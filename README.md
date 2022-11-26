@@ -33,8 +33,8 @@ Step 1. Add the JitPack repository to your build file
                   tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
 
 
-                  InfyOmAds.initializeAds(this);
-                  InfyOmAds.enableTestMode(this);
+                  InfyOmAds.initializeAds(this);  // Once
+                  InfyOmAds.enableTestMode(this); // Once
 
                   InfyOmAds.initDefaultValue();
                   InfyOmAds.showBanner(this,rlBanner,1);
