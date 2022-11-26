@@ -22,8 +22,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="20dp"
-                android:indeterminateTint="@color/ads_view_color"
-                android:secondaryProgressTint="@color/ads_view_color"/>
+                android:indeterminateTint="?android:attr/colorPrimary"
+                android:secondaryProgressTint="?android:attr/colorPrimary"/>
 
             <TextView
                 android:id="@+id/tv_pb"
@@ -31,8 +31,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
                 android:layout_marginBottom="24dp"
+                android:textColor="?android:attr/colorPrimary"
                 android:text="Please Wait..."
-                android:textColor="@color/ads_view_color"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </FrameLayout>

@@ -104,7 +104,7 @@
                 android:layout_height="45dp"
                 android:layout_margin="5dp"
                 android:layout_marginTop="5dp"
-                android:backgroundTint="@color/ads_view_color"
+                android:backgroundTint="?android:attr/colorAccent"
                 android:background="@drawable/button_bg">
 
                 <TextView
@@ -133,7 +133,7 @@
             android:layout_gravity="left"
             android:layout_marginLeft="-17dp"
             android:background="@drawable/button_bg"
-            android:backgroundTint="@color/ads_view_color"
+            android:backgroundTint="?android:attr/colorAccent"
             android:gravity="center"
             android:rotation="-40"
             android:text="AD"

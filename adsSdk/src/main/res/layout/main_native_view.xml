@@ -14,7 +14,7 @@
         android:background="@drawable/ads_space"
         android:gravity="center"
         android:text="Advertise"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/colorAccent"
         android:textSize="15dp"
         android:textStyle="bold" />
 

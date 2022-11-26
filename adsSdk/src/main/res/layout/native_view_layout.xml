@@ -102,7 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:backgroundTint="@color/ads_view_color"
+            android:backgroundTint="?android:attr/colorAccent"
             android:paddingLeft="3dp"
             android:paddingRight="3dp"
             android:textColor="@color/white"

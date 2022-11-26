@@ -101,7 +101,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:backgroundTint="@color/ads_view_color"
+                android:backgroundTint="?android:attr/colorAccent"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:visibility="visible" />
