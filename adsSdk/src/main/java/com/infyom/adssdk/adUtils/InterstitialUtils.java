@@ -103,9 +103,14 @@ public class InterstitialUtils {
             public void onTick(long millisUntilFinished) {}
 
             public void onFinish() {
-                Constants.interAdmob = null;
-                Constants.mCountTimer.cancel();
-                Constants.mCountTimer = null;
+                try {
+                    Constants.interAdmob = null;
+                    Constants.mCountTimer.cancel();
+                    Constants.mCountTimer = null;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
             }
 
 
@@ -115,18 +120,22 @@ public class InterstitialUtils {
     }
 
      static void dismissCount() {
-        if (Constants.mCountTimer != null) {
-            Constants.mCountTimer.cancel();
-            Constants.mCountTimer = null;
-            Constants.interAdmob = null;
-        }
+         try {
+             if (Constants.mCountTimer != null) {
+                 Constants.mCountTimer.cancel();
+                 Constants.interAdmob = null;
+             }
+         } catch (Exception e) {
+             e.printStackTrace();
+         }
+
+
     }
 
 
     public void show_interstitial(InterstitialAd mInterstitialAd) {
 
         if ( mInterstitialAd != null) {
-            dialog = AdProgressDialog.show(mContext);
 
             mInterstitialAd.show((Activity) mContext);
             mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
@@ -137,10 +146,10 @@ public class InterstitialUtils {
 
                 @Override
                 public void onAdShowedFullScreenContent() {
-                    super.onAdShowedFullScreenContent();
                     if (dialog != null && dialog.isShowing()) {
                         dialog.dismiss();
                     }
+                    super.onAdShowedFullScreenContent();
                     Constants.isInterDismissed = false;
                     dismissCount();
                     load_interstitial(false);
@@ -163,9 +172,7 @@ public class InterstitialUtils {
                 @Override
                 public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                     super.onAdFailedToShowFullScreenContent(adError);
-                    if (dialog != null && dialog.isShowing()) {
-                        dialog.dismiss();
-                    }
+                    dialog = AdProgressDialog.show(mContext);
                     show_interstitial(mInterstitialAd);
                 }
             });
