@@ -30,6 +30,9 @@ public class InterstitialUtilsFb {
                 InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
                     @Override
                     public void onInterstitialDisplayed(Ad ad) {
+                        if (dialog.isShowing()) {
+                            dialog.dismiss();
+                        }
                         Constants.isInterDismissed = false;
                     }
 

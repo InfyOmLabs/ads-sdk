@@ -65,6 +65,9 @@ public class InterstitialUtils {
                 @Override
                 public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                     super.onAdFailedToLoad(loadAdError);
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
 
                     if (InfyOmAds.isConnectingToInternet(mContext)) {
                         listener.onAdClose(true);
@@ -123,9 +126,7 @@ public class InterstitialUtils {
     public void show_interstitial(InterstitialAd mInterstitialAd) {
 
         if ( mInterstitialAd != null) {
-            if (dialog != null && dialog.isShowing()) {
-                dialog.dismiss();
-            }
+            dialog = AdProgressDialog.show(mContext);
 
             mInterstitialAd.show((Activity) mContext);
             mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
@@ -137,6 +138,9 @@ public class InterstitialUtils {
                 @Override
                 public void onAdShowedFullScreenContent() {
                     super.onAdShowedFullScreenContent();
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     Constants.isInterDismissed = false;
                     dismissCount();
                     load_interstitial(false);
@@ -159,6 +163,9 @@ public class InterstitialUtils {
                 @Override
                 public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                     super.onAdFailedToShowFullScreenContent(adError);
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     show_interstitial(mInterstitialAd);
                 }
             });
