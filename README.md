@@ -20,6 +20,13 @@ Step 1. Add the JitPack repository to your build file
         }
         
         
+ ===== color guide ====== 
+ 
+            <------------   set color in theme --------------->
+
+                     Progressbar color ------> colorPrimary
+                     Button and Space -------> colorAccent
+
  3). use below code in activity 
  
  
