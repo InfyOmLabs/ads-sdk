@@ -16,7 +16,7 @@ Step 1. Add the JitPack repository to your build file
 2). Add the dependency
 
         dependencies {
-                implementation 'com.github.InfyOmLabs:ads-sdk:1.0.1'
+                implementation 'com.github.InfyOmLabs:ads-sdk:1.1.0'
         }
         
         
