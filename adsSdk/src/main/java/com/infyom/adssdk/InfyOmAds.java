@@ -37,7 +37,7 @@ public class InfyOmAds {
         Constants.nativeAdFb = null;
         Constants.interAdmob = null;
         Constants.interFb = null;
-        Constants.isInterDismissed = false;
+        Constants.isAdShowing = false;
         Constants.mCountTimer = null;
     }
 

@@ -150,7 +150,7 @@ public class InterstitialUtils {
                         dialog.dismiss();
                     }
                     super.onAdShowedFullScreenContent();
-                    Constants.isInterDismissed = false;
+                    Constants.isAdShowing = true;
                     dismissCount();
                     load_interstitial(false);
                 }
@@ -158,7 +158,7 @@ public class InterstitialUtils {
                 @Override
                 public void onAdDismissedFullScreenContent() {
                     super.onAdDismissedFullScreenContent();
-                    Constants.isInterDismissed = true;
+                    Constants.isAdShowing = false;
                     Constants.isTimeFinish = false;
                     new Handler().postDelayed(new Runnable() {
                         @Override

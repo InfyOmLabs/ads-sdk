@@ -20,7 +20,7 @@ public  class Constants {
     public static com.facebook.ads.NativeAd nativeAdFb = null;
     public static InterstitialAd interAdmob = null;
     public static com.facebook.ads.InterstitialAd interFb = null;
-    public static boolean isInterDismissed = false;
+    public static boolean isAdShowing = false;
     public static CountDownTimer mCountTimer = null;
 
 }

@@ -33,12 +33,12 @@ public class InterstitialUtilsFb {
                         if (dialog.isShowing()) {
                             dialog.dismiss();
                         }
-                        Constants.isInterDismissed = false;
+                        Constants.isAdShowing = true;
                     }
 
                     @Override
                     public void onInterstitialDismissed(Ad ad) {
-                        Constants.isInterDismissed = true;
+                        Constants.isAdShowing = false;
                         Constants.isTimeFinish = false;
                         new Handler().postDelayed(new Runnable() {
                             @Override
