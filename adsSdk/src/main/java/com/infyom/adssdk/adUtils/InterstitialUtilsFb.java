@@ -53,6 +53,13 @@ public class InterstitialUtilsFb {
                     public void onError(Ad ad, AdError adError) {
                         Log.e("INTER_ERROR-->", "Interstitial ad failed to load: " + adError.getErrorMessage());
                         dialog.dismiss();
+                        Constants.isTimeFinish = false;
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Constants.isTimeFinish = true;
+                            }
+                        }, accountProvider.getAdsTime() * 1000);
                         listener.onAdClose(true);
                     }
 

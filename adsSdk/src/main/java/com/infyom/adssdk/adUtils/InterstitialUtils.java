@@ -69,6 +69,14 @@ public class InterstitialUtils {
                         dialog.dismiss();
                     }
 
+                    Constants.isTimeFinish = false;
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Constants.isTimeFinish = true;
+                        }
+                    }, myPref.getAdsTime() * 1000);
+
                     if (InfyOmAds.isConnectingToInternet(mContext)) {
                         listener.onAdClose(true);
                     } else {
