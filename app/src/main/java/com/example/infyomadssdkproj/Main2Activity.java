@@ -30,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         InfyOmAds.enableTestMode(this);
 
         InfyOmAds.showBanner(this,rlBanner,1);
-        InfyOmAds.showNative(this,rl_native,tv_space,1,false);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_40);
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {
                 @Override
