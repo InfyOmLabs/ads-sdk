@@ -1,12 +1,9 @@
 package com.infyom.adssdk;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 
 public class AdProgressDialog {

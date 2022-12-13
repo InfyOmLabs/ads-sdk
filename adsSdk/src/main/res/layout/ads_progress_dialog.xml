@@ -32,7 +32,7 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:layout_marginBottom="24dp"
                 android:textColor="?android:attr/colorPrimary"
-                android:text="Please Wait..."
+                android:text="Ads Loading..."
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </FrameLayout>
