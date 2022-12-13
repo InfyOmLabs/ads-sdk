@@ -66,8 +66,11 @@ Step 1. Add the JitPack repository to your build file
         
    ======= Native Templates ===============
    
-    InfyOmAds.AdTemplate.NATIVE_300,
+   InfyOmAds.AdTemplate.NATIVE_300,
+    
                 ![ic_start_vector](https://user-images.githubusercontent.com/119033531/207315967-5b18d5e7-145c-4190-9ad4-95aee760e3ad.png)
+                
+                
               InfyOmAds.AdTemplate.NATIVE_100,
               InfyOmAds.AdTemplate.NATIVE_50,
               InfyOmAds.AdTemplate.NATIVE_40
