@@ -5,9 +5,10 @@ Step 1. Add the JitPack repository to your build file
 
 ========= Features ==========
 
-                    Ads Show Rate  >  80% 
-
-                    You Can Use Multiple Ads Id for banner,interstitial and native ads; 
+          ==> Ads Show Rate  >  80% 
+          ==> For Banner, Interstitial, and Native ads, you can use multiple ad IDs; 
+          ==> You can set interstitial ads to appear periodically.
+          
 
 ========= Gradle ==========
 
@@ -65,7 +66,8 @@ Step 1. Add the JitPack repository to your build file
         
    ======= Native Templates ===============
    
-              InfyOmAds.AdTemplate.NATIVE_300,
+    InfyOmAds.AdTemplate.NATIVE_300,
+                ![ic_start_vector](https://user-images.githubusercontent.com/119033531/207315967-5b18d5e7-145c-4190-9ad4-95aee760e3ad.png)
               InfyOmAds.AdTemplate.NATIVE_100,
               InfyOmAds.AdTemplate.NATIVE_50,
               InfyOmAds.AdTemplate.NATIVE_40
