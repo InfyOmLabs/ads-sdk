@@ -22,7 +22,7 @@ Step 1. Add the JitPack repository to your build file
 2). Add the dependency
 
         dependencies {
-                implementation 'com.github.InfyOmLabs:ads-sdk:1.0.2'
+                implementation 'com.github.InfyOmLabs:ads-sdk:1.0.3'
         }
         
         
@@ -52,7 +52,7 @@ Step 1. Add the JitPack repository to your build file
                   InfyOmAds.initDefaultValue(); // Once Splash
                   
                   InfyOmAds.showBanner(this,rlBanner,1);
-                  InfyOmAds.showNative(this,rl_native,tv_space,1,false);
+                  InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_300);
 
                   showAds.setOnClickListener(v -> {
                       InfyOmAds.showInterstitial(1, this, new Interstitial() {
@@ -63,4 +63,9 @@ Step 1. Add the JitPack repository to your build file
                       });
                   });
         
-        
+   ======= Native Templates ===============
+   
+              InfyOmAds.AdTemplate.NATIVE_300,
+              InfyOmAds.AdTemplate.NATIVE_100,
+              InfyOmAds.AdTemplate.NATIVE_50,
+              InfyOmAds.AdTemplate.NATIVE_40
