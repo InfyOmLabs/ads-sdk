@@ -17,6 +17,7 @@ import com.infyom.adssdk.adUtils.BannerUtilsFb;
 import com.infyom.adssdk.adUtils.InterstitialUtils;
 import com.infyom.adssdk.adUtils.InterstitialUtilsFb;
 import com.infyom.adssdk.adUtils.NativeUtils;
+import com.infyom.adssdk.adUtils.NativeUtils50;
 import com.infyom.adssdk.adUtils.NativeUtilsFb;
 import com.infyom.adssdk.aditerface.Interstitial;
 
@@ -121,6 +122,30 @@ public class InfyOmAds {
             NativeUtilsFb.showNativeFb(context, nativeContainer, space, isBigNative);
         }
     }
+
+    public static void showNative50(Context context, RelativeLayout nativeContainer, View space, int admob, boolean isBigNative) {
+        AdsAccountProvider myPref = new AdsAccountProvider(context);
+        int preloadId;
+        String adsType;
+
+        if (admob == 1) {
+            adsType = myPref.getFirstAdsType();
+            preloadId = 2;
+        } else if (admob == 2) {
+            adsType = myPref.getSecondAdsType();
+            preloadId = 3;
+        } else {
+            adsType = myPref.getThirdAdsType();
+            preloadId = 1;
+        }
+
+        if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
+            NativeUtils50.showNative(context, nativeContainer, space, admob, preloadId);
+        } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
+            NativeUtilsFb.showNativeFb(context, nativeContainer, space, isBigNative);
+        }
+    }
+
 
     public static void  initializeAds(Context context) {
         MobileAds.initialize(context, initializationStatus -> {});
