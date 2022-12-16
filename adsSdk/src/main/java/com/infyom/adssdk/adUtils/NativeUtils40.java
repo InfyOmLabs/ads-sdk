@@ -47,16 +47,22 @@ public class NativeUtils40 {
                 if (!Constants.isPreloadedNative ) {
                     Constants.isPreloadedNative = true;
 
-                    if (rlNative.getChildCount() > 0) {
+                    try {
+                        if (rlNative.getChildCount() > 0) {
+                            rlNative.removeAllViews();
+                        }
+
+                        View view = LayoutInflater.from(context).inflate( R.layout.ad_40, null);
+                        populateNative40(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
+                        space.setVisibility(View.GONE);
+                        rlNative.setVisibility(View.VISIBLE);
                         rlNative.removeAllViews();
+                        rlNative.addView(view);
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
 
-                    View view = LayoutInflater.from(context).inflate( R.layout.ad_40, null);
-                    populateNative40(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
-                    space.setVisibility(View.GONE);
-                    rlNative.setVisibility(View.VISIBLE);
-                    rlNative.removeAllViews();
-                    rlNative.addView(view);
+
 
                     load_native(context, rlNative, space, admob);
                 } else {
@@ -72,9 +78,15 @@ public class NativeUtils40 {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
-                Constants.nativeAds = null;
-                space.setVisibility(View.VISIBLE);
-                rlNative.setVisibility(View.GONE);
+                try {
+                    Constants.nativeAds = null;
+                    space.setVisibility(View.VISIBLE);
+                    rlNative.setVisibility(View.GONE);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
                 load_native(context, rlNative, space, admob);
             }
         }).withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
@@ -85,16 +97,23 @@ public class NativeUtils40 {
     public static void showNative(Context context,RelativeLayout rlNative, View space,int admob,int admobPreId) {
 
         if (Constants.nativeAds != null) {
-            if (rlNative.getChildCount() > 0) {
+
+            try {
+                if (rlNative.getChildCount() > 0) {
+                    rlNative.removeAllViews();
+                }
+
+                View view = LayoutInflater.from(context).inflate( R.layout.ad_40, null);
+                populateNative40(Constants.nativeAds, (NativeAdView) view.findViewById(R.id.unified));
+                space.setVisibility(View.GONE);
+                rlNative.setVisibility(View.VISIBLE);
                 rlNative.removeAllViews();
+                rlNative.addView(view);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
 
-            View view = LayoutInflater.from(context).inflate( R.layout.ad_40, null);
-            populateNative40(Constants.nativeAds, (NativeAdView) view.findViewById(R.id.unified));
-            space.setVisibility(View.GONE);
-            rlNative.setVisibility(View.VISIBLE);
-            rlNative.removeAllViews();
-            rlNative.addView(view);
+
             load_native(context,rlNative,space,admobPreId);
         } else {
             Constants.isPreloadedNative = false;
