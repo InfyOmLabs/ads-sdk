@@ -77,12 +77,15 @@ public class InterstitialUtils {
                         }
                     }, myPref.getAdsTime() * 1000);
 
-                    if (InfyOmAds.isConnectingToInternet(mContext)) {
-                        listener.onAdClose(true);
-                    } else {
-                        listener.onAdClose(true);
-                        Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+                    if (isFailed) {
+                        if (InfyOmAds.isConnectingToInternet(mContext)) {
+                            listener.onAdClose(true);
+                        } else {
+                            listener.onAdClose(true);
+                            Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+                        }
                     }
+
                 }
 
                 @Override
@@ -156,10 +159,11 @@ public class InterstitialUtils {
                         if (dialog != null && dialog.isShowing()) {
                             dialog.dismiss();
                         }
-                        super.onAdShowedFullScreenContent();
                         Constants.isAdShowing = true;
                         dismissCount();
                         load_interstitial(false);
+                        super.onAdShowedFullScreenContent();
+
                     }
 
                     @Override
