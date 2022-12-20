@@ -22,73 +22,69 @@ public class InterstitialUtilsFb {
         AdsAccountProvider accountProvider = new AdsAccountProvider(mContext);
 
         if (InfyOmAds.isConnectingToInternet(mContext)) {
-            if (Constants.isTimeFinish) {
 
-                Dialog dialog = AdProgressDialog.show(mContext);
-                InterstitialAd interstitialAd = new InterstitialAd(mContext,accountProvider.getFbInterAds());
 
-                InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
-                    @Override
-                    public void onInterstitialDisplayed(Ad ad) {
-                        if (dialog.isShowing()) {
-                            dialog.dismiss();
-                        }
-                        Constants.isAdShowing = true;
-                    }
+            Dialog dialog = AdProgressDialog.show(mContext);
+            InterstitialAd interstitialAd = new InterstitialAd(mContext,accountProvider.getFbInterAds());
 
-                    @Override
-                    public void onInterstitialDismissed(Ad ad) {
-                        Constants.isAdShowing = false;
-                        Constants.isTimeFinish = false;
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                Constants.isTimeFinish = true;
-                            }
-                        },accountProvider.getAdsTime() * 1000);
-                        listener.onAdClose(false);
-                    }
-
-                    @Override
-                    public void onError(Ad ad, AdError adError) {
-                        Log.e("INTER_ERROR-->", "Interstitial ad failed to load: " + adError.getErrorMessage());
+            InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
+                @Override
+                public void onInterstitialDisplayed(Ad ad) {
+                    if (dialog.isShowing()) {
                         dialog.dismiss();
-                        Constants.isTimeFinish = false;
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                Constants.isTimeFinish = true;
-                            }
-                        }, accountProvider.getAdsTime() * 1000);
-                        listener.onAdClose(true);
                     }
+                    Constants.isAdShowing = true;
+                }
 
-                    @Override
-                    public void onAdLoaded(Ad ad) {
-                        dialog.dismiss();
-                        if (!interstitialAd.isAdInvalidated()) {
-                            interstitialAd.show();
-                        } else {
-                            loadInterstitial(mContext,listener);
+                @Override
+                public void onInterstitialDismissed(Ad ad) {
+                    Constants.isAdShowing = false;
+                    Constants.isTimeFinish = false;
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Constants.isTimeFinish = true;
                         }
+                    },accountProvider.getAdsTime() * 1000);
+                    listener.onAdClose(false);
+                }
 
+                @Override
+                public void onError(Ad ad, AdError adError) {
+                    Log.e("INTER_ERROR-->", "Interstitial ad failed to load: " + adError.getErrorMessage());
+                    dialog.dismiss();
+                    Constants.isTimeFinish = false;
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Constants.isTimeFinish = true;
+                        }
+                    }, accountProvider.getAdsTime() * 1000);
+                    listener.onAdClose(true);
+                }
+
+                @Override
+                public void onAdLoaded(Ad ad) {
+                    dialog.dismiss();
+                    if (!interstitialAd.isAdInvalidated()) {
+                        interstitialAd.show();
+                    } else {
+                        loadInterstitial(mContext,listener);
                     }
 
-                    @Override
-                    public void onAdClicked(Ad ad) {}
+                }
 
-                    @Override
-                    public void onLoggingImpression(Ad ad) {}
-                };
+                @Override
+                public void onAdClicked(Ad ad) {}
 
-                interstitialAd.loadAd(
-                        interstitialAd.buildLoadAdConfig()
-                                .withAdListener(interstitialAdListener)
-                                .build());
+                @Override
+                public void onLoggingImpression(Ad ad) {}
+            };
 
-            } else {
-                listener.onAdClose(false);
-            }
+            interstitialAd.loadAd(
+                    interstitialAd.buildLoadAdConfig()
+                            .withAdListener(interstitialAdListener)
+                            .build());
         } else {
             Toast.makeText(mContext, "Please check internet connection", Toast.LENGTH_SHORT).show();
             listener.onAdClose(true);

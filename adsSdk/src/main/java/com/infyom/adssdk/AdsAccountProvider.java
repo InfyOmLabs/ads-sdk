@@ -26,6 +26,10 @@ public class AdsAccountProvider {
     static final String KEY_SECOND_ADS_TYPE = "key_second_ads_type";
     static final String KEY_THIRD_ADS_TYPE = "key_third_ads_type";
     static final String KEY_PACKAGE = "key_third_ads_type";
+    static final String KEY_url = "key_url";
+    static final String KEY_IMAGE_URL = "key_image_url";
+    static final String KEY_INTER_URL = "key_inter_url";
+    static final String KEY_INTER_IMAGE_URL = "key_inter_image_url";
 
     Context context;
     SharedPreferences sharedPreferences;
@@ -215,6 +219,42 @@ public class AdsAccountProvider {
 
     public String getAdsType() {
         return sharedPreferences.getString(KEY_ADS_TYPE, "admob" );
+
+    }
+
+    public void setUrl(String url) {
+        sharedPreferences.edit().putString(KEY_url, url ).apply();
+    }
+
+    public String getUrl() {
+        return sharedPreferences.getString(KEY_url, "0Ab" );
+
+    }
+
+    public void setImageUrl(String url) {
+        sharedPreferences.edit().putString(KEY_IMAGE_URL, url ).apply();
+    }
+
+    public String getImageUrl() {
+        return sharedPreferences.getString(KEY_IMAGE_URL, "0Ab" );
+
+    }
+
+    public void setInterUrl(String url) {
+        sharedPreferences.edit().putString(KEY_INTER_URL, url ).apply();
+    }
+
+    public String getInterUrl() {
+        return sharedPreferences.getString(KEY_INTER_URL, "0Ab" );
+
+    }
+
+    public void setInterImageUrl(String url) {
+        sharedPreferences.edit().putString(KEY_INTER_IMAGE_URL, url ).apply();
+    }
+
+    public String getInterImageUrl() {
+        return sharedPreferences.getString(KEY_INTER_IMAGE_URL, "0Ab" );
 
     }
 

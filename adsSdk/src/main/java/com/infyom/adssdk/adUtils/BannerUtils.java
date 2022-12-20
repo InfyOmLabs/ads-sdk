@@ -85,7 +85,6 @@ public class BannerUtils {
                     load_ads(context, bannerView, adMobId,false);
                 } else {
                     Constants.adView = adView;
-//                    Log.e("NATIVE_ADS---->", "showNative: "+Constants.adView);
                 }
             }
         });

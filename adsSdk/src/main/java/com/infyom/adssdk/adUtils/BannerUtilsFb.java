@@ -41,7 +41,6 @@ public class BannerUtilsFb {
         }
     }
 
-
     static void loadFbBanner(Context context, RelativeLayout adContainer, boolean isFailed) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
 

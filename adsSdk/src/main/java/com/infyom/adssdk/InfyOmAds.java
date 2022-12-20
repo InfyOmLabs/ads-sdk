@@ -14,8 +14,10 @@ import com.facebook.ads.BuildConfig;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.infyom.adssdk.adUtils.BannerQuereca;
 import com.infyom.adssdk.adUtils.BannerUtils;
 import com.infyom.adssdk.adUtils.BannerUtilsFb;
+import com.infyom.adssdk.adUtils.InterstitialQuereca;
 import com.infyom.adssdk.adUtils.InterstitialUtils;
 import com.infyom.adssdk.adUtils.InterstitialUtilsFb;
 import com.infyom.adssdk.adUtils.NativeUtils;
@@ -65,24 +67,30 @@ public class InfyOmAds {
             return;
         }
 
-        AdsAccountProvider myPref = new AdsAccountProvider(context);
+        if (Constants.isTimeFinish) {
+            AdsAccountProvider myPref = new AdsAccountProvider(context);
 
-        String adsType;
-        if (admob == 1) {
-            adsType = myPref.getFirstAdsType();
-        } else if (admob == 2) {
-            adsType = myPref.getSecondAdsType();
-        } else {
-            adsType = myPref.getThirdAdsType();
-        }
+            String adsType;
+            if (admob == 1) {
+                adsType = myPref.getFirstAdsType();
+            } else if (admob == 2) {
+                adsType = myPref.getSecondAdsType();
+            } else {
+                adsType = myPref.getThirdAdsType();
+            }
 
-        if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
-            InterstitialUtils interstitialUtils = new InterstitialUtils(context, listener, admob);
-            interstitialUtils.show_interstitial(Constants.interAdmob);
-        } else if ((myPref.getAdsType().equals("facebook") || adsType.equals("facebook"))) {
-            InterstitialUtilsFb.loadInterstitial(context, listener);
+            if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
+                InterstitialUtils interstitialUtils = new InterstitialUtils(context, listener, admob);
+                interstitialUtils.show_interstitial(Constants.interAdmob);
+            } else if ((myPref.getAdsType().equals("facebook") || adsType.equals("facebook"))) {
+                InterstitialUtilsFb.loadInterstitial(context, listener);
+            } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
+                InterstitialQuereca.showInterstitial(context,listener);
+            }else {
+                listener.onAdClose(false);
+            }
         } else {
-            listener.onAdClose(false);
+            listener.onAdClose(true);
         }
     }
 
@@ -108,6 +116,8 @@ public class InfyOmAds {
             BannerUtils.show_banner(context, bannerContainer, admob, preloadId);
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
             BannerUtilsFb.show_banner(context, bannerContainer);
+        } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
+            BannerQuereca.showBanner(context,bannerContainer);
         }
     }
 
@@ -168,12 +178,17 @@ public class InfyOmAds {
         myPref.setFbBannerAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
         myPref.setFbNativeAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
-        myPref.setAdsTime(1);
+        myPref.setAdsTime(5);
         myPref.setSplashAds(1);
         myPref.setAdsType("admob");
         myPref.setFirstAdsType("admob");
         myPref.setSecondAdsType("admob");
         myPref.setThirdAdsType("admob");
+        myPref.setImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");
+        myPref.setUrl("https://infyom.com/");
+        myPref.setInterImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");
+        myPref.setInterUrl("https://infyom.com/");
+
     }
 
 
