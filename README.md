@@ -3,10 +3,6 @@
 To get a Git project into your build:
 Step 1. Add the JitPack repository to your build file
 
-![health logo](https://user-images.githubusercontent.com/119033531/209423442-1a54d0f6-2ddd-471e-bf33-ca8158a52e67.png)
-
-
-
 ========= Features ==========
 
           ==> Ads Show Rate  >  80% 
