@@ -25,7 +25,7 @@ Step 1. Add the JitPack repository to your build file
 
        implementation 'com.github.InfyOmLabs:ads-sdk:1.0.8'
         
-==> FOR PRELOADED ADS
+==> FOR SIMPLE ADS
 
        implementation 'com.github.InfyOmLabs:ads-sdk:1.1.2'  
         
