@@ -2,6 +2,6 @@
 <shape xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <solid
-        android:color="?android:attr/colorAccent" />
+        android:color="?attr/tabSelectedTextColor" />
     <corners android:radius="10dp"/>
 </shape>

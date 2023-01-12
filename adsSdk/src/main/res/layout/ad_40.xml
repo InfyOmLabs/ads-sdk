@@ -92,7 +92,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_click_here"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="45dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"

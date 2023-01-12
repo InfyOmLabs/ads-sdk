@@ -1,5 +1,6 @@
 package com.example.infyomadssdkproj;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,16 +27,13 @@ public class Main2Activity extends AppCompatActivity {
         rl_native = findViewById(com.infyom.adssdk.R.id.rl_native);
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
 
-        InfyOmAds.initializeAds(this);
-        InfyOmAds.enableTestMode(this);
-
         InfyOmAds.showBanner(this,rlBanner,1);
-        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_40);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
         showAds.setOnClickListener(v -> {
-            InfyOmAds.showInterstitial(1, this, new Interstitial() {
+            InfyOmAds.showInterstitial(2, this, new Interstitial() {
                 @Override
                 public void onAdClose(boolean isFail) {
-                    Toast.makeText(Main2Activity.this, "Showed", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Main2Activity.this,MainActivity3.class));
                 }
             });
         });

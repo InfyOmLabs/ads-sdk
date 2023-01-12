@@ -80,11 +80,13 @@ public class BannerUtils {
                         e.printStackTrace();
                     }
 
-
                     Constants.adView = adView;
                     load_ads(context, bannerView, adMobId,false);
+
                 } else {
+
                     Constants.adView = adView;
+
                 }
             }
         });

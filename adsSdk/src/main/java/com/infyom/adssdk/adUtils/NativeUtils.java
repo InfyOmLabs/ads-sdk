@@ -25,7 +25,7 @@ import com.infyom.adssdk.R;
 public class NativeUtils {
 
      static String mUnitId;
-     static void load_native(Context context,RelativeLayout rlNative, View space,int admob,boolean isBigNative,int preAdmobId) {
+     public static void load_native(Context context,RelativeLayout rlNative, View space,int admob,boolean isBigNative,int preAdmobId) {
 
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
 
@@ -40,34 +40,35 @@ public class NativeUtils {
         AdLoader adLoader = new AdLoader.Builder(context, mUnitId).forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
             @Override
             public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
-                if (!Constants.isPreloadedNative) {
-                    Constants.isPreloadedNative = true;
-
-                    try {
-                        if (rlNative.getChildCount() > 0) {
-                            rlNative.removeAllViews();
-                        }
-
-                        View view;
-                        if (isBigNative) {
-                            view = LayoutInflater.from(context).inflate(R.layout.ad_300, null);
-                            populate300AppInstallAdViewMedia(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
-                        } else {
-                            view = LayoutInflater.from(context).inflate(R.layout.ad_100, null);
-                            populateAppInstallAdViewMedia(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
-                        }
-                        space.setVisibility(View.GONE);
-                        rlNative.setVisibility(View.VISIBLE);
+                try {
+                    if (rlNative.getChildCount() > 0) {
                         rlNative.removeAllViews();
-                        rlNative.addView(view);
-                    } catch (Exception e) {
-                        e.printStackTrace();
                     }
 
-                    load_native(context,rlNative,space,preAdmobId,isBigNative,preAdmobId);
-                } else {
-                    Constants.nativeAds = nativeAd;
+                    View view;
+                    if (isBigNative) {
+                        view = LayoutInflater.from(context).inflate(R.layout.ad_300, null);
+                        populate300AppInstallAdViewMedia(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
+                    } else {
+                        view = LayoutInflater.from(context).inflate(R.layout.ad_100, null);
+                        populateAppInstallAdViewMedia(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
+                    }
+                    space.setVisibility(View.GONE);
+                    rlNative.setVisibility(View.VISIBLE);
+                    rlNative.removeAllViews();
+                    rlNative.addView(view);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+
+//                if (!Constants.isPreloadedNative) {
+//                    Constants.isPreloadedNative = true;
+//
+//
+//                    load_native(context,rlNative,space,preAdmobId,isBigNative,preAdmobId);
+//                } else {
+//                    Constants.nativeAds = nativeAd;
+//                }
             }
         }).withAdListener(new AdListener() {
             @Override

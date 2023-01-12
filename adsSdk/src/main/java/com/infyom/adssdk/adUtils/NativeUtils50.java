@@ -43,29 +43,30 @@ public class NativeUtils50 {
             @Override
             public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
                                                 // && !(context instanceof SplashScreen)
-                if (!Constants.isPreloadedNative ) {
-                    Constants.isPreloadedNative = true;
-
-                    try {
-                        if (rlNative.getChildCount() > 0) {
-                            rlNative.removeAllViews();
-                        }
-
-                        View view = LayoutInflater.from(context).inflate( R.layout.ad_50, null);
-                        populateNative50(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
-                        space.setVisibility(View.GONE);
-                        rlNative.setVisibility(View.VISIBLE);
+                try {
+                    if (rlNative.getChildCount() > 0) {
                         rlNative.removeAllViews();
-                        rlNative.addView(view);
-                    } catch (Exception e) {
-                        e.printStackTrace();
                     }
 
-
-                    load_native(context, rlNative, space, admob);
-                } else {
-                    Constants.nativeAds = nativeAd;
+                    View view = LayoutInflater.from(context).inflate( R.layout.ad_50, null);
+                    populateNative50(nativeAd, (NativeAdView) view.findViewById(R.id.unified));
+                    space.setVisibility(View.GONE);
+                    rlNative.setVisibility(View.VISIBLE);
+                    rlNative.removeAllViews();
+                    rlNative.addView(view);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+//                if (!Constants.isPreloadedNative ) {
+//                    Constants.isPreloadedNative = true;
+//
+//
+//
+//
+//                    load_native(context, rlNative, space, admob);
+//                } else {
+//                    Constants.nativeAds = nativeAd;
+//                }
             }
         }).withAdListener(new AdListener() {
             @Override

@@ -23,16 +23,13 @@
             android:layout_height="0dp"
             android:layout_marginEnd="5dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             app:layout_constraintDimensionRatio="H,4:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:orientation="horizontal"
-            android:id="@+id/background"
-            >
+            android:id="@+id/background">
 
             <ImageView
                 android:id="@+id/icon"
@@ -61,8 +58,7 @@
                     android:id="@+id/headline"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="40dp"
                     app:layout_constraintBottom_toTopOf="@+id/row_two"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -74,10 +70,9 @@
                         android:textStyle="bold"
                         android:textSize="12dp"
                         android:textColor="@color/black"
-                        android:lines="1"
                         android:layout_weight="1"
-                        android:layout_height="0dp"
-                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_marginTop="0dp"
                         android:layout_marginBottom="0dp"
                         android:layout_marginStart="0dp"
@@ -87,19 +82,19 @@
                         android:id="@+id/body"
                         android:textStyle="bold"
                         android:textSize="8dp"
-                        android:layout_weight="0.7"
                         android:textColor="#A4A0A0"
                         android:lines="1"
-                        android:layout_height="0dp"
+                        android:layout_weight="0.7"
+                        android:layout_height="wrap_content"
                         android:layout_width="match_parent" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/row_two"
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
                     app:layout_constraintBottom_toTopOf="@+id/cta"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -112,11 +107,12 @@
                         android:gravity="center"
                         android:layout_gravity="center"
                         android:id="@+id/ad_notification_view"
-                        android:layout_height="20dp"
+                        android:layout_height="15dp"
                         android:text="Ad"
+                        android:layout_margin="3dp"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:textSize="10dp"
+                        android:textSize="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
@@ -151,17 +147,17 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toEndOf="@id/ad_notification_view"
-                        app:layout_constraintTop_toTopOf="parent"
-                        ></TextView>
+                        app:layout_constraintTop_toTopOf="parent"/>
 
                 </LinearLayout>
+                
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/cta"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:background="@drawable/button_bg"
                     android:textSize="16dp"
-                    android:backgroundTint="?attr/colorAccent"
+                    android:backgroundTint="?attr/tabSelectedTextColor"
                     android:textColor="@color/white"
                     android:lines="1"
                     app:layout_constraintBottom_toBottomOf="parent"

@@ -81,7 +81,7 @@ public class InfyOmAds {
 
             if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
                 InterstitialUtils interstitialUtils = new InterstitialUtils(context, listener, admob);
-                interstitialUtils.show_interstitial(Constants.interAdmob);
+                interstitialUtils.load_interstitial(true);
             } else if ((myPref.getAdsType().equals("facebook") || adsType.equals("facebook"))) {
                 InterstitialUtilsFb.loadInterstitial(context, listener);
             } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
@@ -89,12 +89,14 @@ public class InfyOmAds {
             }else {
                 listener.onAdClose(false);
             }
+
         } else {
             listener.onAdClose(true);
         }
     }
 
     public static void showBanner(Context context, RelativeLayout bannerContainer, int admob) {
+
         AdsAccountProvider myPref = new AdsAccountProvider(context);
         int preloadId;
 
@@ -113,7 +115,7 @@ public class InfyOmAds {
         }
 
         if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
-            BannerUtils.show_banner(context, bannerContainer, admob, preloadId);
+            BannerUtils.load_ads(context, bannerContainer, admob, true);
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
             BannerUtilsFb.show_banner(context, bannerContainer);
         } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
@@ -140,13 +142,13 @@ public class InfyOmAds {
         if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
 
             if (adTemplate.equals(AdTemplate.NATIVE_300)) {
-                NativeUtils.showNative(context, nativeContainer, space, admob, true, preloadId);
+                NativeUtils.load_native(context, nativeContainer, space, admob, true,preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_100)){
-                NativeUtils.showNative(context, nativeContainer, space, admob, false, preloadId);
+                NativeUtils.load_native(context, nativeContainer, space, admob, false,preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_50)){
-                NativeUtils50.showNative(context, nativeContainer, space, admob, preloadId);
+                NativeUtils50.load_native(context, nativeContainer, space, admob);
             } else {
-                NativeUtils40.showNative(context, nativeContainer, space, admob, preloadId);
+                NativeUtils40.load_native(context, nativeContainer, space, admob);
             }
 
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
@@ -178,7 +180,7 @@ public class InfyOmAds {
         myPref.setFbBannerAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
         myPref.setFbNativeAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
-        myPref.setAdsTime(5);
+        myPref.setAdsTime(1);
         myPref.setSplashAds(1);
         myPref.setAdsType("admob");
         myPref.setFirstAdsType("admob");

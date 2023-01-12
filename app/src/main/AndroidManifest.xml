@@ -20,15 +20,19 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
         </activity>
 
         <activity
             android:name=".Main2Activity"
-            android:exported="true"/>
+            android:exported="false"/>
+
+        <activity
+            android:name=".MainActivity3"
+            android:exported="false"/>
+
+        <activity
+            android:name=".MainActivity4"
+            android:exported="false"/>
 
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"

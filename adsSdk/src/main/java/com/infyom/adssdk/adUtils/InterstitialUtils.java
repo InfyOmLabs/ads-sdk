@@ -28,14 +28,14 @@ public class InterstitialUtils {
     AdsAccountProvider myPref;
     Interstitial listener;
     int adMobId;
-
+    private int failedCount = 0;
     public InterstitialUtils(Context mContext,Interstitial listener,int adMobId) {
         this.mContext = mContext;
         this.listener = listener;
         this.adMobId = adMobId;
     }
 
-     void load_interstitial(boolean isFailed) {
+     public void load_interstitial(boolean isFailed) {
 
         myPref = new AdsAccountProvider(mContext);
 
@@ -48,7 +48,9 @@ public class InterstitialUtils {
                  adMobId = 1;
              }
          } else {
-             dialog = AdProgressDialog.show(mContext);
+             if (dialog == null) {
+                 dialog = AdProgressDialog.show(mContext);
+             }
          }
 
          if (adMobId == 1) {
@@ -63,27 +65,34 @@ public class InterstitialUtils {
              @Override
              public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                  super.onAdFailedToLoad(loadAdError);
-                 if (dialog != null && dialog.isShowing()) {
-                     dialog.dismiss();
-                 }
-
-                 Constants.isTimeFinish = false;
-                 new Handler().postDelayed(new Runnable() {
-                     @Override
-                     public void run() {
-                         Constants.isTimeFinish = true;
+                 if (failedCount == 2) {
+                     failedCount = 0;
+                     if (dialog != null && dialog.isShowing()) {
+                         dialog.dismiss();
                      }
-                 }, myPref.getAdsTime() * 1000);
 
-                 if (isFailed) {
-                     if (InfyOmAds.isConnectingToInternet(mContext)) {
-                         listener.onAdClose(true);
-                     } else {
-                         listener.onAdClose(true);
-                         Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+                     Constants.isTimeFinish = false;
+                     new Handler().postDelayed(new Runnable() {
+                         @Override
+                         public void run() {
+                             Constants.isTimeFinish = true;
+                         }
+                     }, myPref.getAdsTime() * 1000);
+
+                     if (isFailed) {
+                         if (InfyOmAds.isConnectingToInternet(mContext)) {
+                             listener.onAdClose(true);
+                         } else {
+                             listener.onAdClose(true);
+                             Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+                         }
                      }
-                 }
+                 } else {
+                     failedCount++;
+                     load_interstitial(true);
 
+
+                 }
              }
 
              @Override
@@ -92,7 +101,7 @@ public class InterstitialUtils {
                  if (dialog != null && dialog.isShowing()) {
                      dialog.dismiss();
                  }
-                 setCountDown();
+//                 setCountDown();
                  if (isFailed) {
                      show_interstitial(interstitialAd);
                  } else {
@@ -131,7 +140,6 @@ public class InterstitialUtils {
              e.printStackTrace();
          }
     }
-
 
     public void show_interstitial(InterstitialAd mInterstitialAd) {
 

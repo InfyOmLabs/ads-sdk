@@ -61,7 +61,7 @@ public class Google {
     private String appOpenThird;
     @SerializedName("display_time")
     @Expose
-    private Object displayTime;
+    private Integer displayTime;
     @SerializedName("place_add")
     @Expose
     private Integer placeAdd;
@@ -211,11 +211,11 @@ public class Google {
     }
 
 
-    public Object getDisplayTime() {
+    public Integer getDisplayTime() {
         return displayTime;
     }
 
-    public void setDisplayTime(Object displayTime) {
+    public void setDisplayTime(Integer displayTime) {
         this.displayTime = displayTime;
     }
 
