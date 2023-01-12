@@ -35,7 +35,7 @@ Step 1. Add the JitPack repository to your build file
             <------------   set color in theme --------------->
 
                      Progressbar color ------> colorPrimary
-                     Button and Space -------> colorAccent
+                     Button and Space -------> tabSelectedTextColor
 
  3). use below code in activity 
  
