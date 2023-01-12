@@ -5,7 +5,6 @@ Step 1. Add the JitPack repository to your build file
 
 ========= Features ==========
 
-          ==> Ads Show Rate  >  80% 
           ==> For Banner, Interstitial, and Native ads, you can use multiple ad IDs; 
           ==> You can set interstitial ads to appear periodically.
           
@@ -22,9 +21,13 @@ Step 1. Add the JitPack repository to your build file
           
 2). Add the dependency
 
-        dependencies {
-                implementation 'com.github.InfyOmLabs:ads-sdk:1.0.9'
-        }
+==> FOR PRELOADED ADS
+
+       implementation 'com.github.InfyOmLabs:ads-sdk:1.0.8'
+        
+==> FOR PRELOADED ADS
+
+       implementation 'com.github.InfyOmLabs:ads-sdk:1.1.2'  
         
         
  ===== color guide ====== 
