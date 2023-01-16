@@ -58,7 +58,7 @@
                             android:layout_gravity="left"
                             android:layout_marginBottom="2dp"
                             android:layout_marginStart="-17dp"
-                            android:background="@drawable/button_bg"
+                            android:background="@drawable/ads_button_bg"
                             android:backgroundTint="?attr/tabSelectedTextColor"
                             android:gravity="center"
                             android:rotation="-40"

@@ -105,7 +105,7 @@
                 android:layout_margin="5dp"
                 android:layout_marginTop="5dp"
                 android:backgroundTint="?attr/tabSelectedTextColor"
-                android:background="@drawable/button_bg">
+                android:background="@drawable/ads_button_bg">
 
                 <TextView
                     android:id="@+id/ad_call_to_action"
@@ -132,7 +132,7 @@
             android:layout_height="15dp"
             android:layout_gravity="left"
             android:layout_marginLeft="-17dp"
-            android:background="@drawable/button_bg"
+            android:background="@drawable/ads_button_bg"
             android:backgroundTint="?attr/tabSelectedTextColor"
             android:gravity="center"
             android:rotation="-40"

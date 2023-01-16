@@ -3,7 +3,7 @@
     android:id="@+id/ad_unit"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/button_bg"
+    android:background="@drawable/ads_button_bg"
     android:backgroundTint="@color/white"
     android:orientation="vertical"
     android:paddingLeft="10dp"

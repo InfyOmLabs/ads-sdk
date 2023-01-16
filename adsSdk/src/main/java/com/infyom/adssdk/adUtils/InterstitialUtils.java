@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -65,34 +66,36 @@ public class InterstitialUtils {
              @Override
              public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                  super.onAdFailedToLoad(loadAdError);
-                 if (failedCount == 2) {
-                     failedCount = 0;
-                     if (dialog != null && dialog.isShowing()) {
-                         dialog.dismiss();
-                     }
-
-                     Constants.isTimeFinish = false;
-                     new Handler().postDelayed(new Runnable() {
-                         @Override
-                         public void run() {
-                             Constants.isTimeFinish = true;
+                 if (InfyOmAds.isConnectingToInternet(mContext)) {
+                     if (failedCount == 3) {
+                         failedCount = 0;
+                         Log.e("I_TAG", "onAdFailedToLoad: "+failedCount );
+                         if (dialog != null && dialog.isShowing()) {
+                             dialog.dismiss();
                          }
-                     }, myPref.getAdsTime() * 1000);
 
-                     if (isFailed) {
-                         if (InfyOmAds.isConnectingToInternet(mContext)) {
+                         Constants.isTimeFinish = false;
+                         new Handler().postDelayed(new Runnable() {
+                             @Override
+                             public void run() {
+                                 Constants.isTimeFinish = true;
+                             }
+                         }, myPref.getAdsTime() * 1000);
+
+                         if (isFailed) {
                              listener.onAdClose(true);
-                         } else {
-                             listener.onAdClose(true);
-                             Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+
                          }
+                     } else {
+                         failedCount++;
+                         load_interstitial(true);
+
                      }
                  } else {
-                     failedCount++;
-                     load_interstitial(true);
-
-
+                     listener.onAdClose(true);
+                     Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
                  }
+
              }
 
              @Override

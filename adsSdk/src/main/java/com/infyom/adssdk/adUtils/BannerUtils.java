@@ -1,6 +1,7 @@
 package com.infyom.adssdk.adUtils;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -12,10 +13,12 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.infyom.adssdk.AdsAccountProvider;
 import com.infyom.adssdk.Constants;
+import com.infyom.adssdk.InfyOmAds;
 
 
 public class BannerUtils {
     static String mUnitId = null;
+    public static int loadFailed = 0;
 
     public static void show_banner(Context context, RelativeLayout bannerView, int adMobId,int preloadId) {
 
@@ -62,12 +65,21 @@ public class BannerUtils {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
                 Constants.adView = null;
-                load_ads(context, bannerView, adMobId,true);
+                if (InfyOmAds.isConnectingToInternet(context)) {
+                    if (loadFailed != 3) {
+                        Log.e("B_TAG", "onAdFailedToLoad: "+loadFailed );
+                        loadFailed++;
+                        load_ads(context, bannerView, adMobId,true);
+                    }
+                }
+
             }
 
             @Override
             public void onAdLoaded() {
                 super.onAdLoaded();
+                loadFailed = 0;
+
                 if (isFailed) {
 
                     try {

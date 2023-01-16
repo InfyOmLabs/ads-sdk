@@ -20,11 +20,13 @@ import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.infyom.adssdk.AdsAccountProvider;
 import com.infyom.adssdk.Constants;
+import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.R;
 
 public class NativeUtils {
 
      static String mUnitId;
+     public static int loadFailed = 0;
      public static void load_native(Context context,RelativeLayout rlNative, View space,int admob,boolean isBigNative,int preAdmobId) {
 
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
@@ -40,6 +42,7 @@ public class NativeUtils {
         AdLoader adLoader = new AdLoader.Builder(context, mUnitId).forNativeAd(new NativeAd.OnNativeAdLoadedListener() {
             @Override
             public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
+                loadFailed = 0;
                 try {
                     if (rlNative.getChildCount() > 0) {
                         rlNative.removeAllViews();
@@ -80,7 +83,13 @@ public class NativeUtils {
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
                 Constants.nativeAds = null;
-                load_native(context, rlNative, space, admob,isBigNative,preAdmobId);
+                if (InfyOmAds.isConnectingToInternet(context)) {
+                    if (loadFailed != 3) {
+                        Log.e("N_TAG", "onAdFailedToLoad: "+loadFailed );
+                        loadFailed++;
+                        load_native(context, rlNative, space, admob, isBigNative, preAdmobId);
+                    }
+                }
                 try {
                     space.setVisibility(View.VISIBLE);
                     rlNative.setVisibility(View.GONE);

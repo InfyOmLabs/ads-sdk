@@ -18,7 +18,7 @@
         android:layout_margin="10dp"
         android:layout_alignParentEnd="true"
         android:visibility="gone"
-        android:src="@drawable/ic_cancel"
+        android:src="@drawable/ads_ic_cancel"
         app:tint="@color/black" />
 
 </RelativeLayout>

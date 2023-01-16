@@ -115,6 +115,7 @@ public class InfyOmAds {
         }
 
         if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
+            BannerUtils.loadFailed = 0;
             BannerUtils.load_ads(context, bannerContainer, admob, true);
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
             BannerUtilsFb.show_banner(context, bannerContainer);
@@ -142,12 +143,16 @@ public class InfyOmAds {
         if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
 
             if (adTemplate.equals(AdTemplate.NATIVE_300)) {
+                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, true,preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_100)){
+                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, false,preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_50)){
+                NativeUtils50.loadFailed = 0;
                 NativeUtils50.load_native(context, nativeContainer, space, admob);
             } else {
+                NativeUtils40.loadFailed = 0;
                 NativeUtils40.load_native(context, nativeContainer, space, admob);
             }
 

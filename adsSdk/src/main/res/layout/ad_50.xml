@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_centerInParent="true"
     android:id="@+id/unified"
-    android:background = "@drawable/button_bg"
+    android:background = "@drawable/ads_button_bg"
     android:backgroundTint="@color/white"
     >
 
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/ads_button_bg"
         android:backgroundTint="@color/white"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -101,7 +101,7 @@
                     app:layout_constraintTop_toBottomOf="@id/headline">
 
                     <TextView
-                        android:background="@drawable/button_bg"
+                        android:background="@drawable/ads_button_bg"
                         android:layout_width="wrap_content"
                         android:paddingHorizontal="5dp"
                         android:gravity="center"
@@ -155,7 +155,7 @@
                     android:id="@+id/cta"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:background="@drawable/button_bg"
+                    android:background="@drawable/ads_button_bg"
                     android:textSize="16dp"
                     android:backgroundTint="?attr/tabSelectedTextColor"
                     android:textColor="@color/white"

@@ -23,11 +23,14 @@ import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.infyom.adssdk.AdsAccountProvider;
 import com.infyom.adssdk.Constants;
+import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.R;
 
 public class NativeUtils40 {
 
     public static String mUnitId;
+    public static int loadFailed = 0;
+
     public static void load_native(Context context, RelativeLayout rlNative, View space, int admob) {
 
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
@@ -54,6 +57,8 @@ public class NativeUtils40 {
 //                } else {
 //                    Constants.nativeAds = nativeAd;
 //                }
+                loadFailed = 0;
+
                 try {
                     if (rlNative.getChildCount() > 0) {
                         rlNative.removeAllViews();
@@ -87,8 +92,13 @@ public class NativeUtils40 {
                     e.printStackTrace();
                 }
 
-
-                load_native(context, rlNative, space, admob);
+                if (InfyOmAds.isConnectingToInternet(context)) {
+                    if (loadFailed != 3) {
+                        Log.e("N_TAG", "onAdFailedToLoad: "+loadFailed );
+                        loadFailed++;
+                        load_native(context, rlNative, space, admob);
+                    }
+                }
             }
         }).withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
 
