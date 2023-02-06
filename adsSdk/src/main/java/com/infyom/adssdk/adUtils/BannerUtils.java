@@ -48,6 +48,7 @@ public class BannerUtils {
     }
 
     public static void load_ads(Context context, RelativeLayout bannerView, int adMobId,boolean isFailed) {
+
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
         if (adMobId == 1) {
             mUnitId = accountProvider.getBannerAds1();

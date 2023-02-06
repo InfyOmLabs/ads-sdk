@@ -82,10 +82,10 @@ public class InterstitialUtils {
                              }
                          }, myPref.getAdsTime() * 1000);
 
-                         if (isFailed) {
-                             listener.onAdClose(true);
-
-                         }
+//                         if (isFailed) {
+//                             listener.onAdClose(true);
+//                         }
+                         listener.onAdClose(true);
                      } else {
                          failedCount++;
                          load_interstitial(true);
@@ -101,15 +101,17 @@ public class InterstitialUtils {
              @Override
              public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                  super.onAdLoaded(interstitialAd);
+                 failedCount = 0;
                  if (dialog != null && dialog.isShowing()) {
                      dialog.dismiss();
                  }
+                 show_interstitial(interstitialAd);
 //                 setCountDown();
-                 if (isFailed) {
-                     show_interstitial(interstitialAd);
-                 } else {
-                     Constants.interAdmob = interstitialAd;
-                 }
+//                 if (isFailed) {
+//                     show_interstitial(interstitialAd);
+//                 } else {
+//                     Constants.interAdmob = interstitialAd;
+//                 }
              }
          });
     }
@@ -162,8 +164,8 @@ public class InterstitialUtils {
                         dialog.dismiss();
                     }
                     Constants.isAdShowing = true;
-                    dismissCount();
-                    load_interstitial(false);
+//                    dismissCount();
+//                    load_interstitial(false);
                 }
 
                 @Override
@@ -188,9 +190,10 @@ public class InterstitialUtils {
 
                 }
             });
-        } else {
-            load_interstitial(true);
         }
+//        else {
+//            load_interstitial(true);
+//        }
 
     }
 }
