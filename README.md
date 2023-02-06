@@ -27,7 +27,7 @@ Step 1. Add the JitPack repository to your build file
         
 ==> FOR SIMPLE ADS
 
-       implementation 'com.github.InfyOmLabs:ads-sdk:1.1.3'  
+       implementation 'com.github.InfyOmLabs:ads-sdk:1.1.4'  
         
         
  ===== color guide ====== 
