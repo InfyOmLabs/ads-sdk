@@ -92,6 +92,9 @@ public class InterstitialUtils {
 
                      }
                  } else {
+                     if (dialog != null && dialog.isShowing()) {
+                         dialog.dismiss();
+                     }
                      listener.onAdClose(true);
                      Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
                  }
