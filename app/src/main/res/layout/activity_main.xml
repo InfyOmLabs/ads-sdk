@@ -15,8 +15,11 @@
         android:layout_centerInParent="true"
         android:text="Second" />
 
-
-    <include
-        layout="@layout/main_banner_view" />
+    <RelativeLayout
+        android:id="@+id/rl_banner"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:gravity="center" />
 
 </RelativeLayout>

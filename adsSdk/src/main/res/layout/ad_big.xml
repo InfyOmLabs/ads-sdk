@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="10dp"
-    app:cardElevation="3dp"
+    app:cardElevation="5dp"
     app:cardUseCompatPadding="true">
 
     <com.google.android.gms.ads.nativead.NativeAdView
@@ -53,15 +53,11 @@
 
             <ImageView
                 android:id="@+id/ad_app_icon"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="10dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight=".01" />
 
             <TextView
                 android:id="@+id/ad_headline"
@@ -69,7 +65,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="4dp"
                 android:layout_toRightOf="@+id/ad_app_icon"
                 android:ellipsize="end"
                 android:text="fsdffdfsff"

@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_cancel" />
+                            <entry key="color" value="7d7a7a" />
+                            <entry key="outputName" value="ic_ad_close" />
                           </map>
                         </option>
                       </PersistentState>

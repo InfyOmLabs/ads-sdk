@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.infyom.adssdk.InfyOmAds;
+
 import com.infyom.adssdk.aditerface.Interstitial;
 
 public class MainActivity4 extends AppCompatActivity {
@@ -22,18 +23,18 @@ public class MainActivity4 extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         showAds = findViewById(R.id.btn_next);
-        rlBanner = findViewById(com.infyom.adssdk.R.id.rl_banner);
+        rlBanner = findViewById(R.id.rl_banner);
         rl_native = findViewById(com.infyom.adssdk.R.id.rl_native);
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
 
         InfyOmAds.showBanner(this,rlBanner,1);
-        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_300);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_100);
 
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {
                 @Override
                 public void onAdClose(boolean isFail) {
-                    startActivity(new Intent(MainActivity4.this,Main2Activity.class));
+                    startActivity(new Intent(MainActivity4.this,FullNativeActivity.class));
                 }
             });
         });

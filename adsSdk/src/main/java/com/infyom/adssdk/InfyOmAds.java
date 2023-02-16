@@ -1,6 +1,5 @@
 package com.infyom.adssdk;
 
-import android.app.Application;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,18 +11,17 @@ import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.BuildConfig;
 import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.initialization.InitializationStatus;
-import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
-import com.infyom.adssdk.adUtils.BannerQuereca;
-import com.infyom.adssdk.adUtils.BannerUtils;
-import com.infyom.adssdk.adUtils.BannerUtilsFb;
-import com.infyom.adssdk.adUtils.InterstitialQuereca;
-import com.infyom.adssdk.adUtils.InterstitialUtils;
-import com.infyom.adssdk.adUtils.InterstitialUtilsFb;
-import com.infyom.adssdk.adUtils.NativeUtils;
-import com.infyom.adssdk.adUtils.NativeUtils40;
-import com.infyom.adssdk.adUtils.NativeUtils50;
-import com.infyom.adssdk.adUtils.NativeUtilsFb;
+
+import com.infyom.adssdk.adUtils.banner.AdBanner;
+import com.infyom.adssdk.adUtils.banner.BannerQuereca;
+import com.infyom.adssdk.adUtils.banner.BannerUtilsFb;
+import com.infyom.adssdk.adUtils.inter.InterstitialQuereca;
+import com.infyom.adssdk.adUtils.inter.InterstitialUtils;
+import com.infyom.adssdk.adUtils.inter.InterstitialUtilsFb;
+import com.infyom.adssdk.adUtils.nativeAd.NativeUtils;
+import com.infyom.adssdk.adUtils.nativeAd.NativeUtils40;
+import com.infyom.adssdk.adUtils.nativeAd.NativeUtils50;
+import com.infyom.adssdk.adUtils.nativeAd.NativeUtilsFb;
 import com.infyom.adssdk.aditerface.Interstitial;
 
 
@@ -98,25 +96,19 @@ public class InfyOmAds {
     public static void showBanner(Context context, RelativeLayout bannerContainer, int admob) {
 
         AdsAccountProvider myPref = new AdsAccountProvider(context);
-        int preloadId;
 
         String adsType;
 
         if (admob == 1) {
             adsType = myPref.getFirstAdsType();
-            preloadId = 2;
-
         } else if (admob == 2) {
             adsType = myPref.getSecondAdsType();
-            preloadId = 3;
         } else {
             adsType = myPref.getThirdAdsType();
-            preloadId = 1;
         }
 
         if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
-            BannerUtils.loadFailed = 0;
-            BannerUtils.load_ads(context, bannerContainer, admob, true);
+            AdBanner.showBanner(context, bannerContainer, admob);
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
             BannerUtilsFb.show_banner(context, bannerContainer);
         } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
