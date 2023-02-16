@@ -32,54 +32,54 @@ Step 1. Add the JitPack repository to your build file
 ===> FOR BANNER IN APPLICATION CLASS
 
 
-          public class MyApplication extends Application implements ActivityLifecycleCallbacks {
+    public class MyApplication extends Application implements ActivityLifecycleCallbacks {
 
-    private Activity currentActivity;
+            private Activity currentActivity;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        this.registerActivityLifecycleCallbacks(this);
+           @Override
+           public void onCreate() {
+              super.onCreate();
+              this.registerActivityLifecycleCallbacks(this);
 
-    }
+           }
 
-    @Override
-    public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
-        currentActivity = activity;
-    }
+           @Override
+           public void onActivityCreated(@NonNull Activity activity, @Nullable Bundle savedInstanceState) {
+               currentActivity = activity;
+            }
 
-    @Override
-    public void onActivityStarted(@NonNull Activity activity) {}
+            @Override
+           public void onActivityStarted(@NonNull Activity activity) {}
 
-    @Override
-    public void onActivityResumed(@NonNull Activity activity) {
-        AdBanner.resumeAdView();
-
-    }
-
-    @Override
-    public void onActivityPaused(@NonNull Activity activity) {
-        if (AdBanner.getCurrentActivity() != null && (AdBanner.getCurrentActivity() == currentActivity)) {
-            AdBanner.pauseAdView();
-        }
-    }
-
-    @Override
-    public void onActivityStopped(@NonNull Activity activity) {
-    }
-
-    @Override
-    public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {
-    }
-
-    @Override
-    public void onActivityDestroyed(@NonNull Activity activity) {
-        if (AdBanner.getCurrentActivity() != null && (AdBanner.getCurrentActivity() == currentActivity)) {
-            AdBanner.destroyAdView();
-        }
-    }
+            @Override
+           public void onActivityResumed(@NonNull Activity activity) {
+              AdBanner.resumeAdView();
 
           }
+
+           @Override
+            public void onActivityPaused(@NonNull Activity activity) {
+                if (AdBanner.getCurrentActivity() != null && (AdBanner.getCurrentActivity() == currentActivity)) {
+                  AdBanner.pauseAdView();
+              }
+           }
+
+           @Override
+           public void onActivityStopped(@NonNull Activity activity) {
+          }
+
+           @Override
+          public void onActivitySaveInstanceState(@NonNull Activity activity, @NonNull Bundle outState) {
+           }
+
+          @Override
+           public void onActivityDestroyed(@NonNull Activity activity) {
+             if (AdBanner.getCurrentActivity() != null && (AdBanner.getCurrentActivity() == currentActivity)) {
+                      AdBanner.destroyAdView();
+                     }
+          }
+
+      }
        
         
         
