@@ -32,7 +32,7 @@ Step 1. Add the JitPack repository to your build file
 ===> FOR BANNER IN APPLICATION CLASS
 
 
-          public class MyApplication extends Application implements ActivityLifecycleCallbacks, LifecycleObserver {
+          public class MyApplication extends Application implements ActivityLifecycleCallbacks {
 
     private Activity currentActivity;
 
