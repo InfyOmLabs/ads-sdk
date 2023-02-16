@@ -29,11 +29,10 @@ Step 1. Add the JitPack repository to your build file
 
        implementation 'com.github.InfyOmLabs:ads-sdk:1.1.7'  
        
-===> FOR BANNER APPLICATION CLASS
+===> FOR BANNER IN APPLICATION CLASS
 
-          *** APPLICATION CLASS ***
 
-public class MyApplication extends Application implements ActivityLifecycleCallbacks, LifecycleObserver {
+          public class MyApplication extends Application implements ActivityLifecycleCallbacks, LifecycleObserver {
 
     private Activity currentActivity;
 
@@ -80,7 +79,7 @@ public class MyApplication extends Application implements ActivityLifecycleCallb
         }
     }
 
-}
+          }
        
         
         
