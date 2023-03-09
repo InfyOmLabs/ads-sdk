@@ -27,7 +27,7 @@ Step 1. Add the JitPack repository to your build file
         
 ==> FOR SIMPLE ADS
 
-       implementation 'com.github.InfyOmLabs:ads-sdk:1.1.7'  
+       implementation 'com.github.InfyOmLabs:ads-sdk:1.1.9'  
        
 ===> FOR BANNER IN APPLICATION CLASS
 
