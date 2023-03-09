@@ -10,38 +10,13 @@ import com.facebook.ads.AdListener;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 import com.infyom.adssdk.AdsAccountProvider;
-import com.infyom.adssdk.Constants;
+import com.infyom.adssdk.InfyOmAds;
 
 
 public class BannerUtilsFb {
+    private static int loadFail = 0;
 
-    public static void show_banner(Context context, RelativeLayout bannerView) {
-
-        if (Constants.adViewFb != null) {
-
-            try {
-                if (bannerView.getChildCount() > 0) {
-                    bannerView.removeAllViews();
-                }
-
-                bannerView.addView(Constants.adViewFb);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            loadFbBanner(context, bannerView, false);
-        } else {
-            if (Constants.isSplashRun)  {
-                Constants.isSplashRun = false;
-                loadFbBanner(context, bannerView, false);
-            } else {
-                loadFbBanner(context, bannerView, true);
-            }
-
-        }
-    }
-
-    static void loadFbBanner(Context context, RelativeLayout adContainer, boolean isFailed) {
+    public static void loadFbBanner(Context context, RelativeLayout adContainer) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
 
         AdView adView = new AdView(context, accountProvider.getFbBannerAds(), AdSize.BANNER_HEIGHT_50);
@@ -49,34 +24,30 @@ public class BannerUtilsFb {
             @Override
             public void onError(Ad ad, AdError adError) {
                 Log.e("BANNER_ERROR-->", adError.getErrorMessage());
-                Constants.adViewFb = null;
-                loadFbBanner(context, adContainer, true);
+                if (InfyOmAds.isConnectingToInternet(context)) {
+                    if (loadFail != 3) {
+                        Log.e("B_F_TAG", "onError: "+loadFail );
+                        loadFail++;
+                        loadFbBanner(context, adContainer);
+                    } else {
+                        loadFail = 0;
+                    }
+                }
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                Log.e("BANNER-->", "banner: " + Constants.adViewFb);
-
-                if (isFailed) {
-
-                    try {
-                        if (adContainer.getChildCount() > 0) {
-                            adContainer.removeAllViews();
-                        }
-
-                        adContainer.addView(adView);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                loadFail = 0;
+                try {
+                    if (adContainer.getChildCount() > 0) {
+                        adContainer.removeAllViews();
                     }
 
-
-                    Constants.adViewFb = adView;
-                    loadFbBanner(context, adContainer, false);
-
-                } else {
-                    Constants.adViewFb = adView;
-
+                    adContainer.addView(adView);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+
             }
 
             @Override
@@ -89,6 +60,7 @@ public class BannerUtilsFb {
 
             }
         }).build());
+
     }
 
 }

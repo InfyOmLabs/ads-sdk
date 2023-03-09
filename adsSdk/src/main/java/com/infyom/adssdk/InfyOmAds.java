@@ -110,7 +110,7 @@ public class InfyOmAds {
         if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
             AdBanner.showBanner(context, bannerContainer, admob);
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
-            BannerUtilsFb.show_banner(context, bannerContainer);
+            BannerUtilsFb.loadFbBanner(context, bannerContainer);
         } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
             BannerQuereca.showBanner(context,bannerContainer);
         }
@@ -149,7 +149,7 @@ public class InfyOmAds {
             }
 
         } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
-            NativeUtilsFb.showNativeFb(context, nativeContainer, space, adTemplate.equals(AdTemplate.NATIVE_300));
+            NativeUtilsFb.loadFbNative(context, nativeContainer, space, adTemplate.equals(AdTemplate.NATIVE_300));
         }
     }
 
@@ -174,15 +174,15 @@ public class InfyOmAds {
         myPref.setNativeAds1("/6499/example/native");
         myPref.setNativeAds2("/6499/example/native");
         myPref.setNativeAds3("/6499/example/native");
-        myPref.setFbBannerAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
-        myPref.setFbNativeAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
-        myPref.setFbInterAds("IMG_16_9_APP_INSTALL#YOUR_PLACEMENT_ID");
+        myPref.setFbBannerAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
+        myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
+        myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setAdsTime(1);
         myPref.setSplashAds(1);
-        myPref.setAdsType("admob");
-        myPref.setFirstAdsType("admob");
-        myPref.setSecondAdsType("admob");
-        myPref.setThirdAdsType("admob");
+        myPref.setAdsType("facebook");
+        myPref.setFirstAdsType("facebook");
+        myPref.setSecondAdsType("facebook");
+        myPref.setThirdAdsType("facebook");
         myPref.setImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");
         myPref.setUrl("https://infyom.com/");
         myPref.setInterImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");

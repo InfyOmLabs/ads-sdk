@@ -17,6 +17,8 @@ import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.aditerface.Interstitial;
 
 public class InterstitialUtilsFb {
+    public static int failLoad= 0;
+    static Dialog dialog;
 
     public static void loadInterstitial(Context mContext, Interstitial listener) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(mContext);
@@ -24,13 +26,16 @@ public class InterstitialUtilsFb {
         if (InfyOmAds.isConnectingToInternet(mContext)) {
 
 
-            Dialog dialog = AdProgressDialog.show(mContext);
+            if (dialog == null) {
+                dialog = AdProgressDialog.show(mContext);
+            }
+
             InterstitialAd interstitialAd = new InterstitialAd(mContext,accountProvider.getFbInterAds());
 
             InterstitialAdListener interstitialAdListener = new InterstitialAdListener() {
                 @Override
                 public void onInterstitialDisplayed(Ad ad) {
-                    if (dialog.isShowing()) {
+                    if (dialog != null && dialog.isShowing()) {
                         dialog.dismiss();
                     }
                     Constants.isAdShowing = true;
@@ -38,6 +43,10 @@ public class InterstitialUtilsFb {
 
                 @Override
                 public void onInterstitialDismissed(Ad ad) {
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+                    failLoad = 0;
                     Constants.isAdShowing = false;
                     Constants.isTimeFinish = false;
                     new Handler().postDelayed(new Runnable() {
@@ -52,20 +61,33 @@ public class InterstitialUtilsFb {
                 @Override
                 public void onError(Ad ad, AdError adError) {
                     Log.e("INTER_ERROR-->", "Interstitial ad failed to load: " + adError.getErrorMessage());
-                    dialog.dismiss();
-                    Constants.isTimeFinish = false;
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            Constants.isTimeFinish = true;
+
+                    if (failLoad != 3) {
+                        Log.e("I_F_TAG-->", "failed to load: " + failLoad);
+                        failLoad++;
+                        loadInterstitial(mContext, listener);
+                    } else {
+                        if (dialog != null && dialog.isShowing()) {
+                            dialog.dismiss();
                         }
-                    }, accountProvider.getAdsTime() * 1000);
-                    listener.onAdClose(true);
+                        Constants.isTimeFinish = false;
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Constants.isTimeFinish = true;
+                            }
+                        }, accountProvider.getAdsTime() * 1000);
+                        listener.onAdClose(true);
+                        failLoad = 0;
+                    }
+
                 }
 
                 @Override
                 public void onAdLoaded(Ad ad) {
-                    dialog.dismiss();
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
                     if (!interstitialAd.isAdInvalidated()) {
                         interstitialAd.show();
                     } else {

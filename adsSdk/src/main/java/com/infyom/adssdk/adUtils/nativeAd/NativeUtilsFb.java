@@ -17,15 +17,15 @@ import com.facebook.ads.NativeAd;
 import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdListener;
 import com.infyom.adssdk.AdsAccountProvider;
-import com.infyom.adssdk.Constants;
+import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class NativeUtilsFb {
-
-    static void loadFbNative(Context context, RelativeLayout nativeAdLayout, View space,boolean isBigNative) {
+    public static int loadFail = 0;
+    public static void loadFbNative(Context context, RelativeLayout nativeAdLayout, View space,boolean isBigNative) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
 
         NativeAd nativeAd = new NativeAd(context, accountProvider.getFbNativeAds());
@@ -38,43 +38,34 @@ public class NativeUtilsFb {
             @Override
             public void onError(Ad ad, AdError adError) {
                 // Native ad failed to load
-                Constants.nativeAdFb = null;
 
-                loadFbNative(context, nativeAdLayout, space,isBigNative);
-                Log.e("_NATIVE_ERROR-->", "Native ad failed to load: " + adError.getErrorMessage());
-                try {
-                    space.setVisibility(View.VISIBLE);
-                    nativeAdLayout.setVisibility(View.GONE);
-                } catch (Exception e) {
-                    e.printStackTrace();
+                if (InfyOmAds.isConnectingToInternet(context)) {
+                    if (loadFail != 3) {
+                        Log.e("N_F_TAG", "onError: "+loadFail );
+                        loadFail++;
+                        loadFbNative(context, nativeAdLayout, space,isBigNative);
+                    } else {
+                        loadFail = 0;
+                    }
                 }
+
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                if (!Constants.isPreloadedFbNative) {
-                    Constants.isPreloadedFbNative = true;
-
-                    try {
-                        if (nativeAdLayout.getChildCount() > 0) {
-                            nativeAdLayout.removeAllViews();
-                        }
-
-                        space.setVisibility(View.GONE);
-                        nativeAdLayout.setVisibility(View.VISIBLE);
-                        inflateNativeAd(nativeAd, context, nativeAdLayout,isBigNative);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                loadFail = 0;
+                try {
+                    if (nativeAdLayout.getChildCount() > 0) {
+                        nativeAdLayout.removeAllViews();
                     }
 
-
-                    loadFbNative(context, nativeAdLayout, space, isBigNative);
-
-                } else {
-                    Constants.nativeAdFb = nativeAd;
-                    Log.e("NATIVE_ADS---->", "showNative: "+Constants.nativeAdFb);
-
+                    space.setVisibility(View.GONE);
+                    nativeAdLayout.setVisibility(View.VISIBLE);
+                    inflateNativeAd(nativeAd, context, nativeAdLayout,isBigNative);
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
+
             }
 
             @Override
@@ -89,25 +80,6 @@ public class NativeUtilsFb {
         nativeAd.loadAd(nativeAd.buildLoadAdConfig().withAdListener(nativeAdListener).build());
 
     }
-
-    public static void showNativeFb(Context context, RelativeLayout nativeAdLayout, View space,boolean isBigNative) {
-        if (Constants.nativeAdFb != null) {
-            space.setVisibility(View.GONE);
-            nativeAdLayout.setVisibility(View.VISIBLE);
-            inflateNativeAd(Constants.nativeAdFb, context, nativeAdLayout,isBigNative);
-            loadFbNative(context, nativeAdLayout, space, isBigNative);
-        } else {
-            if (Constants.isSplashRunNative)  {
-                Constants.isSplashRunNative = false;
-                Constants.isPreloadedFbNative = true;
-                loadFbNative(context,nativeAdLayout,space,isBigNative);
-            } else {
-                Constants.isPreloadedFbNative = false;
-                loadFbNative(context,nativeAdLayout,space,isBigNative);
-            }
-        }
-    }
-
 
     private static void inflateNativeAd(NativeAd nativeAd, Context context, RelativeLayout nativeAdLayout,boolean isBigNative) {
 
