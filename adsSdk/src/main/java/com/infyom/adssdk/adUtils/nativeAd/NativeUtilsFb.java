@@ -41,7 +41,7 @@ public class NativeUtilsFb {
 
                 if (InfyOmAds.isConnectingToInternet(context)) {
                     if (loadFail != 3) {
-                        Log.e("N_F_TAG", "onError: "+loadFail );
+                        Log.e("N_F_TAG", "onError: "+loadFail);
                         loadFail++;
                         loadFbNative(context, nativeAdLayout, space,isBigNative);
                     } else {

@@ -45,8 +45,6 @@ public class InfyOmAds {
         Constants.isPreloadedFbNative = false;
         Constants.nativeAds = null;
         Constants.adView = null;
-        Constants.adViewFb = null;
-        Constants.nativeAdFb = null;
         Constants.interAdmob = null;
         Constants.interFb = null;
         Constants.isAdShowing = false;
@@ -179,10 +177,10 @@ public class InfyOmAds {
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setAdsTime(1);
         myPref.setSplashAds(1);
-        myPref.setAdsType("facebook");
-        myPref.setFirstAdsType("facebook");
-        myPref.setSecondAdsType("facebook");
-        myPref.setThirdAdsType("facebook");
+        myPref.setAdsType("admob");
+        myPref.setFirstAdsType("admob");
+        myPref.setSecondAdsType("admob");
+        myPref.setThirdAdsType("admob");
         myPref.setImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");
         myPref.setUrl("https://infyom.com/");
         myPref.setInterImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");

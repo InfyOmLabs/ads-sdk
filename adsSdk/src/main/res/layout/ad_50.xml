@@ -12,7 +12,7 @@
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_height="wrap_content"
+        android:layout_height="110dp"
         android:layout_width="match_parent"
         android:layout_centerInParent="true"
         android:background="@drawable/ads_button_bg"
@@ -154,9 +154,10 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/cta"
                     android:layout_width="match_parent"
-                    android:layout_height="0dp"
+                    android:layout_height="25dp"
                     android:background="@drawable/ads_button_bg"
                     android:textSize="16dp"
+                    android:textAllCaps="false"
                     android:backgroundTint="?attr/tabSelectedTextColor"
                     android:textColor="@color/white"
                     android:lines="1"

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         InfyOmAds.initDefaultValue();
         InfyOmAds.showBanner(this,rlBanner,1);
 
-        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_100);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
 
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {

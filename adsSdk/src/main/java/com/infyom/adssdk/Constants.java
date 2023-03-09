@@ -16,8 +16,6 @@ public  class Constants {
     public static boolean isPreloadedFbNative = false;
     public static NativeAd nativeAds = null;
     public static AdView adView = null;
-    public static com.facebook.ads.AdView adViewFb = null;
-    public static com.facebook.ads.NativeAd nativeAdFb = null;
     public static InterstitialAd interAdmob = null;
     public static com.facebook.ads.InterstitialAd interFb = null;
     public static boolean isAdShowing = false;
