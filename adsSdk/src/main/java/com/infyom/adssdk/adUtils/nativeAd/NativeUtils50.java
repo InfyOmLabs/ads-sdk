@@ -30,6 +30,7 @@ public class NativeUtils50 {
 
     public static String mUnitId;
     public static int loadFailed = 0;
+    
 
     public static void load_native(Context context, RelativeLayout rlNative, View space, int admob) {
 

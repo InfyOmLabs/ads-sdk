@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/tools"
-    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="10dp"
     app:cardElevation="3dp"
     app:cardUseCompatPadding="true"
@@ -14,7 +13,6 @@
         android:id="@+id/unified"
         android:layout_width="match_parent"
         android:layout_height="165dp"
-        android:background="@color/white"
         app:ignore="NamespaceTypo">
 
         <RelativeLayout
@@ -36,7 +34,6 @@
                 android:id="@+id/card_native_start"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app1:cardBackgroundColor="@color/white"
                 android:visibility="visible">
 
                 <LinearLayout
@@ -44,7 +41,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="2dp"
-                    android:background="#FFFFFF"
                     android:orientation="vertical">
 
                     <LinearLayout

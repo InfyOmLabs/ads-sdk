@@ -6,10 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_width="match_parent"
     android:layout_centerInParent="true"
-    android:id="@+id/unified"
-    android:background = "@drawable/ads_button_bg"
-    android:backgroundTint="@color/white"
-    >
+    android:id="@+id/unified">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_height="110dp"
