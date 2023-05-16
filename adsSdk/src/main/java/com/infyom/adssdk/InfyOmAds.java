@@ -75,11 +75,15 @@ public class InfyOmAds {
                 adsType = myPref.getThirdAdsType();
             }
 
-            if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
+            if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) && !adsType.equals("Quereca") || adsType.equals("admob")) {
                 InterstitialUtils interstitialUtils = new InterstitialUtils(context, listener, admob);
                 interstitialUtils.load_interstitial(true);
             } else if ((myPref.getAdsType().equals("facebook") || adsType.equals("facebook"))) {
-                InterstitialUtilsFb.loadInterstitial(context, listener);
+                if (Constants.isAdLoading) {
+                    return;
+                }
+                Constants.isAdLoading = true;
+                InterstitialUtilsFb.loadInterstitial(context, listener,false);
             } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
                 InterstitialQuereca.showInterstitial(context,listener);
             }else {
@@ -87,6 +91,7 @@ public class InfyOmAds {
             }
 
         } else {
+            Constants.isAdLoading = false;
             listener.onAdClose(true);
         }
     }

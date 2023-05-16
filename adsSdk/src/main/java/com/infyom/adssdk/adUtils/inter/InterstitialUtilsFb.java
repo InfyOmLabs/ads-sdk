@@ -18,15 +18,14 @@ import com.infyom.adssdk.aditerface.Interstitial;
 
 public class InterstitialUtilsFb {
     public static int failLoad= 0;
-    static Dialog dialog;
+    static Dialog dialog = null;
 
-    public static void loadInterstitial(Context mContext, Interstitial listener) {
+    public static void loadInterstitial(Context mContext, Interstitial listener,boolean isFailed) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(mContext);
 
         if (InfyOmAds.isConnectingToInternet(mContext)) {
 
-
-            if (dialog == null) {
+            if (!isFailed) {
                 dialog = AdProgressDialog.show(mContext);
             }
 
@@ -38,6 +37,7 @@ public class InterstitialUtilsFb {
                     if (dialog != null && dialog.isShowing()) {
                         dialog.dismiss();
                     }
+                    Constants.isAdLoading = false;
                     Constants.isAdShowing = true;
                 }
 
@@ -49,6 +49,7 @@ public class InterstitialUtilsFb {
                     failLoad = 0;
                     Constants.isAdShowing = false;
                     Constants.isTimeFinish = false;
+                    Constants.isAdLoading = false;
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
@@ -65,12 +66,13 @@ public class InterstitialUtilsFb {
                     if (failLoad != 3) {
                         Log.e("I_F_TAG-->", "failed to load: " + failLoad);
                         failLoad++;
-                        loadInterstitial(mContext, listener);
+                        loadInterstitial(mContext, listener,true);
                     } else {
                         if (dialog != null && dialog.isShowing()) {
                             dialog.dismiss();
                         }
                         Constants.isTimeFinish = false;
+                        Constants.isAdLoading = false;
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
@@ -85,15 +87,7 @@ public class InterstitialUtilsFb {
 
                 @Override
                 public void onAdLoaded(Ad ad) {
-                    if (dialog != null && dialog.isShowing()) {
-                        dialog.dismiss();
-                    }
-                    if (!interstitialAd.isAdInvalidated()) {
-                        interstitialAd.show();
-                    } else {
-                        loadInterstitial(mContext,listener);
-                    }
-
+                    interstitialAd.show();
                 }
 
                 @Override
@@ -101,6 +95,8 @@ public class InterstitialUtilsFb {
 
                 @Override
                 public void onLoggingImpression(Ad ad) {}
+
+
             };
 
             interstitialAd.loadAd(
