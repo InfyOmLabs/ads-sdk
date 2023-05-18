@@ -10,8 +10,8 @@ import android.widget.RelativeLayout;
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;
 import com.facebook.ads.BuildConfig;
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
-
 import com.infyom.adssdk.adUtils.banner.AdBanner;
 import com.infyom.adssdk.adUtils.banner.BannerQuereca;
 import com.infyom.adssdk.adUtils.banner.BannerUtilsFb;
@@ -26,6 +26,11 @@ import com.infyom.adssdk.aditerface.Interstitial;
 
 
 public class InfyOmAds {
+
+    public static final String ADMOB = "admob";
+    public static final String FB = "facebook";
+    public static final String PRE = "pre";
+    public static final String LOAD = "load";
 
     public enum AdTemplate {
         NATIVE_300,
@@ -57,6 +62,40 @@ public class InfyOmAds {
         return (networkInfo != null && networkInfo.isConnected());
     }
 
+
+    public static void loadPreInterstitial(int admob, Context context) {
+        if (Constants.isTimeFinish) {
+            AdsAccountProvider myPref = new AdsAccountProvider(context);
+
+            String adsType;
+            if (admob == 1) {
+                adsType = myPref.getFirstAdsType();
+            } else if (admob == 2) {
+                adsType = myPref.getSecondAdsType();
+            } else {
+                adsType = myPref.getThirdAdsType();
+            }
+
+            if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) && !adsType.equals("Quereca") || adsType.equals(ADMOB)) {
+
+                if (myPref.getLoad().equals(PRE)) {
+                    String mUnitId = "oa";
+                    if (admob == 1) {
+                        mUnitId = myPref.getInterAds1();
+                    } else if (admob == 2) {
+                        mUnitId = myPref.getInterAds2();
+                    } else {
+                        mUnitId = myPref.getInterAds3();
+                    }
+
+                    AdRequest adRequest = InterstitialUtils.getAdRequest();
+
+                    InterstitialUtils.loadPreInterstitialAd(context, mUnitId, adRequest);
+                }
+            }
+        }
+    }
+
     public static void showInterstitial(int admob, Context context, Interstitial listener) {
 
         if (checkValidation()) {
@@ -75,18 +114,23 @@ public class InfyOmAds {
                 adsType = myPref.getThirdAdsType();
             }
 
-            if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) && !adsType.equals("Quereca") || adsType.equals("admob")) {
+            if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) && !adsType.equals("Quereca") || adsType.equals(ADMOB)) {
                 InterstitialUtils interstitialUtils = new InterstitialUtils(context, listener, admob);
-                interstitialUtils.load_interstitial(true);
-            } else if ((myPref.getAdsType().equals("facebook") || adsType.equals("facebook"))) {
+
+                if (myPref.getLoad().equals(PRE)) {
+                    interstitialUtils.showPreInterstitial();
+                } else {
+                    interstitialUtils.load_interstitial(true);
+                }
+            } else if ((myPref.getAdsType().equals(FB) || adsType.equals(FB))) {
                 if (Constants.isAdLoading) {
                     return;
                 }
                 Constants.isAdLoading = true;
-                InterstitialUtilsFb.loadInterstitial(context, listener,false);
+                InterstitialUtilsFb.loadInterstitial(context, listener, false);
             } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
-                InterstitialQuereca.showInterstitial(context,listener);
-            }else {
+                InterstitialQuereca.showInterstitial(context, listener);
+            } else {
                 listener.onAdClose(false);
             }
 
@@ -110,16 +154,16 @@ public class InfyOmAds {
             adsType = myPref.getThirdAdsType();
         }
 
-        if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
+        if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
             AdBanner.showBanner(context, bannerContainer, admob);
-        } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
+        } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
             BannerUtilsFb.loadFbBanner(context, bannerContainer);
         } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
-            BannerQuereca.showBanner(context,bannerContainer);
+            BannerQuereca.showBanner(context, bannerContainer);
         }
     }
 
-    public static void showNative(Context context, RelativeLayout nativeContainer, View space, int admob,AdTemplate adTemplate) {
+    public static void showNative(Context context, RelativeLayout nativeContainer, View space, int admob, AdTemplate adTemplate) {
         AdsAccountProvider myPref = new AdsAccountProvider(context);
         int preloadId;
         String adsType;
@@ -135,15 +179,15 @@ public class InfyOmAds {
             preloadId = 1;
         }
 
-        if ((myPref.getAdsType().equals("admob") && !adsType.equals("facebook")) || adsType.equals("admob")) {
+        if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
 
             if (adTemplate.equals(AdTemplate.NATIVE_300)) {
                 NativeUtils.loadFailed = 0;
-                NativeUtils.load_native(context, nativeContainer, space, admob, true,preloadId);
-            } else if (adTemplate.equals(AdTemplate.NATIVE_100)){
+                NativeUtils.load_native(context, nativeContainer, space, admob, true, preloadId);
+            } else if (adTemplate.equals(AdTemplate.NATIVE_100)) {
                 NativeUtils.loadFailed = 0;
-                NativeUtils.load_native(context, nativeContainer, space, admob, false,preloadId);
-            } else if (adTemplate.equals(AdTemplate.NATIVE_50)){
+                NativeUtils.load_native(context, nativeContainer, space, admob, false, preloadId);
+            } else if (adTemplate.equals(AdTemplate.NATIVE_50)) {
                 NativeUtils50.loadFailed = 0;
                 NativeUtils50.load_native(context, nativeContainer, space, admob);
             } else {
@@ -151,13 +195,14 @@ public class InfyOmAds {
                 NativeUtils40.load_native(context, nativeContainer, space, admob);
             }
 
-        } else if (myPref.getAdsType().equals("facebook") || adsType.equals("facebook")) {
+        } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
             NativeUtilsFb.loadFbNative(context, nativeContainer, space, adTemplate.equals(AdTemplate.NATIVE_300));
         }
     }
 
     public static void initializeAds(Context context) {
-        MobileAds.initialize(context, initializationStatus -> {});
+        MobileAds.initialize(context, initializationStatus -> {
+        });
         AudienceNetworkAds.initialize(context);
         if (BuildConfig.DEBUG) {
             AdSettings.setTestMode(true);
@@ -180,16 +225,13 @@ public class InfyOmAds {
         myPref.setFbBannerAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
-        myPref.setAdsTime(1);
+        myPref.setAdsTime(0);
         myPref.setSplashAds(1);
-        myPref.setAdsType("admob");
-        myPref.setFirstAdsType("admob");
-        myPref.setSecondAdsType("admob");
-        myPref.setThirdAdsType("admob");
-        myPref.setImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");
-        myPref.setUrl("https://infyom.com/");
-        myPref.setInterImageUrl("https://infyom.com/static/f6cef67f4ace05541cc030d1fae4e8a5/ef330/open-source.webp");
-        myPref.setInterUrl("https://infyom.com/");
+        myPref.setAdsType(ADMOB);
+        myPref.setFirstAdsType(ADMOB);
+        myPref.setSecondAdsType(ADMOB);
+        myPref.setThirdAdsType(ADMOB);
+        myPref.setLoad(PRE);
 
     }
 

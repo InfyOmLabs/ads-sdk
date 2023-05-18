@@ -39,7 +39,11 @@ public class MainActivity3 extends AppCompatActivity {
                 }
             });
         });
+    }
 
-
+    @Override
+    protected void onResume() {
+        InfyOmAds.loadPreInterstitial(1,this);
+        super.onResume();
     }
 }

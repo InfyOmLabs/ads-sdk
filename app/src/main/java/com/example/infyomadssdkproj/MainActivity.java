@@ -28,12 +28,8 @@ public class MainActivity extends AppCompatActivity {
         rl_native = findViewById(com.infyom.adssdk.R.id.rl_native);
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
 
-        InfyOmAds.initializeAds(this);
         InfyOmAds.enableTestMode(this);
-
-        InfyOmAds.initDefaultValue();
         InfyOmAds.showBanner(this,rlBanner,1);
-
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
 
         showAds.setOnClickListener(v -> {
@@ -48,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        InfyOmAds.loadPreInterstitial(1,this);
 
         Application application = getApplication();
 

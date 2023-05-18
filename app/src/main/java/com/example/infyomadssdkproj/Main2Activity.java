@@ -5,12 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.infyom.adssdk.InfyOmAds;
-
 import com.infyom.adssdk.aditerface.Interstitial;
 
 public class Main2Activity extends AppCompatActivity {
@@ -30,6 +28,7 @@ public class Main2Activity extends AppCompatActivity {
 
 //        InfyOmAds.showBanner(this,rlBanner,1);
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_300);
+        InfyOmAds.loadPreInterstitial(1,this);
 
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(2, this, new Interstitial() {
@@ -41,5 +40,11 @@ public class Main2Activity extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        InfyOmAds.loadPreInterstitial(1,this);
+        super.onResume();
     }
 }

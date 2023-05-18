@@ -29,6 +29,7 @@ public class MainActivity4 extends AppCompatActivity {
 
         InfyOmAds.showBanner(this,rlBanner,1);
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
+        InfyOmAds.loadPreInterstitial(1,this);
 
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {
@@ -40,5 +41,11 @@ public class MainActivity4 extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        InfyOmAds.loadPreInterstitial(1,this);
+        super.onResume();
     }
 }

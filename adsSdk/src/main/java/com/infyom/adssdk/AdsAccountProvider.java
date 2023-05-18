@@ -25,7 +25,7 @@ public class AdsAccountProvider {
     static final String KEY_FIRST_ADS_TYPE = "key_first_ads_type";
     static final String KEY_SECOND_ADS_TYPE = "key_second_ads_type";
     static final String KEY_THIRD_ADS_TYPE = "key_third_ads_type";
-    static final String KEY_PACKAGE = "key_third_ads_type";
+    static final String KEY_LOAD_TYPE = "key_load_type";
     static final String KEY_url = "key_url";
     static final String KEY_IMAGE_URL = "key_image_url";
     static final String KEY_INTER_URL = "key_inter_url";
@@ -41,12 +41,12 @@ public class AdsAccountProvider {
         editor = sharedPreferences.edit();
     }
 
-    public void setPackage(String packageName) {
-        sharedPreferences.edit().putString(KEY_PACKAGE, packageName).apply();
+    public void setLoad(String packageName) {
+        sharedPreferences.edit().putString(KEY_LOAD_TYPE, packageName).apply();
     }
 
-    public String getPackage() {
-        return sharedPreferences.getString(KEY_PACKAGE, "null");
+    public String getLoad() {
+        return sharedPreferences.getString(KEY_LOAD_TYPE, InfyOmAds.LOAD);
     }
 
     public void setOpenAds(String user) {
@@ -218,7 +218,7 @@ public class AdsAccountProvider {
     }
 
     public String getAdsType() {
-        return sharedPreferences.getString(KEY_ADS_TYPE, "admob" );
+        return sharedPreferences.getString(KEY_ADS_TYPE, InfyOmAds.ADMOB );
 
     }
 

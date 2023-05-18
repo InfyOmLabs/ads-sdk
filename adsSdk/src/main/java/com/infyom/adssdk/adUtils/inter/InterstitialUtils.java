@@ -30,39 +30,34 @@ public class InterstitialUtils {
     Interstitial listener;
     int adMobId;
     private int failedCount = 0;
+    private static int failedPreLoad = 0;
+    public static InterstitialAd mInterstitialAd = null;
+
     public InterstitialUtils(Context mContext,Interstitial listener,int adMobId) {
         this.mContext = mContext;
         this.listener = listener;
         this.adMobId = adMobId;
+        myPref = new AdsAccountProvider(mContext);
+        if (adMobId == 1) {
+            mUnitId = myPref.getInterAds1();
+        } else if (adMobId == 2) {
+            mUnitId = myPref.getInterAds2();
+        } else {
+            mUnitId = myPref.getInterAds3();
+        }
     }
 
      public void load_interstitial(boolean isFailed) {
 
-        myPref = new AdsAccountProvider(mContext);
 
-         if (!isFailed) {
-             if (adMobId == 1) {
-                 adMobId = 2;
-             } else if(adMobId == 2) {
-                 adMobId = 3;
-             } else {
-                 adMobId = 1;
-             }
-         } else {
+         if (isFailed) {
              if (dialog == null) {
                  dialog = AdProgressDialog.show(mContext);
              }
          }
 
-         if (adMobId == 1) {
-             mUnitId = myPref.getInterAds1();
-         } else if (adMobId == 2) {
-             mUnitId = myPref.getInterAds2();
-         } else {
-             mUnitId = myPref.getInterAds3();
-         }
-
-         InterstitialAd.load(mContext, mUnitId, new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
+         AdRequest adRequest = new AdRequest.Builder().build();
+         InterstitialAd.load(mContext, mUnitId, adRequest, new InterstitialAdLoadCallback() {
              @Override
              public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                  super.onAdFailedToLoad(loadAdError);
@@ -126,9 +121,9 @@ public class InterstitialUtils {
 
             public void onFinish() {
                 try {
-                    Constants.interAdmob = null;
                     Constants.mCountTimer.cancel();
                     Constants.mCountTimer = null;
+                    mInterstitialAd = null;
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -142,7 +137,8 @@ public class InterstitialUtils {
          try {
              if (Constants.mCountTimer != null) {
                  Constants.mCountTimer.cancel();
-                 Constants.interAdmob = null;
+                 Constants.mCountTimer = null;
+                 mInterstitialAd = null;
              }
          } catch (Exception e) {
              e.printStackTrace();
@@ -199,4 +195,195 @@ public class InterstitialUtils {
 //        }
 
     }
+
+
+    public static void loadPreInterstitialAd(Context mContext,String mUnitId,AdRequest adRequest) {
+        if (mInterstitialAd == null) {
+            InterstitialAdLoadCallback loadCallback = new InterstitialAdLoadCallback() {
+                @Override
+                public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                    super.onAdFailedToLoad(loadAdError);
+                    if (mInterstitialAd != null) {
+                        mInterstitialAd = null;
+                    }
+                    dismissCount();
+                    if (InfyOmAds.isConnectingToInternet(mContext)) {
+                        if (failedPreLoad == 3) {
+                            failedPreLoad = 0;
+                            Log.e("I_TAG", "onAdFailedToLoad: "+failedPreLoad );
+                        } else {
+                            failedPreLoad++;
+                            loadPreInterstitialAd(mContext, mUnitId,adRequest);
+                        }
+                    } else {
+                        Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+
+                @Override
+                public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                    super.onAdLoaded(interstitialAd);
+                    Log.e("I_TAG", "onAdLoaded: " );
+                    failedPreLoad = 0;
+                    setCountDown();
+                    mInterstitialAd = interstitialAd;
+                }
+            };
+
+            InterstitialAd.load(mContext, mUnitId,adRequest,loadCallback);
+        }
+    }
+
+    public void showPreInterstitial() {
+
+        if ( mInterstitialAd != null) {
+            dialog = AdProgressDialog.show(mContext);
+
+            mInterstitialAd.show((Activity) mContext);
+            mInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                @Override
+                public void onAdClicked() {
+                    super.onAdClicked();
+                }
+
+                @Override
+                public void onAdShowedFullScreenContent() {
+                    super.onAdShowedFullScreenContent();
+                    if (dialog != null && dialog.isShowing()) {
+                        dialog.dismiss();
+                    }
+                    Log.e("I_TAG", "onAdShowedFullScreenContent: " );
+                    dismissCount();
+                    Constants.isAdShowing = true;
+                    mInterstitialAd = null;
+//                    dismissCount();
+//                    load_interstitial(false);
+                }
+
+                @Override
+                public void onAdDismissedFullScreenContent() {
+                    super.onAdDismissedFullScreenContent();
+                    Constants.isAdShowing = false;
+                    Constants.isTimeFinish = false;
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Constants.isTimeFinish = true;
+                        }
+                    }, myPref.getAdsTime() * 1000);
+                    listener.onAdClose(true);
+                }
+
+                @Override
+                public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                    super.onAdFailedToShowFullScreenContent(adError);
+                    Log.e("I_TAG", "onAdFailedToShowFullScreenContent: " );
+                    mInterstitialAd = null;
+                    dismissCount();
+                    Constants.isAdShowing = false;
+                    Constants.isTimeFinish = false;
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Constants.isTimeFinish = true;
+                        }
+                    }, myPref.getAdsTime() * 1000);
+                    listener.onAdClose(true);
+
+                }
+            });
+        } else {
+            loadFailedInterstitialAd(mContext,mUnitId,listener);
+        }
+
+    }
+
+    public  void loadFailedInterstitialAd(Context mContext,String mUnitId,Interstitial listener) {
+        Dialog dialog1 = AdProgressDialog.show(mContext);
+        AdRequest adRequest = getAdRequest();
+        myPref = new AdsAccountProvider(mContext);
+        InterstitialAd.load(mContext, mUnitId,adRequest, new InterstitialAdLoadCallback() {
+            @Override
+            public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                super.onAdFailedToLoad(loadAdError);
+                Log.e("I_TAG", "onAdFailedToLoad: " );
+                if (dialog1.isShowing()) {
+                    dialog1.dismiss();
+                }
+                Constants.isAdShowing = false;
+                Constants.isTimeFinish = false;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Constants.isTimeFinish = true;
+                    }
+                }, myPref.getAdsTime() * 1000);
+                listener.onAdClose(true);
+            }
+
+            @Override
+            public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
+                super.onAdLoaded(interstitialAd);
+                Log.e("I_TAG", "onAdLoaded: " );
+                interstitialAd.show((Activity) mContext);
+                interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+                    @Override
+                    public void onAdClicked() {
+                        super.onAdClicked();
+                    }
+
+                    @Override
+                    public void onAdShowedFullScreenContent() {
+                        super.onAdShowedFullScreenContent();
+                        Log.e("I_TAG", "onAdShowedFullScreenContent: " );
+                        if (dialog1.isShowing()) {
+                            dialog1.dismiss();
+                        }
+                        Constants.isAdShowing = true;
+                    }
+
+                    @Override
+                    public void onAdDismissedFullScreenContent() {
+                        super.onAdDismissedFullScreenContent();
+                        Log.e("I_TAG", "onAdDismissedFullScreenContent: " );
+                        Constants.isAdShowing = false;
+                        Constants.isTimeFinish = false;
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Constants.isTimeFinish = true;
+                            }
+                        }, myPref.getAdsTime() * 1000);
+                        listener.onAdClose(true);
+                    }
+
+                    @Override
+                    public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
+                        super.onAdFailedToShowFullScreenContent(adError);
+                        Log.e("I_TAG", "onAdFailedToShowFullScreenContent: " );
+                        if (dialog1.isShowing()) {
+                            dialog1.dismiss();
+                        }
+                        Constants.isAdShowing = false;
+                        Constants.isTimeFinish = false;
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                Constants.isTimeFinish = true;
+                            }
+                        }, myPref.getAdsTime() * 1000);
+                        listener.onAdClose(true);
+                    }
+                });
+            }
+        });
+    }
+
+
+    public static AdRequest getAdRequest() {
+        return new AdRequest.Builder().build();
+    }
+
+
 }
