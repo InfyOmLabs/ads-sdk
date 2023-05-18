@@ -28,6 +28,15 @@ Step 1. Add the JitPack repository to your build file
 ==> FOR SIMPLE ADS
 
        implementation 'com.github.InfyOmLabs:ads-sdk:1.2.6'  
+     
+==> Pre Interstitital Ads
+
+                  @Override
+    protected void onResume() {
+        InfyOmAds.loadPreInterstitial(1,this);
+        super.onResume();
+    }
+         
        
 ===> FOR BANNER IN APPLICATION CLASS
 
