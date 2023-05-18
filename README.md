@@ -31,6 +31,8 @@ Step 1. Add the JitPack repository to your build file
      
 ==> Pre Interstitital Ads
 
+     // 1 = admob id
+     
     @Override
     protected void onResume() {
         InfyOmAds.loadPreInterstitial(1,this);
