@@ -11,9 +11,20 @@ public class Datum {
     @SerializedName("facebook")
     @Expose
     private Facebook facebook;
+    @SerializedName("qureka")
+    @Expose
+    private Qureka qureka;
     @SerializedName("start_ups")
     @Expose
     private StartUps startUps;
+
+    public Qureka getQureka() {
+        return qureka;
+    }
+
+    public void setQureka(Qureka qureka) {
+        this.qureka = qureka;
+    }
 
     public Google getGoogle() {
         return google;
