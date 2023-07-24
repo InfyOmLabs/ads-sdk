@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NativeUtilsFb {
-    public static int loadFail = 0;
+//    public static int loadFail = 0;
     public static void loadFbNative(Context context, RelativeLayout nativeAdLayout, View space,boolean isBigNative) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
 
@@ -38,22 +38,26 @@ public class NativeUtilsFb {
             @Override
             public void onError(Ad ad, AdError adError) {
                 // Native ad failed to load
+                space.setVisibility(View.VISIBLE);
 
+                nativeAdLayout.setVisibility(View.GONE);
                 if (InfyOmAds.isConnectingToInternet(context)) {
-                    if (loadFail != 3) {
-                        Log.e("N_F_TAG", "onError: "+loadFail);
-                        loadFail++;
-                        loadFbNative(context, nativeAdLayout, space,isBigNative);
-                    } else {
-                        loadFail = 0;
-                    }
+                    Log.e("N_F_TAG", "onError: ");
+
+//                    if (loadFail != 3) {
+//                        Log.e("N_F_TAG", "onError: "+loadFail);
+//                        loadFail++;
+//                        loadFbNative(context, nativeAdLayout, space,isBigNative);
+//                    } else {
+//                        loadFail = 0;
+//                    }
                 }
 
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                loadFail = 0;
+//                loadFail = 0;
                 try {
                     if (nativeAdLayout.getChildCount() > 0) {
                         nativeAdLayout.removeAllViews();

@@ -10,11 +10,10 @@ import com.facebook.ads.AdListener;
 import com.facebook.ads.AdSize;
 import com.facebook.ads.AdView;
 import com.infyom.adssdk.AdsAccountProvider;
-import com.infyom.adssdk.InfyOmAds;
 
 
 public class BannerUtilsFb {
-    private static int loadFail = 0;
+//    private static int loadFail = 0;
 
     public static void loadFbBanner(Context context, RelativeLayout adContainer) {
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
@@ -24,20 +23,20 @@ public class BannerUtilsFb {
             @Override
             public void onError(Ad ad, AdError adError) {
                 Log.e("BANNER_ERROR-->", adError.getErrorMessage());
-                if (InfyOmAds.isConnectingToInternet(context)) {
-                    if (loadFail != 3) {
-                        Log.e("B_F_TAG", "onError: "+loadFail );
-                        loadFail++;
-                        loadFbBanner(context, adContainer);
-                    } else {
-                        loadFail = 0;
-                    }
-                }
+//                if (InfyOmAds.isConnectingToInternet(context)) {
+//                    if (loadFail != 3) {
+//                        Log.e("B_F_TAG", "onError: "+loadFail );
+//                        loadFail++;
+//                        loadFbBanner(context, adContainer);
+//                    } else {
+//                        loadFail = 0;
+//                    }
+//                }
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-                loadFail = 0;
+//                loadFail = 0;
                 try {
                     if (adContainer.getChildCount() > 0) {
                         adContainer.removeAllViews();

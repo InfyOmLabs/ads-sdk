@@ -29,7 +29,7 @@ public class InterstitialUtils {
     AdsAccountProvider myPref;
     Interstitial listener;
     int adMobId;
-    private int failedCount = 0;
+//    private int failedCount = 0;
     private static int failedPreLoad = 0;
     public static InterstitialAd mInterstitialAd = null;
 
@@ -61,45 +61,47 @@ public class InterstitialUtils {
              @Override
              public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                  super.onAdFailedToLoad(loadAdError);
-                 if (InfyOmAds.isConnectingToInternet(mContext)) {
-                     if (failedCount == 3) {
-                         failedCount = 0;
-                         Log.e("I_TAG", "onAdFailedToLoad: "+failedCount );
-                         if (dialog != null && dialog.isShowing()) {
-                             dialog.dismiss();
-                         }
-
-                         Constants.isTimeFinish = false;
-                         new Handler().postDelayed(new Runnable() {
-                             @Override
-                             public void run() {
-                                 Constants.isTimeFinish = true;
-                             }
-                         }, myPref.getAdsTime() * 1000);
-
-//                         if (isFailed) {
-//                             listener.onAdClose(true);
+//                 if (InfyOmAds.isConnectingToInternet(mContext)) {
+//                     if (failedCount == 3) {
+//                         failedCount = 0;
+//                         Log.e("I_TAG", "onAdFailedToLoad: "+failedCount );
+//                         if (dialog != null && dialog.isShowing()) {
+//                             dialog.dismiss();
 //                         }
-                         listener.onAdClose(true);
-                     } else {
-                         failedCount++;
-                         load_interstitial(true);
+//
+//                         Constants.isTimeFinish = false;
+//                         new Handler().postDelayed(new Runnable() {
+//                             @Override
+//                             public void run() {
+//                                 Constants.isTimeFinish = true;
+//                             }
+//                         }, myPref.getAdsTime() * 1000);
+//
+////                         if (isFailed) {
+////                             listener.onAdClose(true);
+////                         }
+//                         listener.onAdClose(true);
+//                     } else {
+//                         failedCount++;
+//                         load_interstitial(true);
+//
+//                     }
+//                 } else {
+//                     if (dialog != null && dialog.isShowing()) {
+//                         dialog.dismiss();
+//                     }
+//                     listener.onAdClose(true);
+//                     Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
+//                 }
 
-                     }
-                 } else {
-                     if (dialog != null && dialog.isShowing()) {
-                         dialog.dismiss();
-                     }
-                     listener.onAdClose(true);
-                     Toast.makeText(mContext, "Please check your internet connection", Toast.LENGTH_SHORT).show();
-                 }
+                 InterstitialUtilsFb.loadInterstitial(mContext,listener,dialog);
 
              }
 
              @Override
              public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                  super.onAdLoaded(interstitialAd);
-                 failedCount = 0;
+//                 failedCount = 0;
                  if (dialog != null && dialog.isShowing()) {
                      dialog.dismiss();
                  }

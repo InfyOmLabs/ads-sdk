@@ -2,11 +2,8 @@
 package com.infyom.adssdk.adUtils.nativeAd;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
@@ -23,13 +20,12 @@ import com.google.android.gms.ads.nativead.NativeAdOptions;
 import com.google.android.gms.ads.nativead.NativeAdView;
 import com.infyom.adssdk.AdsAccountProvider;
 import com.infyom.adssdk.Constants;
-import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.R;
 
 public class NativeUtils40 {
 
     public static String mUnitId;
-    public static int loadFailed = 0;
+//    public static int loadFailed = 0;
 
     public static void load_native(Context context, RelativeLayout rlNative, View space, int admob) {
 
@@ -57,7 +53,7 @@ public class NativeUtils40 {
 //                } else {
 //                    Constants.nativeAds = nativeAd;
 //                }
-                loadFailed = 0;
+//                loadFailed = 0;
 
                 try {
                     if (rlNative.getChildCount() > 0) {
@@ -86,19 +82,19 @@ public class NativeUtils40 {
                 super.onAdFailedToLoad(loadAdError);
                 try {
                     Constants.nativeAds = null;
-                    space.setVisibility(View.VISIBLE);
-                    rlNative.setVisibility(View.GONE);
+//                    space.setVisibility(View.VISIBLE);
+//                    rlNative.setVisibility(View.GONE);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                if (InfyOmAds.isConnectingToInternet(context)) {
-                    if (loadFailed != 3) {
-                        Log.e("N_TAG", "onAdFailedToLoad: "+loadFailed );
-                        loadFailed++;
-                        load_native(context, rlNative, space, admob);
-                    }
-                }
+                NativeUtilsFb.loadFbNative(context,rlNative,space,false);
+//                if (InfyOmAds.isConnectingToInternet(context)) {
+//                    if (loadFailed != 3) {
+//                        Log.e("N_TAG", "onAdFailedToLoad: "+loadFailed );
+//                        loadFailed++;
+//                        load_native(context, rlNative, space, admob);
+//                    }
+//                }
             }
         }).withNativeAdOptions(new NativeAdOptions.Builder().build()).build();
 

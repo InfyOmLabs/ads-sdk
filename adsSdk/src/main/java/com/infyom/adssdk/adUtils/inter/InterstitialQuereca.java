@@ -2,7 +2,6 @@ package com.infyom.adssdk.adUtils.inter;
 
 import android.app.Dialog;
 import android.content.Context;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;

@@ -15,12 +15,11 @@ import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.LoadAdError;
 import com.infyom.adssdk.AdsAccountProvider;
-import com.infyom.adssdk.InfyOmAds;
 
 public class AdBanner {
     static AdView mAdView = null;
     static String mUnitId = null;
-    static int loadFailed = 0;
+//    static int loadFailed = 0;
     static Context context = null;
     static RelativeLayout rlBanner;
     static int adMobId = 1;
@@ -28,7 +27,7 @@ public class AdBanner {
     static boolean isInitBanner = false;
 
     public static void showBanner(Context mContext, RelativeLayout mRlBanner, int mAdMobId) {
-        loadFailed = 0;
+//        loadFailed = 0;
         context = null;
         initAdView();
 
@@ -65,25 +64,26 @@ public class AdBanner {
                 mUnitId = accountProvider.getBannerAds3();
             }
 
-            com.google.android.gms.ads.AdView adView = new com.google.android.gms.ads.AdView(context);
+            AdView adView = new AdView(context);
             adView.setAdUnitId(mUnitId);
             adView.setAdListener(new AdListener() {
                 @Override
                 public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                     super.onAdFailedToLoad(loadAdError);
-                    if (InfyOmAds.isConnectingToInternet(context)) {
-                        Log.e("AD-BANNER", "onAdFailedToLoad: " + loadAdError);
-                        initAdView();
-                        loadFailed++;
-                        loadAfterFail();
-                    }
+//                    if (InfyOmAds.isConnectingToInternet(context)) {
+//                        Log.e("AD-BANNER", "onAdFailedToLoad: " + loadAdError);
+//                        initAdView();
+//                        loadFailed++;
+//                        loadAfterFail();
+//                    }
+                    BannerUtilsFb.loadFbBanner(context, rlBanner);
                 }
 
                 @Override
                 public void onAdLoaded() {
                     super.onAdLoaded();
                     Log.e("AD-BANNER", "load_ads : success call" );
-                    loadFailed = 0;
+//                    loadFailed = 0;
                     setAdView(adView);
                 }
             });
@@ -107,7 +107,7 @@ public class AdBanner {
     }
 
     static void loadAfterFail() {
-        com.google.android.gms.ads.AdView adView = new com.google.android.gms.ads.AdView(context);
+        AdView adView = new AdView(context);
         adView.setAdUnitId(mUnitId);
         adView.setAdListener(new AdListener() {
             @Override
@@ -115,18 +115,18 @@ public class AdBanner {
                 super.onAdFailedToLoad(loadAdError);
                 Log.e("AD-BANNER", "onAdFailedToLoad: " + loadAdError);
                 initAdView();
-                if (loadFailed != 3) {
-                    Log.e("AD-BANNER", "onAdFailedToLoad: " + loadFailed);
-                    loadFailed++;
-                    loadAfterFail();
-                }
+//                if (loadFailed != 3) {
+//                    Log.e("AD-BANNER", "onAdFailedToLoad: " + loadFailed);
+//                    loadFailed++;
+//                    loadAfterFail();
+//                }
             }
 
             @Override
             public void onAdLoaded() {
                 super.onAdLoaded();
                 Log.e("AD-BANNER", "load_ads : success call" );
-                loadFailed = 0;
+//                loadFailed = 0;
                 setAdView(adView);
             }
         });

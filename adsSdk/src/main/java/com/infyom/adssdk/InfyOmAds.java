@@ -98,9 +98,9 @@ public class InfyOmAds {
 
     public static void showInterstitial(int admob, Context context, Interstitial listener) {
 
-        if (checkValidation()) {
-            return;
-        }
+//        if (checkValidation()) {
+//            return;
+//        }
 
         if (Constants.isTimeFinish) {
             AdsAccountProvider myPref = new AdsAccountProvider(context);
@@ -127,7 +127,7 @@ public class InfyOmAds {
                     return;
                 }
                 Constants.isAdLoading = true;
-                InterstitialUtilsFb.loadInterstitial(context, listener, false);
+                InterstitialUtilsFb.loadInterstitial(context, listener, null    );
             } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
                 InterstitialQuereca.showInterstitial(context, listener);
             } else {
@@ -182,16 +182,16 @@ public class InfyOmAds {
         if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
 
             if (adTemplate.equals(AdTemplate.NATIVE_300)) {
-                NativeUtils.loadFailed = 0;
+//                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, true, preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_100)) {
-                NativeUtils.loadFailed = 0;
+//                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, false, preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_50)) {
-                NativeUtils50.loadFailed = 0;
+//                NativeUtils50.loadFailed = 0;
                 NativeUtils50.load_native(context, nativeContainer, space, admob);
             } else {
-                NativeUtils40.loadFailed = 0;
+//                NativeUtils40.loadFailed = 0;
                 NativeUtils40.load_native(context, nativeContainer, space, admob);
             }
 
@@ -210,18 +210,19 @@ public class InfyOmAds {
     }
 
     public static void enableTestMode(Context context) {
+
         myPref = new AdsAccountProvider(context);
 
         myPref.setOpenAds("/6499/example/app-open");
-        myPref.setBannerAds1("/6499/example/banner");
-        myPref.setBannerAds2("/6499/example/banner");
-        myPref.setBannerAds3("/6499/example/banner");
-        myPref.setInterAds1("/6499/example/interstitial");
-        myPref.setInterAds2("/6499/example/interstitial");
-        myPref.setInterAds3("/6499/example/interstitial");
-        myPref.setNativeAds1("/6499/example/native");
-        myPref.setNativeAds2("/6499/example/native");
-        myPref.setNativeAds3("/6499/example/native");
+        myPref.setBannerAds1("/6499/example/bannr");
+        myPref.setBannerAds2("/6499/example/baner");
+        myPref.setBannerAds3("/6499/example/baner");
+        myPref.setInterAds1("/6499/example/inerstitial");
+        myPref.setInterAds2("/6499/example/iterstitial");
+        myPref.setInterAds3("/6499/example/nterstitial");
+        myPref.setNativeAds1("/6499/exampl/native");
+        myPref.setNativeAds2("/6499/exampe/native");
+        myPref.setNativeAds3("/6499/examle/native");
         myPref.setFbBannerAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
@@ -231,7 +232,7 @@ public class InfyOmAds {
         myPref.setFirstAdsType(ADMOB);
         myPref.setSecondAdsType(ADMOB);
         myPref.setThirdAdsType(ADMOB);
-        myPref.setLoad(PRE);
+        myPref.setLoad(LOAD);
 
     }
 
