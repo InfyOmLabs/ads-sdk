@@ -5,37 +5,44 @@
     android:layout_height="150dp"
     android:padding="5dp">
 
-    <androidx.cardview.widget.CardView
+    <com.airbnb.lottie.LottieAnimationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:cardBackgroundColor="@color/white"
-        app:cardCornerRadius="10dp">
+        app:lottie_rawRes="@raw/ad_loader"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:cardBackgroundColor="@color/white"-->
+<!--        app:cardCornerRadius="10dp">-->
 
-            <ProgressBar
-                android:id="@+id/pb_ads"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:indeterminateTint="?android:attr/colorPrimary"
-                android:secondaryProgressTint="?android:attr/colorPrimary"/>
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/tv_pb"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|bottom"
-                android:layout_marginBottom="24dp"
-                android:textColor="?android:attr/colorPrimary"
-                android:text="Ads Loading..."
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </FrameLayout>
-    </androidx.cardview.widget.CardView>
+<!--            <ProgressBar-->
+<!--                android:id="@+id/pb_ads"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:indeterminateTint="?android:attr/colorPrimary"-->
+<!--                android:secondaryProgressTint="?android:attr/colorPrimary"/>-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_pb"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal|bottom"-->
+<!--                android:layout_marginBottom="24dp"-->
+<!--                android:textColor="?android:attr/colorPrimary"-->
+<!--                android:text="Ads Loading..."-->
+<!--                android:textSize="16sp"-->
+<!--                android:textStyle="bold" />-->
+<!--        </FrameLayout>-->
+<!--    </androidx.cardview.widget.CardView>-->
 
 </RelativeLayout>

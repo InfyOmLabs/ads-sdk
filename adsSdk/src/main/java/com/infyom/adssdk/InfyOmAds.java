@@ -214,15 +214,15 @@ public class InfyOmAds {
         myPref = new AdsAccountProvider(context);
 
         myPref.setOpenAds("/6499/example/app-open");
-        myPref.setBannerAds1("/6499/example/bannr");
-        myPref.setBannerAds2("/6499/example/baner");
-        myPref.setBannerAds3("/6499/example/baner");
-        myPref.setInterAds1("/6499/example/inerstitial");
-        myPref.setInterAds2("/6499/example/iterstitial");
-        myPref.setInterAds3("/6499/example/nterstitial");
-        myPref.setNativeAds1("/6499/exampl/native");
-        myPref.setNativeAds2("/6499/exampe/native");
-        myPref.setNativeAds3("/6499/examle/native");
+        myPref.setBannerAds1("/6499/example/banner");
+        myPref.setBannerAds2("/6499/example/banner");
+        myPref.setBannerAds3("/6499/example/banner");
+        myPref.setInterAds1("/6499/example/interstitial");
+        myPref.setInterAds2("/6499/example/interstitial");
+        myPref.setInterAds3("/6499/example/interstitial");
+        myPref.setNativeAds1("/6499/example/native");
+        myPref.setNativeAds2("/6499/example/native");
+        myPref.setNativeAds3("/6499/example/native");
         myPref.setFbBannerAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
