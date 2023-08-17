@@ -10,6 +10,9 @@ public class AdsAccountProvider {
     static final String KEY_NATIVE1 = "key_native_ads1";
     static final String KEY_NATIVE2= "key_native_ads2";
     static final String KEY_NATIVE3 = "key_native_ads3";
+
+    public static String KEY_NATIVE4 = "key_native_ads4";
+    public static String KEY_NATIVE5 = "key_native_ads5";
     static final String KEY_BANNER_ADS1 = "key_banner_ads1";
     static final String KEY_BANNER_ADS2 = "key_banner_ads2";
     static final String KEY_BANNER_ADS3 = "key_banner_ads3";
@@ -30,6 +33,7 @@ public class AdsAccountProvider {
     static final String KEY_IMAGE_URL = "key_image_url";
     static final String KEY_INTER_URL = "key_inter_url";
     static final String KEY_INTER_IMAGE_URL = "key_inter_image_url";
+
 
     Context context;
     SharedPreferences sharedPreferences;
@@ -168,6 +172,22 @@ public class AdsAccountProvider {
     public String getNativeAds3() {
         return sharedPreferences.getString(KEY_NATIVE3, "0a" );
 
+    }
+
+    public  String getAdsNative4() {
+        return sharedPreferences.getString(KEY_NATIVE4,"0a");
+    }
+
+    public  void setAdsNative4(String adsNative4) {
+        sharedPreferences.edit().putString(KEY_NATIVE4,adsNative4).apply();
+    }
+
+    public  String getAdsNative5() {
+        return sharedPreferences.getString(KEY_NATIVE5,"0a");
+    }
+
+    public  void setAdsNative5(String adsNative5) {
+        sharedPreferences.edit().putString(KEY_NATIVE5,adsNative5).apply();
     }
 
     public void setAdsTime(int user) {

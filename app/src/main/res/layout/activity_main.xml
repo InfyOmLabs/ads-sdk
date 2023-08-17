@@ -8,8 +8,6 @@
 
    <include layout="@layout/main_native_view"/>
 
-
-
     <Button
         android:id="@+id/btn_next"
         android:layout_width="match_parent"

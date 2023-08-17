@@ -19,6 +19,8 @@ import com.infyom.adssdk.adUtils.inter.InterstitialQuereca;
 import com.infyom.adssdk.adUtils.inter.InterstitialUtils;
 import com.infyom.adssdk.adUtils.inter.InterstitialUtilsFb;
 import com.infyom.adssdk.adUtils.nativeAd.NativeUtils;
+import com.infyom.adssdk.adUtils.nativeAd.NativeUtils150;
+import com.infyom.adssdk.adUtils.nativeAd.NativeUtils350;
 import com.infyom.adssdk.adUtils.nativeAd.NativeUtils40;
 import com.infyom.adssdk.adUtils.nativeAd.NativeUtils50;
 import com.infyom.adssdk.adUtils.nativeAd.NativeUtilsFb;
@@ -33,6 +35,8 @@ public class InfyOmAds {
     public static final String LOAD = "load";
 
     public enum AdTemplate {
+        NATIVE_350,
+        NATIVE_150,
         NATIVE_300,
         NATIVE_100,
         NATIVE_50,
@@ -181,9 +185,13 @@ public class InfyOmAds {
 
         if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
 
-            if (adTemplate.equals(AdTemplate.NATIVE_300)) {
+            if (adTemplate.equals(AdTemplate.NATIVE_350)){
+                NativeUtils350.loadNative350AdViewMedia(context, nativeContainer, space, admob);
+            } else  if (adTemplate.equals(AdTemplate.NATIVE_300)) {
 //                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, true, preloadId);
+            } else if (adTemplate.equals(AdTemplate.NATIVE_150)){
+                NativeUtils150.loadNative150AdViewMedia(context, nativeContainer, space, admob);
             } else if (adTemplate.equals(AdTemplate.NATIVE_100)) {
 //                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, false, preloadId);
@@ -223,6 +231,8 @@ public class InfyOmAds {
         myPref.setNativeAds1("/6499/example/native");
         myPref.setNativeAds2("/6499/example/native");
         myPref.setNativeAds3("/6499/example/native");
+        myPref.setAdsNative4("/6499/example/native");
+        myPref.setAdsNative5("/6499/example/native");
         myPref.setFbBannerAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
