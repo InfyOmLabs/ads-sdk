@@ -27,7 +27,7 @@ Step 1. Add the JitPack repository to your build file
         
 ==> FOR SIMPLE ADS
 
-       implementation 'com.github.InfyOmLabs:ads-sdk:1.2.9'  
+       implementation 'com.github.InfyOmLabs:ads-sdk:1.3.0'  
      
 ==> Pre Interstitital Ads
 
@@ -133,7 +133,9 @@ Step 1. Add the JitPack repository to your build file
         
    ======= Native Templates ===============
    
+          InfyOmAds.AdTemplate.NATIVE_350,
           InfyOmAds.AdTemplate.NATIVE_300,
+          InfyOmAds.AdTemplate.NATIVE_150,
           InfyOmAds.AdTemplate.NATIVE_100,
           InfyOmAds.AdTemplate.NATIVE_50,
           InfyOmAds.AdTemplate.NATIVE_40
