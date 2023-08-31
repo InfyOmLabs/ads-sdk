@@ -48,7 +48,7 @@
                         android:id="@+id/title"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:lines="1"
+                        android:maxLines="1"
                         android:ellipsize="end"
                         android:gravity="center"
                         android:textColor="@color/black"
@@ -65,7 +65,7 @@
                         android:ellipsize="end"
                         android:gravity="center"
                         android:textSize="10dp"
-                        android:lines="1" />
+                        android:maxLines="1" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -80,6 +80,7 @@
                             android:text="AD"
                             android:textColor="@color/white"
                             android:textSize="10dp"
+                            android:ellipsize="end"
                             android:background="?attr/tabSelectedTextColor" />
 
                         <TextView
@@ -89,6 +90,7 @@
                             android:background="@drawable/ads_button_bg"
                             android:textColor="@color/black"
                             android:gravity="center"
+                            android:ellipsize="end"
                             android:backgroundTint="@color/black"
                             android:layout_gravity="center"/>
 
@@ -111,6 +113,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="10dp"
+                                android:ellipsize="end"
+                                android:maxLines="2"
                                 android:textColor="@color/black"/>
 
 
@@ -128,16 +132,17 @@
                 android:layout_height="45dp"
                 android:background="@drawable/ads_button_bg"
                 android:textSize="16dp"
+                android:ellipsize="end"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:textAllCaps="false"
                 android:backgroundTint="?attr/tabSelectedTextColor"
                 android:textColor="@color/white"
+                android:maxLines="1"
+                android:gravity="center"
                 android:layout_marginHorizontal="10dp"/>
 
         </LinearLayout>
     </com.google.android.gms.ads.nativead.NativeAdView>
-
-
 
 </androidx.cardview.widget.CardView>

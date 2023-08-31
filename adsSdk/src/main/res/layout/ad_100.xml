@@ -28,6 +28,8 @@
                 android:textSize="18dp"
                 android:layout_centerInParent="true"
                 android:gravity="center"
+                android:ellipsize="end"
+                android:maxLines="1"
                 android:visibility="gone"/>
 
             <androidx.cardview.widget.CardView
@@ -59,6 +61,7 @@
                             android:gravity="center"
                             android:rotation="-40"
                             android:text="AD"
+                            android:ellipsize="end"
                             android:textColor="@color/white"
                             android:textSize="6dp"
                             android:textStyle="bold" />
@@ -68,11 +71,12 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:maxLines="1"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="14sp"
                             android:textStyle="bold"
+                            android:ellipsize="end"
+                            android:maxLines="1"
                             app:ignore="RtlCompat" />
 
                     </LinearLayout>
@@ -186,6 +190,8 @@
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"
                                 android:textSize="13sp"
+                                android:maxLines="1"
+                                android:ellipsize="end"
                                 android:textStyle="bold" />
 
                         </LinearLayout>

@@ -62,7 +62,7 @@
                             android:layout_marginRight="8dp"
                             android:layout_toRightOf="@+id/ad_app_icon"
                             android:ellipsize="end"
-                            android:lines="1"
+                            android:maxLines="1"
                             android:text="1234567890123456789012345"
                             android:textColor="#ffffff"
                             android:textSize="14sp"
@@ -78,7 +78,7 @@
                             android:layout_marginRight="8dp"
                             android:layout_toRightOf="@+id/ad_app_icon"
                             android:ellipsize="end"
-                            android:lines="1"
+                            android:maxLines="1"
                             android:text="Sponsored"
                             android:textColor="#ffffff"
                             android:textSize="9sp" />
@@ -102,8 +102,10 @@
                     android:singleLine="false"
                     android:text="abc"
                     android:textAllCaps="false"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="25sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:textStyle="bold" />
 
             </RelativeLayout>

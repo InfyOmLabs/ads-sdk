@@ -13,9 +13,7 @@ import com.facebook.ads.BuildConfig;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.infyom.adssdk.adUtils.banner.AdBanner;
-import com.infyom.adssdk.adUtils.banner.BannerQuereca;
 import com.infyom.adssdk.adUtils.banner.BannerUtilsFb;
-import com.infyom.adssdk.adUtils.inter.InterstitialQuereca;
 import com.infyom.adssdk.adUtils.inter.InterstitialUtils;
 import com.infyom.adssdk.adUtils.inter.InterstitialUtilsFb;
 import com.infyom.adssdk.adUtils.nativeAd.NativeUtils;
@@ -132,9 +130,7 @@ public class InfyOmAds {
                 }
                 Constants.isAdLoading = true;
                 InterstitialUtilsFb.loadInterstitial(context, listener, null    );
-            } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
-                InterstitialQuereca.showInterstitial(context, listener);
-            } else {
+            }  else {
                 listener.onAdClose(false);
             }
 
@@ -162,8 +158,6 @@ public class InfyOmAds {
             AdBanner.showBanner(context, bannerContainer, admob);
         } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
             BannerUtilsFb.loadFbBanner(context, bannerContainer);
-        } else if (myPref.getAdsType().equals("Quereca") || adsType.equals("Quereca")) {
-            BannerQuereca.showBanner(context, bannerContainer);
         }
     }
 
