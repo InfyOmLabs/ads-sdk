@@ -41,7 +41,7 @@ public class InfyOmAds {
         NATIVE_40
     }
 
-    static boolean isClicked = false;
+    public static boolean isClicked = false;
     //    static ArrayList<Datum> adsIdsList = new ArrayList<>();
     static AdsAccountProvider myPref;
 
@@ -78,7 +78,7 @@ public class InfyOmAds {
                 adsType = myPref.getThirdAdsType();
             }
 
-            if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) && !adsType.equals("Quereca") || adsType.equals(ADMOB)) {
+            if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB))  || adsType.equals(ADMOB)) {
 
                 if (myPref.getLoad().equals(PRE)) {
                     String mUnitId = "oa";
@@ -100,9 +100,9 @@ public class InfyOmAds {
 
     public static void showInterstitial(int admob, Context context, Interstitial listener) {
 
-//        if (checkValidation()) {
-//            return;
-//        }
+        if (checkValidation()) {
+            return;
+        }
 
         if (Constants.isTimeFinish) {
             AdsAccountProvider myPref = new AdsAccountProvider(context);
@@ -116,13 +116,13 @@ public class InfyOmAds {
                 adsType = myPref.getThirdAdsType();
             }
 
-            if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) && !adsType.equals("Quereca") || adsType.equals(ADMOB)) {
+            if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
                 InterstitialUtils interstitialUtils = new InterstitialUtils(context, listener, admob);
 
                 if (myPref.getLoad().equals(PRE)) {
                     interstitialUtils.showPreInterstitial();
                 } else {
-                    interstitialUtils.load_interstitial(true);
+                    interstitialUtils.loadInterstitial();
                 }
             } else if ((myPref.getAdsType().equals(FB) || adsType.equals(FB))) {
                 if (Constants.isAdLoading) {
@@ -251,7 +251,7 @@ public class InfyOmAds {
             public void run() {
                 isClicked = false;
             }
-        }, 1500);
+        }, 1200);
         return false;
     }
 }

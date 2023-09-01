@@ -119,7 +119,7 @@
                     android:textAllCaps="false"
                     android:ellipsize="end"
                     android:backgroundTint="?attr/tabSelectedTextColor"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:lines="1"
                     />
 

@@ -100,7 +100,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:gravity="center"
             android:textStyle="bold"
             android:ellipsize="end"
