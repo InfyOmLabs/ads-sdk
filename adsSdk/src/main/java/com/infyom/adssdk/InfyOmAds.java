@@ -42,21 +42,7 @@ public class InfyOmAds {
     }
 
     public static boolean isClicked = false;
-    //    static ArrayList<Datum> adsIdsList = new ArrayList<>();
     static AdsAccountProvider myPref;
-
-    public static void initDefaultValue() {
-        Constants.isSplashRun = true;
-        Constants.isSplashRunNative = true;
-        Constants.isPreloadedNative = false;
-        Constants.isPreloadedFbNative = false;
-        Constants.nativeAds = null;
-        Constants.adView = null;
-        Constants.interAdmob = null;
-        Constants.interFb = null;
-        Constants.isAdShowing = false;
-        Constants.mCountTimer = null;
-    }
 
     public static boolean isConnectingToInternet(Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -182,18 +168,14 @@ public class InfyOmAds {
             if (adTemplate.equals(AdTemplate.NATIVE_350)){
                 NativeUtils350.loadNative350AdViewMedia(context, nativeContainer, space, admob);
             } else  if (adTemplate.equals(AdTemplate.NATIVE_300)) {
-//                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, true, preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_150)){
                 NativeUtils150.loadNative150AdViewMedia(context, nativeContainer, space, admob);
             } else if (adTemplate.equals(AdTemplate.NATIVE_100)) {
-//                NativeUtils.loadFailed = 0;
                 NativeUtils.load_native(context, nativeContainer, space, admob, false, preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_50)) {
-//                NativeUtils50.loadFailed = 0;
                 NativeUtils50.load_native(context, nativeContainer, space, admob);
             } else {
-//                NativeUtils40.loadFailed = 0;
                 NativeUtils40.load_native(context, nativeContainer, space, admob);
             }
 

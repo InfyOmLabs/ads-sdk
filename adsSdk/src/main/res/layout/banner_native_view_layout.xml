@@ -104,6 +104,7 @@
                 android:backgroundTint="?attr/tabSelectedTextColor"
                 android:textColor="@android:color/white"
                 android:textSize="12sp"
+                android:maxLines="1"
                 android:ellipsize="end"
                 android:visibility="visible" />
 
