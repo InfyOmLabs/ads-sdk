@@ -65,74 +65,74 @@ public class MainActivity extends AppCompatActivity {
 
     private ConsentInformation consentInformation;
 
-    void consentForm() {
-        ConsentRequestParameters params = new ConsentRequestParameters
-                .Builder()
-                .setTagForUnderAgeOfConsent(false)
-                .build();
+//    void consentForm() {
+//        ConsentRequestParameters params = new ConsentRequestParameters
+//                .Builder()
+//                .setTagForUnderAgeOfConsent(false)
+//                .build();
+//
+//        consentInformation = UserMessagingPlatform.getConsentInformation(this);
+//
+//        consentInformation.requestConsentInfoUpdate (
+//                this,
+//                params,
+//                new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
+//                    @Override
+//                    public void onConsentInfoUpdateSuccess() {
+//                        // The consent information state was updated.
+//                        // You are now ready to check if a form is available.
+//                        if (consentInformation.isConsentFormAvailable()) {
+//                            Log.e("TAG", "onConsentInfoUpdateSuccess: FORM AVAILABLE");
+//                            loadForm();
+//                        } else {
+//                            Log.e("TAG", "onConsentInfoUpdateSuccess: NOT FORM AVAILABLE");
+//
+//                        }
+//                    }
+//                },
+//                new ConsentInformation.OnConsentInfoUpdateFailureListener() {
+//                    @Override
+//                    public void onConsentInfoUpdateFailure(FormError formError) {
+//                        // Handle the error.
+//                        Log.e("TAG", "onConsentInfoUpdateFailure: "+formError.getMessage() );
+//                    }
+//                });
+//    }
 
-        consentInformation = UserMessagingPlatform.getConsentInformation(this);
-
-        consentInformation.requestConsentInfoUpdate (
-                this,
-                params,
-                new ConsentInformation.OnConsentInfoUpdateSuccessListener() {
-                    @Override
-                    public void onConsentInfoUpdateSuccess() {
-                        // The consent information state was updated.
-                        // You are now ready to check if a form is available.
-                        if (consentInformation.isConsentFormAvailable()) {
-                            Log.e("TAG", "onConsentInfoUpdateSuccess: FORM AVAILABLE");
-                            loadForm();
-                        } else {
-                            Log.e("TAG", "onConsentInfoUpdateSuccess: NOT FORM AVAILABLE");
-
-                        }
-                    }
-                },
-                new ConsentInformation.OnConsentInfoUpdateFailureListener() {
-                    @Override
-                    public void onConsentInfoUpdateFailure(FormError formError) {
-                        // Handle the error.
-                        Log.e("TAG", "onConsentInfoUpdateFailure: "+formError.getMessage() );
-                    }
-                });
-    }
-
-    public void loadForm() {
-        // Loads a consent form. Must be called on the main thread.
-        UserMessagingPlatform.loadConsentForm(
-                this,
-                new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
-                    @Override
-                    public void onConsentFormLoadSuccess(ConsentForm consentForm) {
-                        Log.e("TAG", "onConsentFormLoadSuccess: SUCCESS");
-                        if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
-                            consentForm.show(
-                                    MainActivity.this,
-                                    new ConsentForm.OnConsentFormDismissedListener() {
-                                        @Override
-                                        public void onConsentFormDismissed(@Nullable FormError formError) {
-                                            if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
-                                                // App can start requesting ads.
-                                                InfyOmAds.showBanner(MainActivity.this,rlBanner,1);
-                                                InfyOmAds.showNative(MainActivity.this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
-                                            }
-
-                                            // Handle dismissal by reloading form.
-                                            loadForm();
-                                        }
-                                    });
-                        }
-                    }
-                },
-                new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
-                    @Override
-                    public void onConsentFormLoadFailure(FormError formError) {
-                        // Handle Error.
-                        Log.e("TAG", "onConsentFormLoadFailure: "+formError.getMessage() );
-                    }
-                }
-        );
-    }
+//    public void loadForm() {
+//        // Loads a consent form. Must be called on the main thread.
+//        UserMessagingPlatform.loadConsentForm(
+//                this,
+//                new UserMessagingPlatform.OnConsentFormLoadSuccessListener() {
+//                    @Override
+//                    public void onConsentFormLoadSuccess(ConsentForm consentForm) {
+//                        Log.e("TAG", "onConsentFormLoadSuccess: SUCCESS");
+//                        if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.REQUIRED) {
+//                            consentForm.show(
+//                                    MainActivity.this,
+//                                    new ConsentForm.OnConsentFormDismissedListener() {
+//                                        @Override
+//                                        public void onConsentFormDismissed(@Nullable FormError formError) {
+//                                            if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
+//                                                // App can start requesting ads.
+//                                                InfyOmAds.showBanner(MainActivity.this,rlBanner,1);
+//                                                InfyOmAds.showNative(MainActivity.this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
+//                                            }
+//
+//                                            // Handle dismissal by reloading form.
+//                                            loadForm();
+//                                        }
+//                                    });
+//                        }
+//                    }
+//                },
+//                new UserMessagingPlatform.OnConsentFormLoadFailureListener() {
+//                    @Override
+//                    public void onConsentFormLoadFailure(FormError formError) {
+//                        // Handle Error.
+//                        Log.e("TAG", "onConsentFormLoadFailure: "+formError.getMessage() );
+//                    }
+//                }
+//        );
+//    }
 }
