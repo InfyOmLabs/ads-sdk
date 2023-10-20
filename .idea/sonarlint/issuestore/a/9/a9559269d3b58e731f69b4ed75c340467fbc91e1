@@ -1,0 +1,22 @@
+
+>
+java:S1604)"(Make this anonymous inner class a lambda(Ú‹ä¾
+?
+java:S1604„"(Make this anonymous inner class a lambda(”Ÿ¡ƒ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÕƒÀúÿÿÿÿ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Ñ¥ˆšüÿÿÿÿ
+q
+java:S3923!"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ìü¨í
+C
+java:S1185@"(Remove this method to simply inherit it.(âöíóûÿÿÿÿ
+•
+java:S5803M"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öýÿÿÿÿ
+m
+java:S3776P"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(—®µ£øÿÿÿÿ
+G
+java:S1905f",Remove this unnecessary cast to "MediaView".(ô±ºÎøÿÿÿÿ
+Y
+java:S1155g">Use isEmpty() to check whether the collection is empty or not.(Åç¤ƒûÿÿÿÿ
+B
+java:S1905n",Remove this unnecessary cast to "MediaView".(äÖ†Ë

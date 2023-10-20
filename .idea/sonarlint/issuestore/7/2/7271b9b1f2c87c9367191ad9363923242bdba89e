@@ -1,0 +1,33 @@
+
+r
+java:S1192Ì"[Define a constant instead of duplicating this literal "/6499/example/interstitial" 3 times.(Ó…Öè
+l
+java:S1192É"UDefine a constant instead of duplicating this literal "/6499/example/banner" 3 times.(“Æ½
+q
+java:S1192Ï"UDefine a constant instead of duplicating this literal "/6499/example/native" 5 times.(é›˜²ÿÿÿÿÿ
+|
+java:S1192Ô"`Define a constant instead of duplicating this literal "IMG_16_9_LINK#YOUR_PLACEMENT_ID" 3 times.(İìï­øÿÿÿÿ
+J
+java:S1066E"/Merge this if statement with the enclosing one.(ˆ³¢ ÿÿÿÿÿ
+?
+java:S1604ç"(Make this anonymous inner class a lambda(„ÑñŒ
+k
+java:S1104,"UMake isClicked a static final constant or non-public and provide accessors if needed.(×±Ö
+E
+java:S1444,"/Make this "public static isClicked" field final(×±Ö
+I
+java:S18741"3Remove this use of "NetworkInfo"; it is deprecated.(ÿ»¶Ã
+R
+java:S18741"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(ÿ»¶Ã
+N
+java:S18742"3Remove this use of "isConnected"; it is deprecated.(õ§¼ïıÿÿÿÿ
+h
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ŒÇ»²
+P
+java:S1854F";Remove this useless assignment to local variable "mUnitId".(ƒÆ¹3
+
+java:S5803O"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(••ÇŒ
+m
+java:S3776W"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(™èÄÔúÿÿÿÿ
+F
+java:S1874ç"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ
