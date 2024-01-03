@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 import android.os.Handler;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;
@@ -126,7 +127,12 @@ public class InfyOmAds {
         }
     }
 
-    public static void showBanner(Context context, RelativeLayout bannerContainer, int admob) {
+    public static void showBanner(Context context, RelativeLayout bannerContainer,View space, int admob) {
+
+
+        if (Constants.isBannerClicked) {
+            return;
+        }
 
         AdsAccountProvider myPref = new AdsAccountProvider(context);
 
@@ -141,13 +147,17 @@ public class InfyOmAds {
         }
 
         if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
-            AdBanner.showBanner(context, bannerContainer, admob);
+            AdBanner.showBanner(context, bannerContainer, space,admob);
         } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
-            BannerUtilsFb.loadFbBanner(context, bannerContainer);
+            BannerUtilsFb.loadFbBanner(context, bannerContainer,space);
         }
     }
 
     public static void showNative(Context context, RelativeLayout nativeContainer, View space, int admob, AdTemplate adTemplate) {
+        if (Constants.isNativeClicked) {
+            return;
+        }
+
         AdsAccountProvider myPref = new AdsAccountProvider(context);
         int preloadId;
         String adsType;
@@ -213,6 +223,8 @@ public class InfyOmAds {
         myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setAdsTime(0);
+        myPref.setBannerAdsTime(30);
+        myPref.setNativeAdsTime(30);
         myPref.setSplashAds(1);
         myPref.setAdsType(ADMOB);
         myPref.setFirstAdsType(ADMOB);

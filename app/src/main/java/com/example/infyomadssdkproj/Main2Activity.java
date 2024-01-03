@@ -15,6 +15,7 @@ public class Main2Activity extends AppCompatActivity {
     Button showAds;
     RelativeLayout rlBanner,rl_native;
     View tv_space;
+    ShimmerLayout space;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,10 +24,11 @@ public class Main2Activity extends AppCompatActivity {
 
         showAds = findViewById(R.id.btn_next);
         rlBanner = findViewById(R.id.rl_banner);
+        space = findViewById(R.id.shimmer_space);
         rl_native = findViewById(com.infyom.adssdk.R.id.rl_native);
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
 
-//        InfyOmAds.showBanner(this,rlBanner,1);
+        InfyOmAds.showBanner(this,rlBanner,space,1);
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_300);
         InfyOmAds.loadPreInterstitial(1,this);
 

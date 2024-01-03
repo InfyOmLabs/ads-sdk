@@ -1,0 +1,31 @@
+
+H
+java:S1444"2Make this "public static isTimeFinish" field final(å©¨Ø
+R
+java:S1444"5Make this "public static isBannerClicked" field final(ãÆˆ8ÌéîÌ1
+R
+java:S1444"5Make this "public static isNativeClicked" field final(È½£Ù8İ¯ŸïÌ1
+R
+java:S1444"7Make this "public static isPreloadedNative" field final(èØÃÚøÿÿÿÿ
+G
+java:S1444"1Make this "public static isSplashRun" field final(Åšã™
+M
+java:S1444"7Make this "public static isSplashRunNative" field final(¸Â·°
+T
+java:S1444"9Make this "public static isPreloadedFbNative" field final(®Âßøüÿÿÿÿ
+E
+java:S1444"/Make this "public static nativeAds" field final(°•öà
+G
+java:S1444",Make this "public static adView" field final(‚À”ùıÿÿÿÿ
+K
+java:S1444"0Make this "public static interAdmob" field final(†‘âÚùÿÿÿÿ
+H
+java:S1444"-Make this "public static interFb" field final(Èƒô‘ùÿÿÿÿ
+G
+java:S1444"1Make this "public static isAdShowing" field final(«úûñ
+L
+java:S1444"1Make this "public static isAdLoading" field final(ŸÜÁ¿ûÿÿÿÿ
+G
+java:S1444"1Make this "public static mCountTimer" field final(ÿŸüÅ
+U
+java:S1118	":Add a private constructor to hide the implicit public one.(“³±ûÿÿÿÿ

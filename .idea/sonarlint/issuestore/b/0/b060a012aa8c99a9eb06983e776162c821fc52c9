@@ -1,0 +1,19 @@
+
+E
+java:S1066L"/Merge this if statement with the enclosing one.(ñ™”ò
+|
+java:S1488p"aImmediately return this expression instead of assigning it to the temporary variable "adRequest".(ğ¸Ÿ—ÿÿÿÿÿ
+K
+java:S1444"0Make this "public static loadFailed" field final(÷„Âşÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ÿ¥Ú½
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ãıÔ
+h	java:S1008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âûÓ×ùÿÿÿÿ
+m
+java:S37768"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(âûÓ×ùÿÿÿÿ
+
+java:S5803j"wRemove this usage of "AdSize", it is annotated with @VisibleForTesting and should not be accessed from production code.(µŞÁà
+•
+java:S5803o"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(¼Ô‹öşÿÿÿÿ
+N
+java:S10685"9Remove this unused "initialLayoutComplete" private field.(¸¾ÊJ

@@ -1,0 +1,18 @@
+
+E
+java:S1604k"(Make this anonymous inner class a lambda(„ÑñŒ8¶ÏøîÌ1
+„
+java:S1488§"aImmediately return this expression instead of assigning it to the temporary variable "adRequest".(ğ¸Ÿ—ÿÿÿÿÿ8·ÏøîÌ1
+h
+java:S2184p"FCast one of the operands of this multiplication operation to a "long".(“î”ıÿÿÿÿ8£âµïÌ1
+W
+java:S1118":Add a private constructor to hide the implicit public one.(§µ­8âÔŞïÌ1
+j	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äŞü8òĞøîÌ1
+]	java:S125U"<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ8üĞøîÌ1
+X	java:S125v"<This block of commented-out lines of code should be removed.(ˆ¾Ğî8ÑøîÌ1
+“
+java:S5803w"wRemove this usage of "AdSize", it is annotated with @VisibleForTesting and should not be accessed from production code.(ª·¥t8‚ÑøîÌ1
+Y	java:S125‡"<This block of commented-out lines of code should be removed.(ÔáÍø8§³üîÌ1
+^	java:S125’"<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ8©³üîÌ1
+
+java:S5803¦"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ó¸Ìûÿÿÿÿ8ŠÑøîÌ1

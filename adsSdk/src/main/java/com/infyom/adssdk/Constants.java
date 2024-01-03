@@ -9,7 +9,8 @@ import com.google.android.gms.ads.nativead.NativeAd;
 public  class Constants {
 
     public static boolean isTimeFinish = true;
-
+    public static boolean isBannerClicked = false;
+    public static boolean isNativeClicked = false;
     public static boolean isPreloadedNative = false;
     public static boolean isSplashRun = true;
     public static boolean isSplashRunNative = true;

@@ -1,0 +1,21 @@
+
+>
+java:S1604."(Make this anonymous inner class a lambda(Ú‹ä¾
+C
+java:S1444"-Make this "public static mUnitId" field final(¥à³÷
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ÌãÌÌ
+h	java:S100""NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀœÁ…ÿÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ß”¾¦şÿÿÿÿ
+V	java:S1251"<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ
+V	java:S125@"<This block of commented-out lines of code should be removed.(›â„êûÿÿÿÿ
+C
+java:S1185M"(Remove this method to simply inherit it.(âöíóûÿÿÿÿ
+V	java:S125]"<This block of commented-out lines of code should be removed.(„²°Íúÿÿÿÿ
+V	java:S125f"<This block of commented-out lines of code should be removed.(ì‡Ù…øÿÿÿÿ
+•
+java:S5803r"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öıÿÿÿÿ
+R	java:S125œ"<This block of commented-out lines of code should be removed.(…ª¯ı
+Q	java:S125§"<This block of commented-out lines of code should be removed.(¶Ò†S
+B
+java:S2127³"+Remove this "Double.longBitsToDouble" call.(å’¨ú

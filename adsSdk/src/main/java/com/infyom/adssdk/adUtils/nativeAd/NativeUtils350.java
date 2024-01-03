@@ -1,6 +1,7 @@
 package com.infyom.adssdk.adUtils.nativeAd;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -64,6 +65,13 @@ public class NativeUtils350 {
             @Override
             public void onAdClicked() {
                 super.onAdClicked();
+                Constants.isNativeClicked = true;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Constants.isNativeClicked = false;
+                    }
+                },accountProvider.getNativeAdsTime() * 1000);
             }
 
             @Override

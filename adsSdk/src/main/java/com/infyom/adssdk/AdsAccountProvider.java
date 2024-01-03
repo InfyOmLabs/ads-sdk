@@ -21,6 +21,8 @@ public class AdsAccountProvider {
     static final String KEY_INTERSTITIAL_ADS3 = "key_inter_ads3";
     static final String KEY_ADS_TYPE = "key_ads_type";
     static final String KEY_ADS_TIME = "key_ads_time";
+    static final String KEY_BANNER_ADS_TIME = "key_banner_ads_time";
+    static final String KEY_NATIVE_ADS_TIME = "key_native_ads_time";
     static final String KEY_IS_SPLASH_ADS = "key_is_splash_ads";
     static final String KEY_FB_BANNER = "key_banner_fb_ads";
     static final String KEY_FB_NATIVE = "key_native_fb_ads";
@@ -276,6 +278,22 @@ public class AdsAccountProvider {
     public String getInterImageUrl() {
         return sharedPreferences.getString(KEY_INTER_IMAGE_URL, "0Ab" );
 
+    }
+
+    public void setBannerAdsTime(int time) {
+        sharedPreferences.edit().putInt(KEY_BANNER_ADS_TIME, time ).apply();
+    }
+
+    public int getBannerAdsTime() {
+        return sharedPreferences.getInt(KEY_BANNER_ADS_TIME, 0);
+    }
+
+    public void setNativeAdsTime(int time) {
+        sharedPreferences.edit().putInt(KEY_NATIVE_ADS_TIME, time ).apply();
+    }
+
+    public int getNativeAdsTime() {
+        return sharedPreferences.getInt(KEY_NATIVE_ADS_TIME, 0);
     }
 
 }

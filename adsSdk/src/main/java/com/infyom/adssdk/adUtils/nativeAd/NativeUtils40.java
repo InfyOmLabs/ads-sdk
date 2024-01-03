@@ -2,6 +2,7 @@
 package com.infyom.adssdk.adUtils.nativeAd;
 
 import android.content.Context;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -43,17 +44,6 @@ public class NativeUtils40 {
             @Override
             public void onNativeAdLoaded(@NonNull NativeAd nativeAd) {
                                                 // && !(context instanceof SplashScreen)
-//                if (!Constants.isPreloadedNative ) {
-//                    Constants.isPreloadedNative = true;
-//
-//
-//
-//
-//                    load_native(context, rlNative, space, admob);
-//                } else {
-//                    Constants.nativeAds = nativeAd;
-//                }
-//                loadFailed = 0;
 
                 try {
                     if (rlNative.getChildCount() > 0) {
@@ -75,6 +65,13 @@ public class NativeUtils40 {
             @Override
             public void onAdClicked() {
                 super.onAdClicked();
+                Constants.isNativeClicked = true;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Constants.isNativeClicked = false;
+                    }
+                },accountProvider.getNativeAdsTime() * 1000);
             }
 
             @Override

@@ -1,6 +1,7 @@
 package com.infyom.adssdk.adUtils.nativeAd;
 
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import com.facebook.ads.NativeAd;
 import com.facebook.ads.NativeAdLayout;
 import com.facebook.ads.NativeAdListener;
 import com.infyom.adssdk.AdsAccountProvider;
+import com.infyom.adssdk.Constants;
 import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.R;
 
@@ -26,6 +28,10 @@ import java.util.List;
 public class NativeUtilsFb {
 //    public static int loadFail = 0;
     public static void loadFbNative(Context context, RelativeLayout nativeAdLayout, View space,boolean isBigNative) {
+        if (Constants.isNativeClicked) {
+            return;
+        }
+
         AdsAccountProvider accountProvider = new AdsAccountProvider(context);
 
         NativeAd nativeAd = new NativeAd(context, accountProvider.getFbNativeAds());
@@ -43,21 +49,12 @@ public class NativeUtilsFb {
                 nativeAdLayout.setVisibility(View.GONE);
                 if (InfyOmAds.isConnectingToInternet(context)) {
                     Log.e("N_F_TAG", "onError: ");
-
-//                    if (loadFail != 3) {
-//                        Log.e("N_F_TAG", "onError: "+loadFail);
-//                        loadFail++;
-//                        loadFbNative(context, nativeAdLayout, space,isBigNative);
-//                    } else {
-//                        loadFail = 0;
-//                    }
                 }
 
             }
 
             @Override
             public void onAdLoaded(Ad ad) {
-//                loadFail = 0;
                 try {
                     if (nativeAdLayout.getChildCount() > 0) {
                         nativeAdLayout.removeAllViews();
@@ -74,6 +71,13 @@ public class NativeUtilsFb {
 
             @Override
             public void onAdClicked(Ad ad) {
+                Constants.isNativeClicked = true;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Constants.isNativeClicked = false;
+                    }
+                },accountProvider.getNativeAdsTime() * 1000);
             }
 
             @Override

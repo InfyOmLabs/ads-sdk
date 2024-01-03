@@ -16,6 +16,7 @@ public class MainActivity3 extends AppCompatActivity {
     Button showAds;
     RelativeLayout rlBanner,rl_native;
     View tv_space;
+    ShimmerLayout space;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,9 @@ public class MainActivity3 extends AppCompatActivity {
         rlBanner = findViewById(R.id.rl_banner);
         rl_native = findViewById(com.infyom.adssdk.R.id.rl_native);
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
+        space = findViewById(R.id.shimmer_space);
 
-
-        InfyOmAds.showBanner(this,rlBanner,1);
+        InfyOmAds.showBanner(this,rlBanner,space,1);
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
 
         showAds.setOnClickListener(v -> {

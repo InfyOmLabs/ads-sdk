@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -17,9 +18,38 @@
         android:text="Second" />
 
     <RelativeLayout
-        android:id="@+id/rl_banner"
+        android:id="@+id/banner_root"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:layout_height="56dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_banner"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"/>
+
+        <com.example.infyomadssdkproj.ShimmerLayout
+            android:id="@+id/shimmer_space"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:shimmer_auto_start="true"
+            app:shimmer_mask_width="1"
+            app:shimmer_color="@color/ads_view_color"
+            android:gravity="center" >
+
+            <RelativeLayout
+                android:id="@+id/space"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"/>
+            </RelativeLayout>
+
+        </com.example.infyomadssdkproj.ShimmerLayout>
+    </RelativeLayout>
 
 </LinearLayout>

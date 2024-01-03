@@ -1,6 +1,7 @@
 package com.infyom.adssdk.adUtils.nativeAd;
 
 import android.content.Context;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,25 +70,19 @@ public class NativeUtils {
             @Override
             public void onAdClicked() {
                 super.onAdClicked();
+                Constants.isNativeClicked = true;
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Constants.isNativeClicked = false;
+                    }
+                },accountProvider.getNativeAdsTime() * 1000);
             }
 
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
                 Constants.nativeAds = null;
-//                if (InfyOmAds.isConnectingToInternet(context)) {
-//                    if (loadFailed != 3) {
-//                        Log.e("N_TAG", "onAdFailedToLoad: "+loadFailed );
-//                        loadFailed++;
-//                        load_native(context, rlNative, space, admob, isBigNative, preAdmobId);
-//                    }
-//                }
-//                try {
-//                    space.setVisibility(View.VISIBLE);
-//                    rlNative.setVisibility(View.GONE);
-//                } catch (Exception e) {
-//                    e.printStackTrace();
-//                }
                 NativeUtilsFb.loadFbNative(context,rlNative,space,isBigNative);
             }
         }).withNativeAdOptions(new NativeAdOptions.Builder().build()).build();

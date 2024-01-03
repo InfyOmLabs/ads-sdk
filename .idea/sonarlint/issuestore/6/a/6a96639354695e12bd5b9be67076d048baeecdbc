@@ -1,0 +1,10 @@
+
+G
+java:S1444"1Make this "public static KEY_NATIVE4" field final(µνιώ
+G
+java:S1444"1Make this "public static KEY_NATIVE5" field final(³¨Ο½
+o	java:S115""ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ακ
+l
+java:S3008"VRename this field "KEY_NATIVE4" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µνιώ
+l
+java:S3008"VRename this field "KEY_NATIVE5" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(³¨Ο½

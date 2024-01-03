@@ -1,0 +1,27 @@
+
+>
+java:S1604+"(Make this anonymous inner class a lambda(Ú‹ä¾
+E
+java:S1604J"(Make this anonymous inner class a lambda(„ÑñŒ8‘ì§ïÌ1
+D
+java:S1604Î"(Make this anonymous inner class a lambda(¶¹§ãûÿÿÿÿ
+D
+java:S1604ö"(Make this anonymous inner class a lambda(¶¹§ãûÿÿÿÿ
+P
+java:S1118":Add a private constructor to hide the implicit public one.(°¼Â‘
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸„Óüÿÿÿÿ
+L
+java:S1172"1Remove this unused method parameter "preAdmobId".(¸„Óüÿÿÿÿ
+V	java:S125"<This block of commented-out lines of code should be removed.(ß”¾¦şÿÿÿÿ
+V	java:S125."<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ
+•
+java:S5803Z"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öıÿÿÿÿ
+Q	java:S125p"<This block of commented-out lines of code should be removed.(àã™¼
+i
+java:S3776†"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ìÕä½
+H
+java:S1905›",Remove this unnecessary cast to "MediaView".(Ôß·µıÿÿÿÿ
+Z
+java:S1155œ">Use isEmpty() to check whether the collection is empty or not.(ûƒ­Üùÿÿÿÿ
+H
+java:S1905£",Remove this unnecessary cast to "MediaView".(ƒÿ¼øÿÿÿÿ
