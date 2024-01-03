@@ -23,6 +23,15 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+
+    configurations {
+        debugApi {
+            attributes {
+                attribute(Attribute.of('com.android.build.api.attributes.BuildTypeAttr', String), 'debug')
+                attribute(Attribute.of('com.android.build.api.attributes.AgpVersionAttr', String), '8.2.0')
+            }
+        }
+    }
 }
 
 dependencies {
