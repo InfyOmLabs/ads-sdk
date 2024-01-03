@@ -103,6 +103,7 @@
                 android:layout_gravity="center_vertical"
                 android:backgroundTint="?attr/tabSelectedTextColor"
                 android:textColor="@android:color/white"
+                android:textAllCaps="false"
                 android:textSize="12sp"
                 android:maxLines="1"
                 android:ellipsize="end"

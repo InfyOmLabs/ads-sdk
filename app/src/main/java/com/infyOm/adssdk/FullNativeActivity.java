@@ -1,4 +1,4 @@
-package com.example.infyomadssdkproj;
+package com.infyOm.adssdk;
 
 import android.os.Bundle;
 import android.os.Handler;

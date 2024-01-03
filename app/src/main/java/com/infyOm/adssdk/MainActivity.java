@@ -1,6 +1,5 @@
-package com.example.infyomadssdkproj;
+package com.infyOm.adssdk;
 
-import android.app.Application;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;

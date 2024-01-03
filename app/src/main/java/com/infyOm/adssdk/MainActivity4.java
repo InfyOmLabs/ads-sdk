@@ -1,4 +1,4 @@
-package com.example.infyomadssdkproj;
+package com.infyOm.adssdk;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +9,6 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.infyom.adssdk.InfyOmAds;
-
 import com.infyom.adssdk.aditerface.Interstitial;
 
 public class MainActivity4 extends AppCompatActivity {

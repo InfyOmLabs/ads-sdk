@@ -1,7 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.InfyOmAdsSdkProj" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <!-- Primary brand color. -->
+    <style name="Base.Theme.InfyomAdsSdk" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="colorPrimary">@color/ads_view_color</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -15,6 +16,8 @@
         <!-- Customize your theme here. -->
         <item name="tabSelectedTextColor">@color/purple_200</item>
     </style>
+
+    <style name="Theme.InfyomAdsSdk" parent="Base.Theme.InfyomAdsSdk" />
 
     <declare-styleable name="ShimmerLayout">
         <attr name="shimmer_color" format="color|reference"/>
