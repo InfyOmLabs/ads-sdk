@@ -1,0 +1,7 @@
+
+E
+java:S1604%"(Make this anonymous inner class a lambda(ì“Ï‰8”ÈÚùÌ1
+n	java:S116"TRename this field "rl_native" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆõâ·ûÿÿÿÿ
+m	java:S116"SRename this field "tv_space" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¯øòüÿÿÿÿ
+B
+java:S1602$",Remove useless curly braces around statement(€æÔë

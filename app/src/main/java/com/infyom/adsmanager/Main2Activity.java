@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.infyom.adssdk.InfyOmAds;
+import com.infyom.adssdk.ShimmerLayout;
 import com.infyom.adssdk.aditerface.Interstitial;
 
 public class Main2Activity extends AppCompatActivity {

@@ -1,0 +1,17 @@
+
+C
+java:S1604-"(Make this anonymous inner class a lambda(ê²·Æøÿÿÿÿ
+C
+java:S1604D"(Make this anonymous inner class a lambda(Ÿ˜£’ûÿÿÿÿ
+C
+java:S1604R"(Make this anonymous inner class a lambda(†«óˆùÿÿÿÿ
+>
+java:S1604f"(Make this anonymous inner class a lambda(Œûé®
+>
+java:S1604_"(Make this anonymous inner class a lambda(ªÈôû
+C
+java:S1604v"(Make this anonymous inner class a lambda(öğå¶ùÿÿÿÿ
+n	java:S116"TRename this field "rl_native" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆõâ·ûÿÿÿÿ
+m	java:S116"SRename this field "tv_space" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¯øòüÿÿÿÿ
+B
+java:S1602,",Remove useless curly braces around statement(€æÔë

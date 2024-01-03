@@ -30,7 +30,7 @@
             android:layout_height="56dp"
             android:gravity="center"/>
 
-        <com.infyom.adsmanager.ShimmerLayout
+        <com.infyom.adssdk.ShimmerLayout
             android:id="@+id/shimmer_space"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -51,7 +51,7 @@
                     android:background="@color/white"/>
             </RelativeLayout>
 
-        </com.infyom.adsmanager.ShimmerLayout>
+        </com.infyom.adssdk.ShimmerLayout>
     </RelativeLayout>
 
 </LinearLayout>

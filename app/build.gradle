@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-    id 'maven-publish'
 }
 
 android {
@@ -28,20 +27,6 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    configurations {
-        releaseApi {
-            attributes {
-                attribute(Attribute.of('com.android.build.api.attributes.BuildTypeAttr', String), 'release')
-                attribute(Attribute.of('com.android.build.api.attributes.AgpVersionAttr', String), '8.2.0')
-            }
-        }
-        debugApi {
-            attributes {
-                attribute(Attribute.of('com.android.build.api.attributes.BuildTypeAttr', String), 'debug')
-                attribute(Attribute.of('com.android.build.api.attributes.AgpVersionAttr', String), '8.2.0')
-            }
-        }
-    }
 
 }
 

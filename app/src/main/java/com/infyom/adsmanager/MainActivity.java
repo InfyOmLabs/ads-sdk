@@ -16,6 +16,7 @@ import com.google.android.ump.ConsentRequestParameters;
 import com.google.android.ump.FormError;
 import com.google.android.ump.UserMessagingPlatform;
 import com.infyom.adssdk.InfyOmAds;
+import com.infyom.adssdk.ShimmerLayout;
 import com.infyom.adssdk.aditerface.Interstitial;
 
 public class MainActivity extends AppCompatActivity {

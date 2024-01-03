@@ -49,3 +49,13 @@ S
 #adssdk/src/main/AndroidManifest.xml,6/b/6b488061d7e05d275f4eafddd79e2caa24942aa9
 C
 adssdk/build.gradle,2/8/2873aa2522e414011e29983a6760ebc143e92748
+i
+9adssdk/src/main/java/com/infyom/adssdk/ShimmerLayout.java,7/f/7f69e64975d76155ed14bfaf91de372e44546357
+j
+:app/src/main/java/com/infyom/adsmanager/Main2Activity.java,9/6/965f13f9c89d1b853d2b959a743e3fb88cc31d96
+i
+9app/src/main/java/com/infyom/adsmanager/MainActivity.java,0/c/0c231b1a4aad1b7dc4290db5583d0b6e78c7eb58
+j
+:app/src/main/java/com/infyom/adsmanager/MainActivity3.java,6/e/6e50098e4b9b106111f39567aa647f82f7333983
+j
+:app/src/main/java/com/infyom/adsmanager/MainActivity4.java,d/4/d449164e0ce5a5fa4f6cb70b5cb6db1a4e9e369b
