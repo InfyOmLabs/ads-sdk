@@ -53,3 +53,7 @@ z
 JadsSdk/src/main/java/com/infyom/adssdk/adUtils/nativeAd/NativeUtils40.java,3/b/3b8e700d8e8c5fd9f465385d6d93fa334ba1b074
 z
 JadsSdk/src/main/java/com/infyom/adssdk/adUtils/nativeAd/NativeUtilsFb.java,3/8/38bb323c1a40bf838c833c4550568d53b9910f20
+I
+adsSdk/consumer-rules.pro,d/0/d00f5601edbd13906430b73ee7721d7c34de7f2a
+X
+(gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
