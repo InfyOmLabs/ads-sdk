@@ -1,4 +1,4 @@
-package com.infyom.adsmanager;
+package com.example.infyomadssdkproj;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.ShimmerLayout;
 import com.infyom.adssdk.aditerface.Interstitial;
 
-public class MainActivity4 extends AppCompatActivity {
+public class Main2Activity extends AppCompatActivity {
     Button showAds;
     RelativeLayout rlBanner,rl_native;
     View tv_space;
@@ -25,19 +25,19 @@ public class MainActivity4 extends AppCompatActivity {
 
         showAds = findViewById(R.id.btn_next);
         rlBanner = findViewById(R.id.rl_banner);
+        space = findViewById(R.id.shimmer_space);
         rl_native = findViewById(com.infyom.adssdk.R.id.rl_native);
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
-        space = findViewById(R.id.shimmer_space);
 
         InfyOmAds.showBanner(this,rlBanner,space,1);
-        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_300);
         InfyOmAds.loadPreInterstitial(1,this);
 
         showAds.setOnClickListener(v -> {
-            InfyOmAds.showInterstitial(1, this, new Interstitial() {
+            InfyOmAds.showInterstitial(2, this, new Interstitial() {
                 @Override
                 public void onAdClose(boolean isFail) {
-                    startActivity(new Intent(MainActivity4.this,FullNativeActivity.class));
+                    startActivity(new Intent(Main2Activity.this,MainActivity3.class));
                 }
             });
         });

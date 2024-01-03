@@ -59,3 +59,17 @@ j
 :app/src/main/java/com/infyom/adsmanager/MainActivity3.java,6/e/6e50098e4b9b106111f39567aa647f82f7333983
 j
 :app/src/main/java/com/infyom/adsmanager/MainActivity4.java,d/4/d449164e0ce5a5fa4f6cb70b5cb6db1a4e9e369b
+I
+adssdk/consumer-rules.pro,5/d/5dbc1795fa71f16ba7129e485818d41d3fd82112
+i
+9adsSdk/src/main/java/com/infyom/adssdk/ShimmerLayout.java,8/f/8f9c8008a0e2ed46e2df7fa88b004e0e7978478b
+q
+Aapp/src/main/java/com/example/infyomadssdkproj/MainActivity3.java,2/e/2e2181e87ecc303daef2da4ef1b1ad0085841bc4
+p
+@app/src/main/java/com/example/infyomadssdkproj/MainActivity.java,a/d/ad3c1247a5721a8420aa86b35caf259bbc38330f
+v
+Fapp/src/main/java/com/example/infyomadssdkproj/FullNativeActivity.java,4/e/4ea783498f932d1ffd9b7d3cf753b5c18be9cced
+q
+Aapp/src/main/java/com/example/infyomadssdkproj/Main2Activity.java,7/1/71b0d17751c074d05e7857709af77d3ce7b71003
+q
+Aapp/src/main/java/com/example/infyomadssdkproj/MainActivity4.java,e/b/eb94dd1957b89c5135156d6ea5cf6993560bf847

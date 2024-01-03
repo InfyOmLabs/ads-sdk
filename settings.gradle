@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
-        gradlePluginPortal()
         maven { url "https://jitpack.io" }
     }
 }
@@ -14,7 +14,6 @@ dependencyResolutionManagement {
         maven { url "https://jitpack.io" }
     }
 }
-
-rootProject.name = "AdsManager"
+rootProject.name = "InfyOmAdsSdkProj"
 include ':app'
-include ':adssdk'
+include ':adsSdk'

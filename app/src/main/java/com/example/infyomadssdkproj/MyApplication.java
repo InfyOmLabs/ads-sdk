@@ -1,4 +1,4 @@
-package com.infyom.adsmanager;
+package com.example.infyomadssdkproj;
 
 import android.app.Activity;
 import android.app.Application;

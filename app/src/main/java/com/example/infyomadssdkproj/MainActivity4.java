@@ -1,4 +1,4 @@
-package com.infyom.adsmanager;
+package com.example.infyomadssdkproj;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,7 +12,7 @@ import com.infyom.adssdk.InfyOmAds;
 import com.infyom.adssdk.ShimmerLayout;
 import com.infyom.adssdk.aditerface.Interstitial;
 
-public class MainActivity3 extends AppCompatActivity {
+public class MainActivity4 extends AppCompatActivity {
     Button showAds;
     RelativeLayout rlBanner,rl_native;
     View tv_space;
@@ -31,15 +31,18 @@ public class MainActivity3 extends AppCompatActivity {
 
         InfyOmAds.showBanner(this,rlBanner,space,1);
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
+        InfyOmAds.loadPreInterstitial(1,this);
 
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {
                 @Override
                 public void onAdClose(boolean isFail) {
-                    startActivity(new Intent(MainActivity3.this,MainActivity4.class));
+                    startActivity(new Intent(MainActivity4.this,FullNativeActivity.class));
                 }
             });
         });
+
+
     }
 
     @Override
