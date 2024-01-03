@@ -25,6 +25,12 @@ android {
     }
 
     configurations {
+        releaseApi {
+            attributes {
+                attribute(Attribute.of('com.android.build.api.attributes.BuildTypeAttr', String), 'release')
+                attribute(Attribute.of('com.android.build.api.attributes.AgpVersionAttr', String), '8.2.0')
+            }
+        }
         debugApi {
             attributes {
                 attribute(Attribute.of('com.android.build.api.attributes.BuildTypeAttr', String), 'debug')
