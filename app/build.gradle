@@ -3,15 +3,15 @@ plugins {
 }
 
 android {
-    namespace 'com.infyOm.adssdk'
+    namespace 'com.infyom.adsmanager'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.infyOm.adssdk"
+        applicationId "com.infyom.adsmanager"
         minSdk 24
         targetSdk 34
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -29,7 +29,7 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':adsSdk')
+    implementation project(path: ':adssdk')
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'

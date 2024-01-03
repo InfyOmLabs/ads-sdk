@@ -6,7 +6,6 @@ import android.net.NetworkInfo;
 import android.os.Handler;
 import android.view.View;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.facebook.ads.AdSettings;
 import com.facebook.ads.AudienceNetworkAds;

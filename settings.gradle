@@ -15,6 +15,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Infyom AdsSdk"
+rootProject.name = "AdsManager"
 include ':app'
-include ':adsSdk'
+include ':adssdk'

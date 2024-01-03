@@ -29,7 +29,7 @@
             android:layout_height="56dp"
             android:gravity="center"/>
 
-        <com.infyOm.adssdk.ShimmerLayout
+        <com.infyom.adsmanager.ShimmerLayout
             android:id="@+id/shimmer_space"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -49,7 +49,7 @@
                     android:background="@color/white"/>
             </RelativeLayout>
 
-        </com.infyOm.adssdk.ShimmerLayout>
+        </com.infyom.adsmanager.ShimmerLayout>
     </RelativeLayout>
 
 

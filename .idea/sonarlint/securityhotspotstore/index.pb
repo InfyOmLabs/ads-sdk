@@ -57,3 +57,11 @@ I
 adsSdk/consumer-rules.pro,d/0/d00f5601edbd13906430b73ee7721d7c34de7f2a
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+k
+;app/src/main/java/com/infyOm/adssdk/FullNativeActivity.java,7/0/7062122a86e93cbfae7b32587db7deffc783255b
+k
+;app/src/main/java/com/infyom/adssdk/FullNativeActivity.java,5/f/5f9ada764b5525efbac32f86dbc9dbaea6afbf8f
+S
+#adssdk/src/main/AndroidManifest.xml,6/b/6b488061d7e05d275f4eafddd79e2caa24942aa9
+C
+adssdk/build.gradle,2/8/2873aa2522e414011e29983a6760ebc143e92748
