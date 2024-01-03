@@ -13,8 +13,6 @@ C
 adsSdk/build.gradle,0/7/074f1307d340e8baf6d361685b01581cf8d08159
 S
 #adsSdk/src/main/AndroidManifest.xml,7/1/714c85f965e1c57b265cc14add688a46c49e1ee1
-p
-@app/src/main/java/com/example/infyomadssdkproj/MainActivity.java,a/d/ad3c1247a5721a8420aa86b35caf259bbc38330f
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 ?
@@ -23,10 +21,6 @@ A
 local.properties,0/7/0712df971a99ac4d2fccb8e0fb19f377f3374cca
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-i
-9adsSdk/src/main/java/com/infyom/adssdk/ShimmerLayout.java,8/f/8f9c8008a0e2ed46e2df7fa88b004e0e7978478b
-q
-Aapp/src/main/java/com/example/infyomadssdkproj/ShimmerLayout.java,8/0/803db2c4f2e2ec9b33af7e66afe11ee02b87750d
 v
 FadsSdk/src/main/java/com/infyom/adssdk/adUtils/banner/BannerUtils.java,b/0/b060a012aa8c99a9eb06983e776162c821fc52c9
 s
@@ -39,12 +33,6 @@ x
 HadsSdk/src/main/java/com/infyom/adssdk/adUtils/banner/BannerUtilsFb.java,1/2/12de313713d019549b5a8e3c0487aca757c89f60
 {
 KadsSdk/src/main/java/com/infyom/adssdk/adUtils/nativeAd/NativeUtils350.java,d/8/d86307d718193965dc1267c4bf3614f0d28815ac
-q
-Aapp/src/main/java/com/example/infyomadssdkproj/Main2Activity.java,7/1/71b0d17751c074d05e7857709af77d3ce7b71003
-q
-Aapp/src/main/java/com/example/infyomadssdkproj/MainActivity3.java,2/e/2e2181e87ecc303daef2da4ef1b1ad0085841bc4
-q
-Aapp/src/main/java/com/example/infyomadssdkproj/MainActivity4.java,e/b/eb94dd1957b89c5135156d6ea5cf6993560bf847
 x
 HadsSdk/src/main/java/com/infyom/adssdk/adUtils/nativeAd/NativeUtils.java,d/b/dbd4d8b33f2f3f8b7f46db7bc49bccac5841bd11
 z
@@ -57,10 +45,6 @@ I
 adsSdk/consumer-rules.pro,d/0/d00f5601edbd13906430b73ee7721d7c34de7f2a
 X
 (gradle/wrapper/gradle-wrapper.properties,f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-k
-;app/src/main/java/com/infyOm/adssdk/FullNativeActivity.java,7/0/7062122a86e93cbfae7b32587db7deffc783255b
-k
-;app/src/main/java/com/infyom/adssdk/FullNativeActivity.java,5/f/5f9ada764b5525efbac32f86dbc9dbaea6afbf8f
 S
 #adssdk/src/main/AndroidManifest.xml,6/b/6b488061d7e05d275f4eafddd79e2caa24942aa9
 C
