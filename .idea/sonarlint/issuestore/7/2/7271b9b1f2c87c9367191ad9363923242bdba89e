@@ -1,19 +1,17 @@
 
 Q
-java:S1066F"/Merge this if statement with the enclosing one.(ˆ³¢ ÿÿÿÿÿ8ÏßüïÌ1
+java:S1066E"/Merge this if statement with the enclosing one.(ˆ³¢ ÿÿÿÿÿ8ÏßüïÌ1
 F
-java:S1604ó"(Make this anonymous inner class a lambda(„ÑñŒ8ĞßüïÌ1
+java:S1604ò"(Make this anonymous inner class a lambda(„ÑñŒ8ĞßüïÌ1
 L
-java:S1444-"/Make this "public static isClicked" field final(×±Ö8ĞßüïÌ1
+java:S1444,"/Make this "public static isClicked" field final(×±Ö8ĞßüïÌ1
 o
-java:S37767"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ŒÇ»²8‘àüïÌ1
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ŒÇ»²8‘àüïÌ1
 W
-java:S1854G";Remove this useless assignment to local variable "mUnitId".(ƒÆ¹38‘àüïÌ1
+java:S1854F";Remove this useless assignment to local variable "mUnitId".(ƒÆ¹38‘àüïÌ1
 —
-java:S5803P"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(••ÇŒ8•àüïÌ1
+java:S5803O"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(••ÇŒ8•àüïÌ1
 t
-java:S3776X"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(™èÄÔúÿÿÿÿ8–àüïÌ1
+java:S3776W"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(™èÄÔúÿÿÿÿ8–àüïÌ1
 u
-java:S3776œ"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(úúÇûÿÿÿÿ8œàüïÌ1
-S
-java:S1128	"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8§Ò†ğÌ1
+java:S3776›"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(úúÇûÿÿÿÿ8œàüïÌ1

@@ -1,21 +1,23 @@
 
 >
-java:S1604*"(Make this anonymous inner class a lambda(Ú‹ä¾
+java:S1604+"(Make this anonymous inner class a lambda(Ú‹ä¾
 E
-java:S1604D"(Make this anonymous inner class a lambda(„ÑñŒ8¦•©ïÌ1
+java:S1604E"(Make this anonymous inner class a lambda(„ÑñŒ8¦•©ïÌ1
 ?
-java:S1604Œ"(Make this anonymous inner class a lambda(”Ÿ¡ƒ
+java:S1604"(Make this anonymous inner class a lambda(”Ÿ¡ƒ
+h
+java:S2184J"FCast one of the operands of this multiplication operation to a "long".(°¬ôäûÿÿÿÿ8í§•Í1
 U
-java:S1118":Add a private constructor to hide the implicit public one.(Ñ¥ˆšüÿÿÿÿ
+java:S1118":Add a private constructor to hide the implicit public one.(Ñ¥ˆšüÿÿÿÿ
 q
-java:S3923""[Remove this conditional structure or edit its code blocks so that they're not all the same.(ìü¨í
+java:S3923#"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ìü¨í
 •
-java:S5803U"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öýÿÿÿÿ
+java:S5803V"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öýÿÿÿÿ
 m
-java:S3776X"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(—®µ£øÿÿÿÿ
+java:S3776Y"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(—®µ£øÿÿÿÿ
 G
-java:S1905n",Remove this unnecessary cast to "MediaView".(ô±ºÎøÿÿÿÿ
+java:S1905o",Remove this unnecessary cast to "MediaView".(ô±ºÎøÿÿÿÿ
 Y
-java:S1155o">Use isEmpty() to check whether the collection is empty or not.(Åç¤ƒûÿÿÿÿ
+java:S1155p">Use isEmpty() to check whether the collection is empty or not.(Åç¤ƒûÿÿÿÿ
 B
-java:S1905v",Remove this unnecessary cast to "MediaView".(äÖ†Ë
+java:S1905w",Remove this unnecessary cast to "MediaView".(äÖ†Ë

@@ -175,7 +175,7 @@ public class InfyOmAds {
         if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
 
             if (adTemplate.equals(AdTemplate.NATIVE_350)){
-                NativeUtils350.loadNative350AdViewMedia(context, nativeContainer, space, admob);
+                NativeUtils350.showWhenLoadAd(context, nativeContainer, space, admob);
             } else  if (adTemplate.equals(AdTemplate.NATIVE_300)) {
                 NativeUtils.load_native(context, nativeContainer, space, admob, true, preloadId);
             } else if (adTemplate.equals(AdTemplate.NATIVE_150)){

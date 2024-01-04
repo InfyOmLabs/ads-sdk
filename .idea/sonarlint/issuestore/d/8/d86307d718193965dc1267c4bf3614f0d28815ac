@@ -1,16 +1,13 @@
 
->
-java:S1604+"(Make this anonymous inner class a lambda(Ú‹ä¾
 E
-java:S1604E"(Make this anonymous inner class a lambda(„ÑñŒ8‡ŸïÌ1
+java:S16048"(Make this anonymous inner class a lambda(„ÑñŒ8¿ä©•Í1
+K
+java:S1604"(Make this anonymous inner class a lambda(¶¹§ãûÿÿÿÿ8ß÷›•Í1
+h
+java:S2184="FCast one of the operands of this multiplication operation to a "long".(°¬ôäûÿÿÿÿ8Âä©•Í1
 P
-java:S1118":Add a private constructor to hide the implicit public one.(àìÍ¼
-q
-java:S3923#"[Remove this conditional structure or edit its code blocks so that they're not all the same.(ìü¨í
+java:S1118":Add a private constructor to hide the implicit public one.(àìÍ¼
+I
+java:S16021",Remove useless curly braces around statement(Òâ8‡ø›•Í1
 •
-java:S5803V"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öıÿÿÿÿ
-g
-java:S3776Y"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ƒĞ±P
-?
-java:S1185§"(Remove this method to simply inherit it.(ÒŞ¬Ù
-?	java:S108«")Either remove or fill this block of code.(å¥‡
+java:S5803M"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ƒß‰öıÿÿÿÿ
