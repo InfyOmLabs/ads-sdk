@@ -30,7 +30,7 @@ public class Main2Activity extends AppCompatActivity {
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
 
         InfyOmAds.showBanner(this,rlBanner,space,1);
-        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_300);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_350);
         InfyOmAds.loadPreInterstitial(1,this);
 
         showAds.setOnClickListener(v -> {

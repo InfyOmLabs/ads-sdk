@@ -64,6 +64,7 @@ public class NativeUtils350 {
                 @Override
                 public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                     super.onAdFailedToLoad(loadAdError);
+                    mNativeAd = null;
                     NativeUtilsFb.loadFbNative(context,rlNative,space,true);
                 }
 
@@ -75,6 +76,8 @@ public class NativeUtils350 {
             }).withNativeAdOptions(adOptions).build();
 
             adLoader.loadAd(new AdRequest.Builder().build());
+        } else {
+            mNativeAd = null;
         }
 
     }
@@ -89,13 +92,14 @@ public class NativeUtils350 {
 
             view = LayoutInflater.from(context).inflate(R.layout.ad_new_350, null);
             populateAdsBig(mNativeAd, (NativeAdView) view.findViewById(R.id.unified));
-
+            mNativeAd = null;
             space.setVisibility(View.GONE);
             rlNative.setVisibility(View.VISIBLE);
             rlNative.removeAllViews();
             rlNative.addView(view);
 
         } catch (Exception e) {
+            mNativeAd = null;
             e.printStackTrace();
         }
 
