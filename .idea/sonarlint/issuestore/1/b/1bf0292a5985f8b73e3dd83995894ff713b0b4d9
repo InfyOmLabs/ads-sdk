@@ -1,18 +1,27 @@
 
-E
-java:S1604k"(Make this anonymous inner class a lambda(„ÑñŒ8¶ÏøîÌ1
-„
-java:S1488§"aImmediately return this expression instead of assigning it to the temporary variable "adRequest".(ğ¸Ÿ—ÿÿÿÿÿ8·ÏøîÌ1
-h
-java:S2184p"FCast one of the operands of this multiplication operation to a "long".(“î”ıÿÿÿÿ8£âµïÌ1
-W
-java:S1118":Add a private constructor to hide the implicit public one.(§µ­8âÔŞïÌ1
-j	java:S100="NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(äŞü8òĞøîÌ1
-]	java:S125U"<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ8üĞøîÌ1
-X	java:S125v"<This block of commented-out lines of code should be removed.(ˆ¾Ğî8ÑøîÌ1
-“
-java:S5803w"wRemove this usage of "AdSize", it is annotated with @VisibleForTesting and should not be accessed from production code.(ª·¥t8‚ÑøîÌ1
-Y	java:S125‡"<This block of commented-out lines of code should be removed.(ÔáÍø8§³üîÌ1
-^	java:S125’"<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ8©³üîÌ1
-
-java:S5803¦"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(ó¸Ìûÿÿÿÿ8ŠÑøîÌ1
+’
+java:S1192V"JDefine a constant instead of duplicating this literal "AD-BANNER" 7 times.(‘Ğï½ûÿÿÿÿ8„ßÉºã1J$ee7fb06d-28ba-411a-8319-9a55917f6b86
+k
+java:S1604m"(Make this anonymous inner class a lambda(„ÑñŒ8†ßÉºã1J$2218bdcd-e849-4388-9239-8f1e9bc0efdc
+ª
+java:S1488µ"aImmediately return this expression instead of assigning it to the temporary variable "adRequest".(ğ¸Ÿ—ÿÿÿÿÿ8ˆ–Òºã1J$05cfe636-de2b-4c33-a52b-9f930e234907
+
+java:S2184r"FCast one of the operands of this multiplication operation to a "long".(“î”ıÿÿÿÿ8×ô‡»ã1J$a15804c0-ea08-47d1-bb38-20f8f7ba8990
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ûšãøúÿÿÿÿ8‹ßÉºã1J$bcb94154-2dd0-4b7e-936d-01a0116fba4c
+}
+java:S1118":Add a private constructor to hide the implicit public one.(§µ­8ÔßÉºã1J$6aa0ee36-9431-463a-81ec-b6fe329acaab
+•	java:S100?"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÜ£·şÿÿÿÿ8ßßÉºã1J$c0ea07c3-f452-4574-9ee0-f0d23eedc75d
+ƒ	java:S125W"<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ8åßÉºã1J$7dda0b2e-caa3-486d-98bb-0278758a48cb
+r
+java:S1874m"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8êßÉºã1J$17d3f660-1e25-47e0-bdab-32bf023851a8
+½
+java:S5803u"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(Î³Ü8ñßÉºã1J$6ab1107d-0b5e-4855-886a-8ea29673337f
+¹
+java:S5803x"wRemove this usage of "AdSize", it is annotated with @VisibleForTesting and should not be accessed from production code.(ª·¥t8«ÛĞºã1J$352171c0-f238-40ae-938f-df153891f189
+	java:S125„"<This block of commented-out lines of code should be removed.(ˆ¾Ğî8Ş–Òºã1J$cbdf429c-3be7-400c-913f-a14a7956e78a
+	java:S125•"<This block of commented-out lines of code should be removed.(ÔáÍø8ã–Òºã1J$7dcfcce8-6161-48be-852f-638284fea8dc
+„	java:S125 "<This block of commented-out lines of code should be removed.(ÍóêÅıÿÿÿÿ8ã–Òºã1J$e634a409-5974-4578-a1e8-6c4d0fb7aed9
+‚
+java:S1874»"9Remove this use of "getDefaultDisplay"; it is deprecated.(Î³ÏÕÿÿÿÿÿ8æ–Òºã1J$a878113e-e6b9-4602-9c7a-2e8bac676265
+v
+java:S1874½"2Remove this use of "getMetrics"; it is deprecated.(ÑÆëã8æ–Òºã1J$8890876f-c66d-46c8-8896-a158f16371ff

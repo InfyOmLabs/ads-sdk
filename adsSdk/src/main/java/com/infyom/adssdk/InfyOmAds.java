@@ -126,7 +126,7 @@ public class InfyOmAds {
         }
     }
 
-    public static void showBanner(Context context, RelativeLayout bannerContainer,View space, int admob) {
+    public static void showBanner(Context context, RelativeLayout bannerContainer,View space, int admob,boolean isCollaps) {
 
 
         if (Constants.isBannerClicked) {
@@ -146,7 +146,7 @@ public class InfyOmAds {
         }
 
         if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
-            AdBanner.showBanner(context, bannerContainer, space,admob);
+            AdBanner.showBanner(context, bannerContainer, space,admob,isCollaps);
         } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
             BannerUtilsFb.loadFbBanner(context, bannerContainer,space);
         }
@@ -207,9 +207,9 @@ public class InfyOmAds {
         myPref = new AdsAccountProvider(context);
 
         myPref.setOpenAds("/6499/example/app-open");
-        myPref.setBannerAds1("/6499/example/banner");
-        myPref.setBannerAds2("/6499/example/banner");
-        myPref.setBannerAds3("/6499/example/banner");
+        myPref.setBannerAds1("ca-app-pub-3940256099942544/2014213617");
+        myPref.setBannerAds2("ca-app-pub-3940256099942544/2014213617");
+        myPref.setBannerAds3("ca-app-pub-3940256099942544/2014213617");
         myPref.setInterAds1("/6499/example/interstitial");
         myPref.setInterAds2("/6499/example/interstitial");
         myPref.setInterAds3("/6499/example/interstitial");

@@ -1,7 +1,7 @@
 
-E
-java:S1604%"(Make this anonymous inner class a lambda(ì“Ï‰8‹„úÌ1
-n	java:S116"TRename this field "rl_native" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆõâ·ûÿÿÿÿ
-t	java:S116"SRename this field "tv_space" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¯øòüÿÿÿÿ8„úÌ1
-I
-java:S1602$",Remove useless curly braces around statement(€æÔë8µ„úÌ1
+”	java:S116"TRename this field "rl_native" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆõâ·ûÿÿÿÿJ$e622a92d-9e77-4cc8-bb2f-76fd115c833b
+š	java:S116"SRename this field "tv_space" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¯øòüÿÿÿÿ8„úÌ1J$1c1f7d24-bff3-472e-9ec1-10d623cd0b92
+o
+java:S1659"'Declare "rl_native" on a separate line.(ˆõâ·ûÿÿÿÿ8„ÛÕºã1J$4c443c9e-3567-4992-9e74-027cc888b73d
+o
+java:S1602$",Remove useless curly braces around statement(€æÔë8µ„úÌ1J$8e0ba85e-1897-4862-a765-e27d153a9bff

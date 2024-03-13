@@ -1,3 +1,7 @@
 
 >
-java:S1604"(Make this anonymous inner class a lambda(„ÑñŒ
+java:S1604"(Make this anonymous inner class a lambda(„ÑñŒ
+L
+java:S1874"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8¶Ê×ºã1
+l
+java:S1874""JDon't override a deprecated method or explicitly mark it as "@Deprecated".(œƒƒ©ùÿÿÿÿ8ºÊ×ºã1

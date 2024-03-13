@@ -1,4 +1,32 @@
 
+u
+java:S1104"XMake isTimeFinish a static final constant or non-public and provide accessors if needed.(å©¨Ø8Â§«ºã1
+x
+java:S1104"[Make isBannerClicked a static final constant or non-public and provide accessors if needed.(ãÆˆ8Ã§«ºã1
+x
+java:S1104"[Make isNativeClicked a static final constant or non-public and provide accessors if needed.(È½£Ù8Ã§«ºã1
+
+java:S1104"]Make isPreloadedNative a static final constant or non-public and provide accessors if needed.(èØÃÚøÿÿÿÿ8Ã§«ºã1
+t
+java:S1104"WMake isSplashRun a static final constant or non-public and provide accessors if needed.(Åšã™8Ã§«ºã1
+z
+java:S1104"]Make isSplashRunNative a static final constant or non-public and provide accessors if needed.(¸Â·°8Ã§«ºã1
+
+java:S1104"_Make isPreloadedFbNative a static final constant or non-public and provide accessors if needed.(®Âßøüÿÿÿÿ8Ä§«ºã1
+r
+java:S1104"UMake nativeAds a static final constant or non-public and provide accessors if needed.(°•öà8Ä§«ºã1
+t
+java:S1104"RMake adView a static final constant or non-public and provide accessors if needed.(‚À”ùıÿÿÿÿ8Ä§«ºã1
+x
+java:S1104"VMake interAdmob a static final constant or non-public and provide accessors if needed.(†‘âÚùÿÿÿÿ8Ä§«ºã1
+u
+java:S1104"SMake interFb a static final constant or non-public and provide accessors if needed.(Èƒô‘ùÿÿÿÿ8Ä§«ºã1
+t
+java:S1104"WMake isAdShowing a static final constant or non-public and provide accessors if needed.(«úûñ8Ä§«ºã1
+y
+java:S1104"WMake isAdLoading a static final constant or non-public and provide accessors if needed.(ŸÜÁ¿ûÿÿÿÿ8Å§«ºã1
+t
+java:S1104"WMake mCountTimer a static final constant or non-public and provide accessors if needed.(ÿŸüÅ8Å§«ºã1
 H
 java:S1444"2Make this "public static isTimeFinish" field final(å©¨Ø
 R

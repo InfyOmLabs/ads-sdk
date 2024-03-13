@@ -2,6 +2,7 @@ package com.infyom.adssdk.adUtils.banner;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 
+import com.google.ads.mediation.admob.AdMobAdapter;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
@@ -29,7 +31,7 @@ public class AdBanner {
     static AdsAccountProvider accountProvider;
     static boolean isInitBanner = false;
 
-    public static void showBanner(Context mContext, RelativeLayout mRlBanner, View space, int mAdMobId) {
+    public static void showBanner(Context mContext, RelativeLayout mRlBanner, View space, int mAdMobId,boolean isCollaps) {
 
 
         context = null;
@@ -43,7 +45,7 @@ public class AdBanner {
 
         isInitBanner = true;
 
-        load_ads();
+        load_ads(isCollaps);
     }
 
     static void initAdView() {
@@ -58,7 +60,7 @@ public class AdBanner {
         mAdView = adView;
     }
 
-    public static void load_ads() {
+    public static void load_ads(boolean isCollaps) {
 
         if (getAdView() == null) {
             if (adMobId == 1) {
@@ -68,10 +70,10 @@ public class AdBanner {
             } else {
                 mUnitId = accountProvider.getBannerAds3();
             }
-
             AdView adView = new AdView(context);
+            AdView finalAdView = adView;
             adView.setAdUnitId(mUnitId);
-            adView.setAdListener(new AdListener() {
+            adView.setAdListener( new AdListener() {
                 @Override
                 public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                     super.onAdFailedToLoad(loadAdError);
@@ -83,7 +85,7 @@ public class AdBanner {
                     super.onAdLoaded();
                     Log.e("AD-BANNER", "load_ads : success call" );
 //                    loadFailed = 0;
-                    setAdView(adView);
+                    setAdView( finalAdView );
                     try {
                         if (rlBanner.getChildCount() > 0) {
                             rlBanner.removeAllViews();
@@ -92,7 +94,7 @@ public class AdBanner {
                         rlBanner.setVisibility(View.VISIBLE);
                         mSpace.setVisibility(View.GONE);
 
-                        rlBanner.addView(adView);
+                        rlBanner.addView( finalAdView );
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -112,12 +114,24 @@ public class AdBanner {
                     },accountProvider.getBannerAdsTime() * 1000);
                 }
             });
+            AdRequest adRequest;
+            if(!isCollaps){
+                adRequest=getAdRequest();
+                adView.setAdSize(AdSize.BANNER);
+            }else {
+                AdSize adSize = getAdSize(context,rlBanner);
+                adView.setAdSize(adSize);
+                Bundle extras = new Bundle();
+                extras.putString("collapsible", "bottom");
+                adRequest = new AdRequest.Builder()
+                        .addNetworkExtrasBundle( AdMobAdapter.class, extras)
+                        .build();
 
-
-
+            }
+            adView.loadAd(adRequest);
 //            AdSize adSize = getAdSize(context, rlBanner);
-            adView.setAdSize(AdSize.BANNER);
-            adView.loadAd(getAdRequest());
+//            adView.setAdSize(AdSize.BANNER);
+//            adView.loadAd(getAdRequest());
         } else {
             Log.e("AD-BANNER", "load_ads : already loaded call" );
         }

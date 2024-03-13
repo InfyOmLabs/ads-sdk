@@ -1,10 +1,11 @@
 
 E
 java:S16047"(Make this anonymous inner class a lambda(„ÑñŒ8îƒ€ïÌ1
-h
-java:S2184<"FCast one of the operands of this multiplication operation to a "long".(“î”ıÿÿÿÿ8‹çäïÌ1
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ûšãøúÿÿÿÿ8Ø­ºã1
 \
 java:S1118":Add a private constructor to hide the implicit public one.(­Åùıÿÿÿÿ8„€ïÌ1
 X	java:S125"<This block of commented-out lines of code should be removed.(Ø¿ÅË8‘„€ïÌ1
 
 java:S1186@"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ğÿ“ë8–„€ïÌ1
+L
+java:S18747"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8ÚØ­ºã1

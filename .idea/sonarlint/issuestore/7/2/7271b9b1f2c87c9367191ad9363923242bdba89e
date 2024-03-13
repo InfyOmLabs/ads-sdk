@@ -1,17 +1,35 @@
 
-Q
-java:S1066E"/Merge this if statement with the enclosing one.(ˆ³¢ ÿÿÿÿÿ8ÏßüïÌ1
-F
-java:S1604ò"(Make this anonymous inner class a lambda(„ÑñŒ8ĞßüïÌ1
-L
-java:S1444,"/Make this "public static isClicked" field final(×±Ö8ĞßüïÌ1
-o
-java:S37766"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ŒÇ»²8‘àüïÌ1
-W
-java:S1854F";Remove this useless assignment to local variable "mUnitId".(ƒÆ¹38‘àüïÌ1
-—
-java:S5803O"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(••ÇŒ8•àüïÌ1
-t
-java:S3776W"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(™èÄÔúÿÿÿÿ8–àüïÌ1
-u
-java:S3776›"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(úúÇûÿÿÿÿ8œàüïÌ1
+Ÿ
+java:S1192Õ"[Define a constant instead of duplicating this literal "/6499/example/interstitial" 3 times.(Ó…Öè8ªÍºã1J$5a89828e-fbf3-4b46-8497-d16cb1f96b0e
+
+java:S1192Ø"UDefine a constant instead of duplicating this literal "/6499/example/native" 5 times.(é›˜²ÿÿÿÿÿ8ªÍºã1J$8ae3c672-0c93-4a8b-9fa9-59533a5c693d
+Š
+java:S1192Ò"gDefine a constant instead of duplicating this literal "ca-app-pub-3940256099942544/2014213617" 3 times.(ØŞÛùÿÿÿÿ8âå„»ã1
+©
+java:S1192İ"`Define a constant instead of duplicating this literal "IMG_16_9_LINK#YOUR_PLACEMENT_ID" 3 times.(İìï­øÿÿÿÿ8ªÍºã1J$1fffee23-7ad9-49e5-9736-c39a1df28b09
+w
+java:S1066E"/Merge this if statement with the enclosing one.(ˆ³¢ ÿÿÿÿÿ8ÏßüïÌ1J$667d2044-0f53-40e4-98a3-8fee2c8ab624
+l
+java:S1604ò"(Make this anonymous inner class a lambda(„ÑñŒ8ĞßüïÌ1J$1a7aeeda-4333-430c-999e-7247bb248dfb
+˜
+java:S1104,"UMake isClicked a static final constant or non-public and provide accessors if needed.(×±Ö8šªÍºã1J$46e5e0c0-088b-4a93-904a-5f715b4ca916
+r
+java:S1444,"/Make this "public static isClicked" field final(×±Ö8ĞßüïÌ1J$c85b17c3-297f-41e7-8239-b26943b65b6a
+v
+java:S18741"3Remove this use of "NetworkInfo"; it is deprecated.(ÿ»¶Ã8æªÍºã1J$4fca4e69-6591-43fb-a0df-7c87f33fcaef
+
+java:S18741"<Remove this use of "getActiveNetworkInfo"; it is deprecated.(ÿ»¶Ã8çªÍºã1J$57f37963-74ba-489c-974e-4eb6d4283da7
+{
+java:S18742"3Remove this use of "isConnected"; it is deprecated.(õ§¼ïıÿÿÿÿ8éªÍºã1J$d43ee50a-9988-480d-94f0-4e6284dd8323
+•
+java:S37766"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ŒÇ»²8‘àüïÌ1J$161bfe33-ff56-45d1-ac7e-61f88a571a80
+}
+java:S1854F";Remove this useless assignment to local variable "mUnitId".(ƒÆ¹38‘àüïÌ1J$f3cd3648-dc8a-4048-abdc-86a8ff47241f
+½
+java:S5803O"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(••ÇŒ8•àüïÌ1J$014940b8-f984-4488-a082-5ab90addb6da
+š
+java:S3776W"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(™èÄÔúÿÿÿÿ8–àüïÌ1J$93a829eb-6cd6-4fa5-bacb-1f6826a22b98
+›
+java:S3776›"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(úúÇûÿÿÿÿ8œàüïÌ1J$0697130b-c17a-4289-a748-b7bf9641cbbf
+s
+java:S1874ò"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ8œ«Íºã1J$2d48daae-b717-43e6-be31-6a18b5dd9c4f

@@ -1,19 +1,26 @@
 
-E
-java:S1066L"/Merge this if statement with the enclosing one.(ñ™”ò
-|
-java:S1488p"aImmediately return this expression instead of assigning it to the temporary variable "adRequest".(ğ¸Ÿ—ÿÿÿÿÿ
-K
-java:S1444"0Make this "public static loadFailed" field final(÷„Âşÿÿÿÿ
-P
-java:S1118":Add a private constructor to hide the implicit public one.(ÿ¥Ú½
-c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ãıÔ
-h	java:S1008"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âûÓ×ùÿÿÿÿ
-m
-java:S37768"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(âûÓ×ùÿÿÿÿ
-
-java:S5803j"wRemove this usage of "AdSize", it is annotated with @VisibleForTesting and should not be accessed from production code.(µŞÁà
-•
-java:S5803o"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(¼Ô‹öşÿÿÿÿ
-N
-java:S10685"9Remove this unused "initialLayoutComplete" private field.(¸¾ÊJ
+r
+java:S1066N"/Merge this if statement with the enclosing one.(ñ™”ò8àø¬ºã1J$61f4abdf-9b47-435f-adc7-946a15481458
+©
+java:S1488r"aImmediately return this expression instead of assigning it to the temporary variable "adRequest".(ğ¸Ÿ—ÿÿÿÿÿ8ãø¬ºã1J$48a1f593-67ab-4772-ad6a-5e5117d5b0f6
+
+java:S1104"VMake loadFailed a static final constant or non-public and provide accessors if needed.(÷„Âşÿÿÿÿ8åø¬ºã1J$5e2541e0-05e5-4755-8d80-f9ca7e9111fa
+x
+java:S1444"0Make this "public static loadFailed" field final(÷„Âşÿÿÿÿ8çø¬ºã1J$85378d60-de9c-4277-89dc-8d59ab7b4151
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ûšãøúÿÿÿÿ8êø¬ºã1J$d2f053c7-8de5-421a-afc4-d7048ad947c2
+}
+java:S1118":Add a private constructor to hide the implicit public one.(ÿ¥Ú½8±ù¬ºã1J$78cdd900-dcf1-4799-9571-1f42b4fa35f9
+	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿ãıÔ8¶ù¬ºã1J$9641d170-2dc1-4315-8021-e781529c9ab8
+•	java:S100:"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âûÓ×ùÿÿÿÿ8¼ù¬ºã1J$31255aa1-457b-4c1c-9990-dab89a99bf89
+š
+java:S3776:"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(âûÓ×ùÿÿÿÿ8¾ù¬ºã1J$84543c87-08c5-4997-bd06-36d181744ccc
+º
+java:S5803l"wRemove this usage of "AdSize", it is annotated with @VisibleForTesting and should not be accessed from production code.(µŞÁà8Çù¬ºã1J$02d4b862-f275-4e2e-ac37-0d56bb1761b2
+œ
+java:S5803q"zRemove this usage of "AdRequest", it is annotated with @VisibleForTesting and should not be accessed from production code.(¼Ô‹öşÿÿÿÿ8×Ğ­ºã1
+
+java:S1874x"9Remove this use of "getDefaultDisplay"; it is deprecated.(Î³ÏÕÿÿÿÿÿ8Óù¬ºã1J$bdf8f1f4-01c7-450a-a7db-2568ef6e6386
+u
+java:S1874z"2Remove this use of "getMetrics"; it is deprecated.(ÑÆëã8Ôù¬ºã1J$214565ec-104b-4f35-92bb-85e2d53123d0
+{
+java:S10687"9Remove this unused "initialLayoutComplete" private field.(¸¾ÊJ8Öù¬ºã1J$7b612fe3-138b-4988-9d16-68e29f9f6c49

@@ -1,15 +1,17 @@
 
-J
-java:S1604D"(Make this anonymous inner class a lambda(Ÿ˜£’ûÿÿÿÿ8öâúÌ1
-J
-java:S1604R"(Make this anonymous inner class a lambda(†«óˆùÿÿÿÿ8÷âúÌ1
-E
-java:S1604f"(Make this anonymous inner class a lambda(Œûé®8ùâúÌ1
-E
-java:S1604_"(Make this anonymous inner class a lambda(ªÈôû8úâúÌ1
-J
-java:S1604v"(Make this anonymous inner class a lambda(öğå¶ùÿÿÿÿ8ûâúÌ1
-n	java:S116"TRename this field "rl_native" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆõâ·ûÿÿÿÿ
-t	java:S116"SRename this field "tv_space" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¯øòüÿÿÿÿ8ÀãúÌ1
-I
-java:S1602,",Remove useless curly braces around statement(€æÔë8ƒäúÌ1
+p
+java:S1604D"(Make this anonymous inner class a lambda(Ÿ˜£’ûÿÿÿÿ8öâúÌ1J$e90061f5-6576-4530-87a8-8acb1051048f
+p
+java:S1604R"(Make this anonymous inner class a lambda(†«óˆùÿÿÿÿ8÷âúÌ1J$a39f3238-8c50-442f-83e2-de67ecb7b321
+k
+java:S1604f"(Make this anonymous inner class a lambda(Œûé®8ùâúÌ1J$87df7d78-3a86-4783-aaee-7fa06438ff36
+k
+java:S1604_"(Make this anonymous inner class a lambda(ªÈôû8úâúÌ1J$7c503428-aa08-4032-8efa-58371609cd98
+p
+java:S1604v"(Make this anonymous inner class a lambda(öğå¶ùÿÿÿÿ8ûâúÌ1J$7433db06-83ae-40e3-b434-238274449df2
+”	java:S116"TRename this field "rl_native" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆõâ·ûÿÿÿÿJ$4494f9d4-0fac-4554-a19a-c688117fec20
+š	java:S116"SRename this field "tv_space" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¯øòüÿÿÿÿ8ÀãúÌ1J$fb7bc229-984f-4890-9b54-9b35403b55f6
+o
+java:S1659"'Declare "rl_native" on a separate line.(ˆõâ·ûÿÿÿÿ8ÆˆÓºã1J$ec9228bd-9418-4b90-b0b2-fd2f50cdce74
+o
+java:S1602,",Remove useless curly braces around statement(€æÔë8ƒäúÌ1J$9df03f1b-435d-426e-83de-f81a3aa0195e
