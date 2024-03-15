@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         InfyOmAds.enableTestMode(this);
 
-        InfyOmAds.showBanner(MainActivity.this,rlBanner,space,1,false);
+        InfyOmAds.showBanner(MainActivity.this,rlBanner,space,1,true);
         InfyOmAds.showNative(MainActivity.this,rl_native,tv_space,3, InfyOmAds.AdTemplate.NATIVE_350);
 
         showAds.setOnClickListener(v -> {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                                         public void onConsentFormDismissed(@Nullable FormError formError) {
                                             if (consentInformation.getConsentStatus() == ConsentInformation.ConsentStatus.OBTAINED) {
                                                 // App can start requesting ads.
-                                                InfyOmAds.showBanner(MainActivity.this,rlBanner,space,1,false);
+                                                InfyOmAds.showBanner(MainActivity.this,rlBanner,space,1,true);
                                                 InfyOmAds.showNative(MainActivity.this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
                                             }
 

@@ -222,8 +222,8 @@ public class InfyOmAds {
         myPref.setFbNativeAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setFbInterAds("IMG_16_9_LINK#YOUR_PLACEMENT_ID");
         myPref.setAdsTime(0);
-        myPref.setBannerAdsTime(30);
-        myPref.setNativeAdsTime(30);
+        myPref.setBannerAdsTime(0);
+        myPref.setNativeAdsTime(0);
         myPref.setSplashAds(1);
         myPref.setAdsType(ADMOB);
         myPref.setFirstAdsType(ADMOB);
