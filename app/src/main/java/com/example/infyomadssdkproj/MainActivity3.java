@@ -29,7 +29,7 @@ public class MainActivity3 extends AppCompatActivity {
         tv_space = findViewById(com.infyom.adssdk.R.id.tv_space);
         space = findViewById(R.id.shimmer_space);
 
-        InfyOmAds.showBanner(this,rlBanner,space,1,true);
+        InfyOmAds.showBanner(this,rlBanner,space,1);
         InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
 
         showAds.setOnClickListener(v -> {

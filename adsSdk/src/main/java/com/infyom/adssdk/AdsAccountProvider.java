@@ -16,6 +16,9 @@ public class AdsAccountProvider {
     static final String KEY_BANNER_ADS1 = "key_banner_ads1";
     static final String KEY_BANNER_ADS2 = "key_banner_ads2";
     static final String KEY_BANNER_ADS3 = "key_banner_ads3";
+    static final String KEY_COLLAPSE_BANNER_ADS1 = "key_collapse_banner_ads1";
+    static final String KEY_COLLAPSE_BANNER_ADS2 = "key_collapse_banner_ads2";
+    static final String KEY_COLLAPSE_BANNER_ADS3 = "key_collapse_banner_ads3";
     static final String KEY_INTERSTITIAL_ADS1 = "key_inter_ads1";
     static final String KEY_INTERSTITIAL_ADS2 = "key_inter_ads2";
     static final String KEY_INTERSTITIAL_ADS3 = "key_inter_ads3";
@@ -296,4 +299,28 @@ public class AdsAccountProvider {
         return sharedPreferences.getInt(KEY_NATIVE_ADS_TIME, 0);
     }
 
+    public void setCollapseBanner1(String bannerId) {
+        sharedPreferences.edit().putString(KEY_COLLAPSE_BANNER_ADS1, bannerId ).apply();
+    }
+
+    public String getCollapseBanner1() {
+        return sharedPreferences.getString(KEY_COLLAPSE_BANNER_ADS1, "0Ab" );
+    }
+
+
+    public void setCollapseBanner2(String bannerId) {
+        sharedPreferences.edit().putString(KEY_COLLAPSE_BANNER_ADS2, bannerId ).apply();
+    }
+
+    public String getCollapseBanner2() {
+        return sharedPreferences.getString(KEY_COLLAPSE_BANNER_ADS2, "0Ab" );
+    }
+
+    public void setCollapseBanner3(String bannerId) {
+        sharedPreferences.edit().putString(KEY_COLLAPSE_BANNER_ADS3, bannerId ).apply();
+    }
+
+    public String getCollapseBanner3() {
+        return sharedPreferences.getString(KEY_COLLAPSE_BANNER_ADS3, "0Ab" );
+    }
 }

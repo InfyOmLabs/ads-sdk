@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.MobileAds;
 import com.infyom.adssdk.adUtils.banner.AdBanner;
 import com.infyom.adssdk.adUtils.banner.BannerUtilsFb;
+import com.infyom.adssdk.adUtils.banner.CollapseAdBanner;
 import com.infyom.adssdk.adUtils.inter.InterstitialUtils;
 import com.infyom.adssdk.adUtils.inter.InterstitialUtilsFb;
 import com.infyom.adssdk.adUtils.nativeAd.NativeUtils;
@@ -39,6 +40,11 @@ public class InfyOmAds {
         NATIVE_100,
         NATIVE_50,
         NATIVE_40
+    }
+
+    public enum BannerAdTemplate {
+        COLLAPSE_TOP,
+        COLLAPSE_BOTTOM
     }
 
     public static boolean isClicked = false;
@@ -126,7 +132,7 @@ public class InfyOmAds {
         }
     }
 
-    public static void showBanner(Context context, RelativeLayout bannerContainer,View space, int admob,boolean isCollaps) {
+    public static void showBanner(Context context, RelativeLayout bannerContainer,View space, int admob) {
 
 
         if (Constants.isBannerClicked) {
@@ -146,7 +152,33 @@ public class InfyOmAds {
         }
 
         if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
-            AdBanner.showBanner(context, bannerContainer, space,admob,isCollaps);
+            AdBanner.showBanner(context, bannerContainer, space,admob);
+        } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
+            BannerUtilsFb.loadFbBanner(context, bannerContainer,space);
+        }
+    }
+
+    public static void showCollapseBanner(Context context, RelativeLayout bannerContainer,View space, int admob,BannerAdTemplate bannerAdTemplate) {
+
+
+        if (Constants.isBannerClicked) {
+            return;
+        }
+
+        AdsAccountProvider myPref = new AdsAccountProvider(context);
+
+        String adsType;
+
+        if (admob == 1) {
+            adsType = myPref.getFirstAdsType();
+        } else if (admob == 2) {
+            adsType = myPref.getSecondAdsType();
+        } else {
+            adsType = myPref.getThirdAdsType();
+        }
+
+        if ((myPref.getAdsType().equals(ADMOB) && !adsType.equals(FB)) || adsType.equals(ADMOB)) {
+            CollapseAdBanner.showBanner(context, bannerContainer, space,admob,bannerAdTemplate);
         } else if (myPref.getAdsType().equals(FB) || adsType.equals(FB)) {
             BannerUtilsFb.loadFbBanner(context, bannerContainer,space);
         }
@@ -207,9 +239,12 @@ public class InfyOmAds {
         myPref = new AdsAccountProvider(context);
 
         myPref.setOpenAds("/6499/example/app-open");
-        myPref.setBannerAds1("ca-app-pub-3940256099942544/2014213617");
-        myPref.setBannerAds2("ca-app-pub-3940256099942544/2014213617");
-        myPref.setBannerAds3("ca-app-pub-3940256099942544/2014213617");
+        myPref.setBannerAds1("/6499/example/banner");
+        myPref.setBannerAds2("/6499/example/banner");
+        myPref.setBannerAds3("/6499/example/banner");
+        myPref.setCollapseBanner1("ca-app-pub-3940256099942544/2014213617");
+        myPref.setCollapseBanner2("ca-app-pub-3940256099942544/2014213617");
+        myPref.setCollapseBanner3("ca-app-pub-3940256099942544/2014213617");
         myPref.setInterAds1("/6499/example/interstitial");
         myPref.setInterAds2("/6499/example/interstitial");
         myPref.setInterAds3("/6499/example/interstitial");

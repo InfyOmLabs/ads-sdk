@@ -17,6 +17,9 @@ public class Google {
     @SerializedName("banner")
     @Expose
     private String banner;
+    @SerializedName("google_collapsible_banner")
+    @Expose
+    private String collapsibleBanner;
     @SerializedName("rewarded")
     @Expose
     private String rewarded;
@@ -35,6 +38,9 @@ public class Google {
     @SerializedName("banner_second")
     @Expose
     private String bannerSecond;
+    @SerializedName("google_collapsible_banner_second")
+    @Expose
+    private String collapsibleBannerSecond;
     @SerializedName("rewarded_second")
     @Expose
     private String rewardedSecond;
@@ -53,6 +59,9 @@ public class Google {
     @SerializedName("banner_third")
     @Expose
     private String bannerThird;
+    @SerializedName("google_collapsible_banner_third")
+    @Expose
+    private String collapsibleBannerThird;
     @SerializedName("rewarded_third")
     @Expose
     private String rewardedThird;
@@ -227,4 +236,35 @@ public class Google {
         this.placeAdd = placeAdd;
     }
 
+    public String getCollapsibleBanner() {
+        return collapsibleBanner;
+    }
+
+    public void setCollapsibleBanner(String collapsibleBanner) {
+        this.collapsibleBanner = collapsibleBanner;
+    }
+
+    public String getCollapsibleBannerSecond() {
+        return collapsibleBannerSecond;
+    }
+
+    public void setCollapsibleBannerSecond(String collapsibleBannerSecond) {
+        this.collapsibleBannerSecond = collapsibleBannerSecond;
+    }
+
+    public String getCollapsibleBannerThird() {
+        return collapsibleBannerThird;
+    }
+
+    public void setCollapsibleBannerThird(String collapsibleBannerThird) {
+        this.collapsibleBannerThird = collapsibleBannerThird;
+    }
+
+    public String get_native() {
+        return _native;
+    }
+
+    public void set_native(String _native) {
+        this._native = _native;
+    }
 }

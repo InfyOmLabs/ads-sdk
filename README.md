@@ -24,7 +24,7 @@ Step 1. Add the JitPack repository to your build file
         
 ==> FOR SIMPLE ADS
 
-       implementation 'com.github.InfyOmLabs:ads-sdk:1.6.5'  
+       implementation 'com.github.InfyOmLabs:ads-sdk:1.6.6'  
      
 ==> Pre Interstitital Ads
 

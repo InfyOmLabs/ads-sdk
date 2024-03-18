@@ -32,7 +32,7 @@ public class AdBanner {
     static boolean isInitBanner = false;
     static AdRequest adRequest;
 
-    public static void showBanner(Context mContext, RelativeLayout mRlBanner, View space, int mAdMobId,boolean isCollaps) {
+    public static void showBanner(Context mContext, RelativeLayout mRlBanner, View space, int mAdMobId) {
 
         context = mContext;
         mSpace = space;
@@ -41,11 +41,11 @@ public class AdBanner {
         accountProvider = new AdsAccountProvider(context);
         isInitBanner = true;
 
-        loadBannerAd(isCollaps);
+        loadBannerAd();
     }
 
 
-    public static void loadBannerAd(boolean isCollaps) {
+    public static void loadBannerAd() {
 
         if (adMobId == 1) {
             mUnitId = accountProvider.getBannerAds1();
@@ -101,19 +101,8 @@ public class AdBanner {
         });
 
 
-        if(!isCollaps){
-            adRequest = getAdRequest();
-            adView.setAdSize(AdSize.BANNER);
-        }else {
-            AdSize adSize = getAdSize(context,rlBanner);
-            adView.setAdSize(adSize);
-            Bundle extras = new Bundle();
-            extras.putString("collapsible", "bottom");
-            adRequest = new AdRequest.Builder()
-                    .addNetworkExtrasBundle( AdMobAdapter.class, extras)
-                    .build();
-
-        }
+        adRequest = getAdRequest();
+        adView.setAdSize(AdSize.BANNER);
         adView.loadAd(adRequest);
     }
 
