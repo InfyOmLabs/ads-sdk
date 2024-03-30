@@ -50,12 +50,12 @@ public class InterstitialUtilsFb {
                         Constants.isTimeFinish = true;
                     }
                 },accountProvider.getAdsTime() * 1000);
-                listener.onAdClose(false);
+                listener.onAdClose("Fb Dismiss");
             }
 
             @Override
             public void onError(Ad ad, AdError adError) {
-                Log.e("INTER_ERROR-->", "Interstitial ad failed to load: " + adError.getErrorMessage());
+                Log.e("ADS_SDK-->", "Interstitial ad failed to load: " + adError.getErrorMessage());
                 if (finalDialog.isShowing()) {
                     finalDialog.dismiss();
                 }
@@ -67,7 +67,7 @@ public class InterstitialUtilsFb {
                         Constants.isTimeFinish = true;
                     }
                 }, accountProvider.getAdsTime() * 1000);
-                listener.onAdClose(true);
+                listener.onAdClose(adError.getErrorMessage().toString());
             }
 
             @Override

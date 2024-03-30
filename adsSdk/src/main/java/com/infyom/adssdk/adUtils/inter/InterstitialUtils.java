@@ -56,7 +56,6 @@ public class InterstitialUtils {
              @Override
              public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                  super.onAdFailedToLoad(loadAdError);
-                 Log.e("INTER_TAG-->", "onAdFailedToLoad: Failed ads");
                  InterstitialUtilsFb.loadInterstitial(mContext,listener,dialog);
 
              }
@@ -129,13 +128,13 @@ public class InterstitialUtils {
                         Constants.isTimeFinish = true;
                     }
                 }, myPref.getAdsTime() * 1000);
-                listener.onAdClose(true);
+                listener.onAdClose("Dismiss");
             }
 
             @Override
             public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                 super.onAdFailedToShowFullScreenContent(adError);
-                listener.onAdClose(true);
+                listener.onAdClose(adError.toString());
 
             }
         });
@@ -155,7 +154,7 @@ public class InterstitialUtils {
                     if (InfyOmAds.isConnectingToInternet(mContext)) {
                         if (failedPreLoad == 3) {
                             failedPreLoad = 0;
-                            Log.e("I_TAG", "onAdFailedToLoad: "+failedPreLoad );
+                            Log.e("ADS_SDK-->", "onAdFailedToLoad: "+failedPreLoad );
                         } else {
                             failedPreLoad++;
                             loadPreInterstitialAd(mContext, mUnitId,adRequest);
@@ -169,7 +168,7 @@ public class InterstitialUtils {
                 @Override
                 public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                     super.onAdLoaded(interstitialAd);
-                    Log.e("I_TAG", "onAdLoaded: " );
+                    Log.e("ADS_SDK-->", "onAdLoaded: " );
                     failedPreLoad = 0;
                     setCountDown();
                     mInterstitialAd = interstitialAd;
@@ -198,7 +197,7 @@ public class InterstitialUtils {
                     if (dialog != null && dialog.isShowing()) {
                         dialog.dismiss();
                     }
-                    Log.e("I_TAG", "onAdShowedFullScreenContent: " );
+                    Log.e("ADS_SDK-->", "onAdShowedFullScreenContent: " );
                     dismissCount();
                     Constants.isAdShowing = true;
                     mInterstitialAd = null;
@@ -217,13 +216,13 @@ public class InterstitialUtils {
                             Constants.isTimeFinish = true;
                         }
                     }, myPref.getAdsTime() * 1000);
-                    listener.onAdClose(true);
+                    listener.onAdClose("Dismiss");
                 }
 
                 @Override
                 public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                     super.onAdFailedToShowFullScreenContent(adError);
-                    Log.e("I_TAG", "onAdFailedToShowFullScreenContent: " );
+                    Log.e("ADS_SDK-->", "onAdFailedToShowFullScreenContent: " );
                     mInterstitialAd = null;
                     dismissCount();
                     Constants.isAdShowing = false;
@@ -234,7 +233,7 @@ public class InterstitialUtils {
                             Constants.isTimeFinish = true;
                         }
                     }, myPref.getAdsTime() * 1000);
-                    listener.onAdClose(true);
+                    listener.onAdClose(adError.getMessage());
 
                 }
             });
@@ -252,7 +251,6 @@ public class InterstitialUtils {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
-                Log.e("I_TAG", "onAdFailedToLoad: " );
                 if (dialog1.isShowing()) {
                     dialog1.dismiss();
                 }
@@ -264,13 +262,13 @@ public class InterstitialUtils {
                         Constants.isTimeFinish = true;
                     }
                 }, myPref.getAdsTime() * 1000);
-                listener.onAdClose(true);
+                listener.onAdClose(loadAdError.toString());
             }
 
             @Override
             public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
                 super.onAdLoaded(interstitialAd);
-                Log.e("I_TAG", "onAdLoaded: " );
+                Log.e("ADS_SDK-->", "onAdLoaded: " );
                 interstitialAd.show((Activity) mContext);
                 interstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
                     @Override
@@ -281,7 +279,7 @@ public class InterstitialUtils {
                     @Override
                     public void onAdShowedFullScreenContent() {
                         super.onAdShowedFullScreenContent();
-                        Log.e("I_TAG", "onAdShowedFullScreenContent: " );
+                        Log.e("ADS_SDK-->", "onAdShowedFullScreenContent: " );
                         if (dialog1.isShowing()) {
                             dialog1.dismiss();
                         }
@@ -291,7 +289,7 @@ public class InterstitialUtils {
                     @Override
                     public void onAdDismissedFullScreenContent() {
                         super.onAdDismissedFullScreenContent();
-                        Log.e("I_TAG", "onAdDismissedFullScreenContent: " );
+                        Log.e("ADS_SDK-->", "onAdDismissedFullScreenContent: " );
                         Constants.isAdShowing = false;
                         Constants.isTimeFinish = false;
                         new Handler().postDelayed(new Runnable() {
@@ -300,13 +298,13 @@ public class InterstitialUtils {
                                 Constants.isTimeFinish = true;
                             }
                         }, myPref.getAdsTime() * 1000);
-                        listener.onAdClose(true);
+                        listener.onAdClose("Dismiss");
                     }
 
                     @Override
                     public void onAdFailedToShowFullScreenContent(@NonNull AdError adError) {
                         super.onAdFailedToShowFullScreenContent(adError);
-                        Log.e("I_TAG", "onAdFailedToShowFullScreenContent: " );
+                        Log.e("ADS_SDK-->", "onAdFailedToShowFullScreenContent: " );
                         if (dialog1.isShowing()) {
                             dialog1.dismiss();
                         }
@@ -318,7 +316,7 @@ public class InterstitialUtils {
                                 Constants.isTimeFinish = true;
                             }
                         }, myPref.getAdsTime() * 1000);
-                        listener.onAdClose(true);
+                        listener.onAdClose(adError.getMessage());
                     }
                 });
             }

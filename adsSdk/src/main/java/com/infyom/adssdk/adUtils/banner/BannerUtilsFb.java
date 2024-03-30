@@ -27,7 +27,7 @@ public class BannerUtilsFb {
         adView.loadAd(adView.buildLoadAdConfig().withAdListener(new AdListener() {
             @Override
             public void onError(Ad ad, AdError adError) {
-                Log.e("BANNER_ERROR-->", adError.getErrorMessage());
+                Log.e("ADS_SDK-->", adError.getErrorMessage());
                 adContainer.setVisibility(View.GONE);
                 space.setVisibility(View.VISIBLE);
             }

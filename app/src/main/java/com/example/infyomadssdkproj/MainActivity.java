@@ -44,8 +44,9 @@ public class MainActivity extends AppCompatActivity {
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {
                 @Override
-                public void onAdClose(boolean isFail) {
+                public void onAdClose(String errorMessage) {
                     startActivity(new Intent(MainActivity.this,Main2Activity.class));
+                    Log.e("ADS_SDK-->", "onAdClose: "+errorMessage );
                 }
             });
         });

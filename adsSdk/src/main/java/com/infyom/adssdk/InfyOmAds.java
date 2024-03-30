@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
@@ -123,12 +124,12 @@ public class InfyOmAds {
                 Constants.isAdLoading = true;
                 InterstitialUtilsFb.loadInterstitial(context, listener, null    );
             }  else {
-                listener.onAdClose(false);
+                listener.onAdClose("Different Ads Type");
             }
 
         } else {
             Constants.isAdLoading = false;
-            listener.onAdClose(true);
+            listener.onAdClose("Ads time running");
         }
     }
 
@@ -227,11 +228,9 @@ public class InfyOmAds {
 
     public static void initializeAds(Context context) {
         MobileAds.initialize(context, initializationStatus -> {
+            Log.e("ADS_SDK-->", "initializeAds: "+initializationStatus.toString());
         });
         AudienceNetworkAds.initialize(context);
-        if (BuildConfig.DEBUG) {
-            AdSettings.setTestMode(true);
-        }
     }
 
     public static void enableTestMode(Context context) {

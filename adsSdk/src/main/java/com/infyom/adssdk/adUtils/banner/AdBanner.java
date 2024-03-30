@@ -61,14 +61,14 @@ public class AdBanner {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
-                Log.e("AD-BANNER", "failed : " +loadAdError.toString());
+                Log.e("ADS_SDK-->", "failed : " +loadAdError.toString());
 //                    BannerUtilsFb.loadFbBanner(context, rlBanner,mSpace);
             }
 
             @Override
             public void onAdLoaded() {
                 super.onAdLoaded();
-                Log.e("AD-BANNER", "load_ads : success call" );
+                Log.e("ADS_SDK-->", "load_ads : success call" );
 //                    loadFailed = 0;
 //                    setAdView( finalAdView );
                 try {

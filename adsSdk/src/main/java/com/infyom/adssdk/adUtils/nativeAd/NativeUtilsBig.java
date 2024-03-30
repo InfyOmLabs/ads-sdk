@@ -69,6 +69,7 @@ public class NativeUtilsBig {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
+                Log.e("ADS_SDK-->", "Native ad failed to load: " + loadAdError.toString());
                 Constants.nativeAds = null;
 //                if (InfyOmAds.isConnectingToInternet(context)) {
 //                    if (loadFailed != 3) {

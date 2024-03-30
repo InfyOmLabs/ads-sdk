@@ -3,6 +3,7 @@ package com.infyom.adssdk.adUtils.nativeAd;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
@@ -77,6 +78,7 @@ public class NativeUtils40 {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
+                Log.e("ADS_SDK-->", "Native ad failed to load: " + loadAdError.toString());
                 try {
                     Constants.nativeAds = null;
 //                    space.setVisibility(View.VISIBLE);

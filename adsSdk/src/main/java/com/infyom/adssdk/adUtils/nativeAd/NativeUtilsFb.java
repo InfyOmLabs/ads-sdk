@@ -48,7 +48,8 @@ public class NativeUtilsFb {
 
                 nativeAdLayout.setVisibility(View.GONE);
                 if (InfyOmAds.isConnectingToInternet(context)) {
-                    Log.e("N_F_TAG", "onError: ");
+                    Log.e("ADS_SDK-->", "Native ad failed to load: " + adError.getErrorMessage());
+                    Log.e("ADS_SDK-->", "Native ad failed to load: " + adError.getErrorCode());
                 }
 
             }

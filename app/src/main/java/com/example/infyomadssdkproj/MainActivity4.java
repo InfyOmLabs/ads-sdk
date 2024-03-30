@@ -2,6 +2,7 @@ package com.example.infyomadssdkproj;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -36,9 +37,11 @@ public class MainActivity4 extends AppCompatActivity {
         showAds.setOnClickListener(v -> {
             InfyOmAds.showInterstitial(1, this, new Interstitial() {
                 @Override
-                public void onAdClose(boolean isFail) {
+                public void onAdClose(String errorMessage) {
+                    Log.e("ADS_SDK-->", "onAdClose: "+errorMessage );
                     startActivity(new Intent(MainActivity4.this,FullNativeActivity.class));
                 }
+
             });
         });
 

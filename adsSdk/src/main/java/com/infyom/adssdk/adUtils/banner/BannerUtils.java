@@ -76,7 +76,7 @@ public class BannerUtils {
                 Constants.adView = null;
                 if (InfyOmAds.isConnectingToInternet(context)) {
                     if (loadFailed != 3) {
-                        Log.e("B_TAG", "onAdFailedToLoad: "+loadFailed );
+                        Log.e("ADS_SDK-->", "onAdFailedToLoad: "+loadFailed );
                         loadFailed++;
                         load_ads(context, bannerView, adMobId,true);
                     }
