@@ -1,6 +1,8 @@
 # ads-sdk
 
 To get a Git project into your build:
+[![](https://jitpack.io/v/InfyOmLabs/ads-sdk.svg)](https://jitpack.io/#InfyOmLabs/ads-sdk)
+
 Step 1. Add the JitPack repository to your build file
 
 ========= Features ==========
