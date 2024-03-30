@@ -56,6 +56,7 @@ public class InterstitialUtils {
              @Override
              public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                  super.onAdFailedToLoad(loadAdError);
+                 Log.e("ADS_SDK-->", "Google inter failed : " + loadAdError.toString());
                  InterstitialUtilsFb.loadInterstitial(mContext,listener,dialog);
 
              }
