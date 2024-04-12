@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="10dp"
-    app:cardElevation="3dp"
-    app:cardUseCompatPadding="true">
+    android:background="@drawable/border_bg">
 
     <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/ads_100"
@@ -145,4 +142,4 @@
         </LinearLayout>
     </com.google.android.gms.ads.nativead.NativeAdView>
 
-</androidx.cardview.widget.CardView>
+</RelativeLayout>
