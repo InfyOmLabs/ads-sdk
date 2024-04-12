@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app1="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
     app:cardElevation="3dp"
-    app:cardUseCompatPadding="true"
-    app:ignore="NamespaceTypo">
+    app:cardUseCompatPadding="true">
 
     <com.google.android.gms.ads.nativead.NativeAdView
         android:id="@+id/unified"
         android:layout_width="match_parent"
-        android:layout_height="165dp"
-        app:ignore="NamespaceTypo">
+        android:layout_height="165dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -76,8 +73,7 @@
                             android:textSize="14sp"
                             android:textStyle="bold"
                             android:ellipsize="end"
-                            android:maxLines="1"
-                            app:ignore="RtlCompat" />
+                            android:maxLines="1" />
 
                     </LinearLayout>
 

@@ -1,111 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.gms.ads.nativead.NativeAdView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/unified"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="60dp">
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardUseCompatPadding="true">
 
-    <LinearLayout
+    <com.google.android.gms.ads.nativead.NativeAdView
+        android:id="@+id/unified"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="60dp">
 
-        <ImageView
-            android:id="@+id/iv_icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="5dp">
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp" />
 
-            <TextView
-                android:id="@+id/txt_headline"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:textStyle="bold"
-                android:ellipsize="end"
-                android:textColor="@color/black" />
-
-            <TextView
-                android:id="@+id/txt_subtitle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt_headline"
-                android:maxLines="1"
-                android:ellipsize="end"
-                android:textColor="#5A5A5A"
-                android:textSize="11dp" />
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/txt_subtitle"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/ads_button_bg"
-                    android:padding="3dp"
-                    android:textStyle="bold"
-                    android:text="AD"
-                    android:textColor="@color/white"
-                    android:textSize="10dp" />
-
-                <RelativeLayout
+                    android:id="@+id/txt_headline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp">
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_headline"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textColor="#5A5A5A"
+                    android:textSize="11dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/txt_subtitle"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/txt_store"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
-                        android:text="Store"
-                        android:textColor="@color/black"
-                        android:textSize="13dp"
-                        android:ellipsize="end"
-                        android:visibility="gone" />
-
-                    <RatingBar
-                        android:id="@+id/ratingbar"
-                        style="?android:attr/ratingBarStyleSmall"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:numStars="5"
-                        android:progressTint="#fdcc0d"
-                        android:rating="4"
-                        android:stepSize="0.5" />
-                </RelativeLayout>
-            </LinearLayout>
+                        android:background="@drawable/ads_button_bg"
+                        android:padding="3dp"
+                        android:text="AD"
+                        android:textColor="@color/white"
+                        android:textSize="10dp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp">
+
+                        <TextView
+                            android:id="@+id/txt_store"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="Store"
+                            android:textColor="@color/black"
+                            android:textSize="13dp"
+                            android:visibility="gone" />
+
+                        <RatingBar
+                            android:id="@+id/ratingbar"
+                            style="?android:attr/ratingBarStyleSmall"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:numStars="5"
+                            android:progressTint="#fdcc0d"
+                            android:rating="4"
+                            android:stepSize="0.5" />
+                    </RelativeLayout>
+                </LinearLayout>
 
 
-        </RelativeLayout>
+            </RelativeLayout>
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_click_here"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
-            android:maxLines="1"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:textStyle="bold"
-            android:ellipsize="end"
-            android:background="@drawable/ads_button_bg"
-            android:textAllCaps="false" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_click_here"
+                android:layout_width="100dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/ads_button_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
 
-    </LinearLayout>
-</com.google.android.gms.ads.nativead.NativeAdView>
+        </LinearLayout>
+    </com.google.android.gms.ads.nativead.NativeAdView>
+</androidx.cardview.widget.CardView>

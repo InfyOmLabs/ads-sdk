@@ -31,7 +31,7 @@ public class MainActivity4 extends AppCompatActivity {
         space = findViewById(R.id.shimmer_space);
 
         InfyOmAds.showBanner(this,rlBanner,space,1);
-        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_50);
+        InfyOmAds.showNative(this,rl_native,tv_space,1, InfyOmAds.AdTemplate.NATIVE_150);
         InfyOmAds.loadPreInterstitial(1,this);
 
         showAds.setOnClickListener(v -> {
